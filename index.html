@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Téo Lima | Psicólogo Online | Salvador – BA</title>
+  <meta name="description" content="Psicólogo online especialista em luto, psicologia hospitalar, cuidados paliativos e ACT. Atendimento para todo o Brasil. CRP 03/20310."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+  :root {
+    --blue:         #4A7FA5;
+    --blue-light:   #7EB5D6;
+    --blue-pale:    #EBF4FA;
+    --green:        #5FA37E;
+    --green-light:  #94C9AD;
+    --green-pale:   #E8F5EE;
+    --lilac:        #8B7BB5;
+    --lilac-light:  #B8AEDE;
+    --lilac-pale:   #F0EDF8;
+    --white:        #FDFCFF;
+    --cream:        #F5F3F8;
+    --text:         #252535;
+    --text-mid:     #585870;
+    --text-light:   #9898B0;
+    --border:       #E0DDF0;
+    --sh-sm:        0 2px 14px rgba(74,127,165,.10);
+    --sh-md:        0 8px 36px rgba(74,127,165,.14);
+    --sh-lg:        0 24px 64px rgba(74,127,165,.17);
+    --r:            22px;
+    --font-d:       'Playfair Display', Georgia, serif;
+    --font-b:       'Nunito', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; font-size:16px; }
+  body { font-family:var(--font-b); background:var(--white); color:var(--text); line-height:1.75; overflow-x:hidden; }
+  img  { max-width:100%; display:block; }
+  a    { text-decoration:none; color:inherit; }
+
+  .container { width:100%; max-width:1120px; margin:0 auto; padding:0 28px; }
+
+  .label { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
+  .lb { color:var(--blue); } .lg { color:var(--green); } .ll { color:var(--lilac); }
+
+  .title { font-family:var(--font-d); font-size:clamp(1.9rem,4vw,2.9rem); font-weight:400; line-height:1.2; color:var(--text); }
+  .title em    { font-style:italic; }
+  .tb { color:var(--blue); } .tg { color:var(--green); } .tl { color:var(--lilac); }
+
+  .btn {
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 30px; border-radius:100px;
+    font-family:var(--font-b); font-size:.88rem; font-weight:700;
+    cursor:pointer; border:none;
+    transition:transform .22s, box-shadow .22s, background .22s;
+  }
+  .btn:hover { transform:translateY(-2px); }
+  .btn svg { width:20px; height:20px; flex-shrink:0; }
+
+  .btn-blue  { background:var(--blue);  color:#fff; box-shadow:0 4px 20px rgba(74,127,165,.38); }
+  .btn-blue:hover  { background:var(--blue-light);  box-shadow:0 8px 30px rgba(74,127,165,.42); }
+  .btn-green { background:var(--green); color:#fff; box-shadow:0 4px 20px rgba(95,163,126,.38); }
+  .btn-green:hover { background:var(--green-light); box-shadow:0 8px 30px rgba(95,163,126,.42); }
+  .btn-white { background:#fff; color:var(--blue); box-shadow:0 4px 24px rgba(0,0,0,.13); }
+  .btn-white:hover { box-shadow:0 10px 36px rgba(0,0,0,.18); }
+  .btn-ghost { background:transparent; color:var(--text-mid); border:1.5px solid var(--border); }
+  .btn-ghost:hover { border-color:var(--blue-light); color:var(--blue); }
+
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── NAV ── */
+  #nav { position:fixed; top:0; left:0; right:0; z-index:300; padding:20px 0; transition:background .4s,padding .3s,box-shadow .3s; }
+  #nav.scrolled { background:rgba(253,252,255,.95); backdrop-filter:blur(16px); padding:13px 0; box-shadow:0 1px 0 var(--border); }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .nav-logo  { font-family:var(--font-d); font-size:1.35rem; font-weight:500; color:var(--text); }
+  .nav-logo span { color:var(--blue); }
+  .nav-links { display:flex; align-items:center; gap:26px; list-style:none; }
+  .nav-links a { font-size:.8rem; font-weight:600; color:var(--text-mid); transition:color .2s; }
+  .nav-links a:hover { color:var(--blue); }
+  .nav-btn { padding:10px 22px; font-size:.8rem; }
+  .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:4px; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--text); border-radius:2px; transition:transform .3s,opacity .3s; }
+  .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity:0; }
+  .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display:none; position:fixed; inset:0; background:rgba(253,252,255,.97); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu a { font-family:var(--font-d); font-size:1.5rem; color:var(--text); }
+
+  /* ── HERO ── */
+  #hero { min-height:100vh; padding:130px 0 90px; background:var(--cream); position:relative; overflow:hidden; display:flex; align-items:center; }
+  .blob { position:absolute; border-radius:50%; pointer-events:none; opacity:.2; filter:blur(70px); }
+  .b1 { width:520px; height:520px; background:var(--blue-light);  top:-12%; right:-10%; }
+  .b2 { width:400px; height:400px; background:var(--lilac-light); bottom:-8%; left:-8%; }
+  .b3 { width:280px; height:280px; background:var(--green-light); top:55%;  left:32%; }
+
+  .hero-inner { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; position:relative; z-index:2; }
+
+  .hero-pill {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(74,127,165,.10); border:1px solid rgba(74,127,165,.25);
+    color:var(--blue); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+    padding:7px 18px; border-radius:100px; margin-bottom:24px;
+    animation:fadeUp .8s ease both;
+  }
+  .hero-pill::before { content:''; width:7px; height:7px; background:var(--blue); border-radius:50%; }
+
+  .hero-h1 { font-family:var(--font-d); font-size:clamp(2.3rem,5.5vw,3.9rem); font-weight:400; line-height:1.12; animation:fadeUp .8s .13s ease both; }
+  .hero-h1 em { font-style:italic; color:var(--blue); }
+  .hero-sub { font-size:1rem; color:var(--text-mid); max-width:460px; margin:20px 0 34px; animation:fadeUp .8s .25s ease both; }
+  .hero-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; animation:fadeUp .8s .37s ease both; }
+
+  .hero-stats { display:flex; gap:24px; margin-top:40px; animation:fadeUp .8s .49s ease both; }
+  .hero-stat  { display:flex; flex-direction:column; }
+  .hero-stat strong { font-family:var(--font-d); font-size:2rem; font-weight:400; line-height:1; }
+  .hero-stat span   { font-size:.7rem; color:var(--text-light); margin-top:4px; }
+  .stat-div { width:1px; background:var(--border); align-self:stretch; }
+
+  .hero-visual { display:flex; justify-content:center; align-items:center; animation:fadeIn 1s .3s ease both; }
+  .hero-card   { position:relative; width:100%; max-width:440px; }
+
+  .hero-photo {
+    width:100%; aspect-ratio:4/5;
+    border-radius:52% 48% 44% 56% / 50% 46% 54% 50%;
+    overflow:hidden;
+    box-shadow:var(--sh-lg);
+    background:linear-gradient(145deg,var(--blue-pale),var(--lilac-pale));
+  }
+  .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+
+  .hero-badge { position:absolute; bottom:22px; left:-22px; background:#fff; border:1px solid var(--border); border-radius:16px; padding:14px 20px; box-shadow:var(--sh-md); font-size:.82rem; }
+  .hero-badge strong { display:block; font-family:var(--font-d); font-size:1.05rem; margin-bottom:3px; }
+  .hero-badge span   { color:var(--text-light); }
+  .hero-crp { position:absolute; top:22px; right:-18px; background:var(--blue); color:#fff; border-radius:12px; padding:10px 16px; font-size:.7rem; font-weight:700; line-height:1.5; box-shadow:var(--sh-sm); }
+
+  /* ── TRUST BAR ── */
+  #trust { background:var(--blue); padding:16px 0; }
+  .trust-inner { display:flex; align-items:center; justify-content:center; gap:36px; flex-wrap:wrap; }
+  .trust-item  { display:flex; align-items:center; gap:9px; color:rgba(255,255,255,.88); font-size:.79rem; }
+  .trust-item svg { width:16px; height:16px; flex-shrink:0; }
+
+  /* ── GALERIA ── */
+  #gallery { padding:86px 0 70px; background:var(--white); }
+  .gallery-hd { text-align:center; max-width:560px; margin:0 auto 48px; }
+  .gallery-hd p { font-size:.93rem; color:var(--text-mid); margin-top:12px; }
+
+  .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+
+  .gc {
+    display:block; border:1.5px solid var(--border); border-radius:var(--r);
+    overflow:hidden; cursor:pointer; background:var(--white);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .gc:hover { transform:translateY(-6px); box-shadow:var(--sh-md); }
+  .gc.cb:hover { border-color:var(--blue-light);  }
+  .gc.cg:hover { border-color:var(--green-light); }
+  .gc.cl:hover { border-color:var(--lilac-light); }
+
+  .gc-thumb { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:2.8rem; position:relative; overflow:hidden; }
+  .cb .gc-thumb { background:var(--blue-pale);  }
+  .cg .gc-thumb { background:var(--green-pale); }
+  .cl .gc-thumb { background:var(--lilac-pale); }
+
+  .gc-body { padding:20px 22px 22px; }
+  .gc-body h3 { font-family:var(--font-d); font-size:1.05rem; font-weight:500; margin-bottom:6px; }
+  .gc-body p  { font-size:.78rem; color:var(--text-mid); line-height:1.55; margin-bottom:12px; }
+  .gc-arrow { display:inline-flex; align-items:center; gap:5px; font-size:.72rem; font-weight:700; transition:gap .2s; }
+  .cb .gc-arrow { color:var(--blue);  }
+  .cg .gc-arrow { color:var(--green); }
+  .cl .gc-arrow { color:var(--lilac); }
+  .gc:hover .gc-arrow { gap:10px; }
+
+  /* ── PROBLEMAS ── */
+  #problems { padding:100px 0; background:var(--cream); position:relative; overflow:hidden; }
+  #problems::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--blue-light),var(--lilac-light),transparent); }
+  .prob-hd { text-align:center; max-width:620px; margin:0 auto 56px; }
+  .prob-hd p { font-size:.93rem; color:var(--text-mid); margin-top:12px; }
+  .prob-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:20px; }
+
+  .pc { background:var(--white); border:1px solid var(--border); border-radius:var(--r); padding:32px; transition:transform .25s,box-shadow .25s,border-color .25s; }
+  .pc:hover { transform:translateY(-4px); box-shadow:var(--sh-md); }
+  .pc.pb:hover { border-color:var(--blue-light);  }
+  .pc.pg:hover { border-color:var(--green-light); }
+  .pc.pl:hover { border-color:var(--lilac-light); }
+  .pc-ico { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:18px; }
+  .pb .pc-ico { background:var(--blue-pale);  }
+  .pg .pc-ico { background:var(--green-pale); }
+  .pl .pc-ico { background:var(--lilac-pale); }
+  .pc h3 { font-family:var(--font-d); font-size:1.15rem; font-weight:500; margin-bottom:10px; }
+  .pc p  { font-size:.85rem; color:var(--text-mid); line-height:1.75; }
+
+  /* ── SOBRE ── */
+  #about { padding:100px 0; background:var(--white); }
+  .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .about-wrap { position:relative; }
+  .about-frame { width:100%; aspect-ratio:1/1; border-radius:44% 56% 40% 60% / 48% 44% 56% 52%; overflow:hidden; background:linear-gradient(135deg,var(--blue-pale),var(--green-pale),var(--lilac-pale)); box-shadow:var(--sh-lg); }
+  .about-frame img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .about-crp { position:absolute; top:14px; right:-16px; background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px 18px; font-size:.74rem; color:var(--text-mid); box-shadow:var(--sh-sm); line-height:1.55; }
+  .about-crp strong { display:block; color:var(--blue); font-weight:700; font-size:.8rem; }
+  .about-text .title { margin-bottom:20px; }
+  .about-text p { color:var(--text-mid); font-size:.92rem; margin-bottom:16px; }
+  .about-text p strong { color:var(--text); }
+  .tags { display:flex; flex-wrap:wrap; gap:9px; margin-top:26px; }
+  .tag  { font-size:.7rem; font-weight:700; padding:6px 14px; border-radius:100px; letter-spacing:.03em; }
+  .tag.tb { background:var(--blue-pale);  color:var(--blue);  border:1px solid rgba(74,127,165,.2); }
+  .tag.tg { background:var(--green-pale); color:var(--green); border:1px solid rgba(95,163,126,.2); }
+  .tag.tl { background:var(--lilac-pale); color:var(--lilac); border:1px solid rgba(139,123,181,.2); }
+
+  /* ── COMO FUNCIONA ── */
+  #how { padding:100px 0; background:var(--cream); }
+  .how-hd { text-align:center; max-width:560px; margin:0 auto 64px; }
+  .how-hd p { font-size:.93rem; color:var(--text-mid); margin-top:12px; }
+  .how-steps { display:grid; grid-template-columns:repeat(4,1fr); position:relative; }
+  .how-steps::before { content:''; position:absolute; top:38px; left:12%; right:12%; height:1px; background:linear-gradient(90deg,var(--blue-light),var(--green-light),var(--lilac-light)); }
+  .hs { text-align:center; padding:0 18px; }
+  .hs-num { width:76px; height:76px; border-radius:50%; margin:0 auto 22px; display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:1.7rem; font-weight:400; position:relative; z-index:2; background:var(--white); border:2px solid; }
+  .sn1 { color:var(--blue);  border-color:var(--blue-light);  }
+  .sn2 { color:var(--green); border-color:var(--green-light); }
+  .sn3 { color:var(--lilac); border-color:var(--lilac-light); }
+  .sn4 { color:var(--blue);  border-color:var(--blue-light);  }
+  .hs h3 { font-family:var(--font-d); font-size:1.1rem; font-weight:500; margin-bottom:8px; }
+  .hs p  { font-size:.82rem; color:var(--text-mid); line-height:1.7; }
+  .how-cta { text-align:center; margin-top:52px; }
+
+  /* ── DEPOIMENTOS ── */
+  #testimonials { padding:100px 0; background:var(--white); }
+  .test-hd { text-align:center; max-width:560px; margin:0 auto 56px; }
+  .test-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+  .tc { background:var(--white); border:1px solid var(--border); border-radius:var(--r); padding:36px; position:relative; transition:transform .25s,box-shadow .25s; }
+  .tc:hover { transform:translateY(-4px); box-shadow:var(--sh-md); }
+  .tc-accent { position:absolute; top:0; left:32px; width:48px; height:4px; border-radius:0 0 4px 4px; }
+  .tab { background:var(--blue-light); } .tag2 { background:var(--green-light); } .tal { background:var(--lilac-light); }
+  .tc-stars { font-size:.82rem; letter-spacing:.1em; margin-bottom:14px; }
+  .sb { color:var(--blue); } .sg { color:var(--green); } .sl { color:var(--lilac); }
+  .tc-quote { font-family:var(--font-d); font-size:3.5rem; line-height:.5; color:var(--border); margin-bottom:18px; }
+  .tc-text  { font-size:.9rem; color:var(--text-mid); font-style:italic; line-height:1.85; margin-bottom:24px; }
+  .tc-author { display:flex; align-items:center; gap:13px; }
+  .tc-av { width:42px; height:42px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:1.1rem; }
+  .avb { background:var(--blue-pale);  color:var(--blue);  }
+  .avg { background:var(--green-pale); color:var(--green); }
+  .avl { background:var(--lilac-pale); color:var(--lilac); }
+  .tc-name   { font-size:.86rem; font-weight:700; }
+  .tc-detail { font-size:.74rem; color:var(--text-light); }
+  .test-disc { text-align:center; margin-top:28px; font-size:.72rem; color:var(--text-light); }
+
+  /* ── FAQ ── */
+  #faq { padding:100px 0; background:var(--cream); }
+  .faq-inner { display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:start; }
+  .faq-side .title { margin-bottom:16px; }
+  .faq-side p { font-size:.88rem; color:var(--text-mid); margin-bottom:28px; line-height:1.7; }
+  .faq-list { display:flex; flex-direction:column; gap:6px; }
+  .fi { border:1px solid var(--border); border-radius:16px; overflow:hidden; transition:border-color .2s; }
+  .fi.open { border-color:var(--blue-light); }
+  .fi-q { width:100%; background:none; border:none; text-align:left; padding:20px 22px; font-family:var(--font-b); font-size:.92rem; font-weight:600; color:var(--text); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; transition:color .2s; }
+  .fi-q:hover { color:var(--blue); }
+  .fi-chev { width:20px; height:20px; flex-shrink:0; color:var(--blue-light); transition:transform .3s; }
+  .fi.open .fi-chev { transform:rotate(180deg); }
+  .fi-a { max-height:0; overflow:hidden; font-size:.87rem; color:var(--text-mid); line-height:1.8; transition:max-height .4s ease,padding .3s; }
+  .fi.open .fi-a { max-height:300px; padding:0 22px 20px; }
+
+  /* ── CTA FINAL ── */
+  #cta-final { padding:110px 0; text-align:center; background:linear-gradient(135deg,var(--blue) 0%,#3a6a8a 40%,var(--lilac) 100%); position:relative; overflow:hidden; }
+  #cta-final::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.08) 0%,transparent 65%); pointer-events:none; }
+  .cta-inner { position:relative; z-index:2; }
+  .cta-inner .label { color:rgba(255,255,255,.7); }
+  .cta-inner h2 { font-family:var(--font-d); font-size:clamp(2rem,4.5vw,3.3rem); font-weight:400; color:#fff; line-height:1.2; margin-bottom:18px; }
+  .cta-inner h2 em { font-style:italic; color:var(--lilac-light); }
+  .cta-inner p { color:rgba(255,255,255,.72); font-size:.97rem; max-width:500px; margin:0 auto 40px; }
+
+  /* ── FOOTER ── */
+  footer { background:#1E1E2E; padding:50px 0 28px; }
+  .foot-main { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:32px; margin-bottom:40px; }
+  .foot-brand { font-family:var(--font-d); font-size:1.4rem; color:rgba(255,255,255,.85); }
+  .foot-brand span { color:var(--blue-light); }
+  .foot-brand p { font-size:.78rem; color:rgba(255,255,255,.4); margin-top:8px; max-width:240px; line-height:1.6; }
+  .foot-col h4 { font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--blue-light); margin-bottom:14px; }
+  .foot-col a, .foot-col p { display:block; font-size:.82rem; color:rgba(255,255,255,.5); margin-bottom:8px; transition:color .2s; }
+  .foot-col a:hover { color:rgba(255,255,255,.85); }
+  .foot-bar { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; text-align:center; font-size:.72rem; color:rgba(255,255,255,.25); line-height:1.8; }
+
+  /* ── WA FLOAT ── */
+  .wa-float { position:fixed; bottom:26px; right:26px; z-index:400; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 22px rgba(37,211,102,.45); transition:transform .25s,box-shadow .25s; }
+  .wa-float:hover { transform:scale(1.1); box-shadow:0 8px 34px rgba(37,211,102,.5); }
+  .wa-float svg { width:28px; height:28px; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:900px) {
+    .hero-inner { grid-template-columns:1fr; gap:48px; }
+    .hero-visual { order:-1; }
+    .hero-photo  { max-width:300px; margin:0 auto; }
+    .hero-badge  { left:0; bottom:16px; font-size:.76rem; padding:10px 16px; }
+    .hero-crp    { display:none; }
+    .about-inner { grid-template-columns:1fr; gap:48px; }
+    .about-wrap  { max-width:320px; margin:0 auto; }
+    .about-crp   { display:none; }
+    .faq-inner   { grid-template-columns:1fr; gap:40px; }
+    .how-steps   { grid-template-columns:1fr 1fr; gap:36px; }
+    .how-steps::before { display:none; }
+    .gallery-grid { grid-template-columns:1fr 1fr; }
+    .nav-links   { display:none; }
+    .hamburger   { display:flex; }
+  }
+  @media(max-width:560px) {
+    .gallery-grid { grid-template-columns:1fr; }
+    .hero-stats   { gap:14px; }
+    .trust-inner  { gap:14px; }
+    .foot-main    { flex-direction:column; }
+  }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">Téo <span>Lima</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#problems">Especialidades</a></li>
+      <li><a href="#how">Como funciona</a></li>
+      <li><a href="#testimonials">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20sessão." class="btn btn-blue nav-btn" target="_blank" rel="noopener">Agendar consulta</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about"        onclick="closeMobile()">Sobre</a>
+  <a href="#problems"     onclick="closeMobile()">Especialidades</a>
+  <a href="#how"          onclick="closeMobile()">Como funciona</a>
+  <a href="#testimonials" onclick="closeMobile()">Depoimentos</a>
+  <a href="#faq"          onclick="closeMobile()">FAQ</a>
+  <a href="https://wa.me/5571991940263" class="btn btn-blue" target="_blank" rel="noopener">Agendar</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-pill">Psicólogo · CRP 03/20310 · Atendimento Online</div>
+        <h1 class="hero-h1">Psicologia que respeita<br>sua história e <em>honra sua vida.</em></h1>
+        <p class="hero-sub">Um espaço seguro, acolhedor e sem julgamentos para você atravessar o luto, os desafios emocionais e as transições da vida com suporte especializado.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Gostaria%20de%20agendar%20uma%20sessão." class="btn btn-blue" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar pelo WhatsApp
+          </a>
+          <a href="#about" class="btn btn-ghost">Conhecer o Téo</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>+5</strong><span>anos de experiência</span></div>
+          <div class="stat-div"></div>
+          <div class="hero-stat"><strong>100%</strong><span>online · todo o Brasil</span></div>
+          <div class="stat-div"></div>
+          <div class="hero-stat"><strong>ACT</strong><span>baseada em evidências</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-photo">
+            <img src="foto-teo.jpg" alt="Téo Lima, Psicólogo – Salvador BA"/>
+          </div>
+          <div class="hero-badge">
+            <strong>Téo Lima</strong>
+            <span>Psicólogo · Salvador, BA</span>
+          </div>
+          <div class="hero-crp">CRP<br>03/20310</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        Sigilo ético garantido
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        100% online · Todo o Brasil
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        Espaço afirmativo LGBTQIAPN+
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Horários flexíveis
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALERIA CLICÁVEL -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-hd reveal">
+      <span class="label lb">Navegue pelo site</span>
+      <h2 class="title">Explore o que você <em class="tb">precisa saber</em></h2>
+      <p>Clique em qualquer card abaixo para ir direto à seção.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <a href="#about" class="gc cb">
+        <div class="gc-thumb">🧠</div>
+        <div class="gc-body">
+          <h3>Sobre o Téo Lima</h3>
+          <p>Formação, especialidades e a abordagem ACT que guia seu trabalho.</p>
+          <span class="gc-arrow">Conhecer o psicólogo →</span>
+        </div>
+      </a>
+      <a href="#problems" class="gc cg">
+        <div class="gc-thumb">🌿</div>
+        <div class="gc-body">
+          <h3>O que posso ajudar</h3>
+          <p>Luto, ansiedade, saúde hospitalar, substâncias e muito mais.</p>
+          <span class="gc-arrow">Ver especialidades →</span>
+        </div>
+      </a>
+      <a href="#how" class="gc cl">
+        <div class="gc-thumb">✨</div>
+        <div class="gc-body">
+          <h3>Como funciona</h3>
+          <p>Do primeiro contato até a sessão online — simples e sem burocracia.</p>
+          <span class="gc-arrow">Ver o processo →</span>
+        </div>
+      </a>
+      <a href="#testimonials" class="gc cg">
+        <div class="gc-thumb">💬</div>
+        <div class="gc-body">
+          <h3>Depoimentos</h3>
+          <p>O que dizem as pessoas que já deram o primeiro passo.</p>
+          <span class="gc-arrow">Ler histórias →</span>
+        </div>
+      </a>
+      <a href="#faq" class="gc cl">
+        <div class="gc-thumb">❓</div>
+        <div class="gc-body">
+          <h3>Perguntas frequentes</h3>
+          <p>Tudo o que você quer saber antes de começar a terapia.</p>
+          <span class="gc-arrow">Ver respostas →</span>
+        </div>
+      </a>
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20agendar%20uma%20sessão." class="gc cb" target="_blank" rel="noopener">
+        <div class="gc-thumb">📅</div>
+        <div class="gc-body">
+          <h3>Agendar uma sessão</h3>
+          <p>Pronto para começar? Fale pelo WhatsApp agora mesmo.</p>
+          <span class="gc-arrow">Agendar pelo WhatsApp →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section id="problems">
+  <div class="container">
+    <div class="prob-hd reveal">
+      <span class="label lg">O que você pode estar vivendo</span>
+      <h2 class="title">Você não precisa atravessar isso <em class="tg">sozinho</em></h2>
+      <p>Muitas pessoas chegam aqui carregando dores que parecem impossíveis de superar. Você está no lugar certo.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="pc pb reveal"><div class="pc-ico">🌑</div><h3>Luto e Perdas</h3><p>Perda de pessoas queridas, relacionamentos, fases da vida. O luto tem muitas formas — todas merecem cuidado especializado e sem pressa.</p></div>
+      <div class="pc pg reveal"><div class="pc-ico">🌊</div><h3>Ansiedade e Estresse</h3><p>Pensamentos acelerados, medo constante, dificuldade de relaxar. Juntos você aprende a lidar com a ansiedade de forma compassiva e prática.</p></div>
+      <div class="pc pl reveal"><div class="pc-ico">🩺</div><h3>Psicologia Hospitalar</h3><p>Diagnósticos difíceis, hospitalização e cuidados paliativos. Apoio especializado para pacientes e familiares em momentos delicados.</p></div>
+      <div class="pc pb reveal"><div class="pc-ico">💊</div><h3>Uso de Substâncias</h3><p>Sem julgamento. Um espaço seguro para entender os gatilhos e construir uma relação mais saudável com a vida.</p></div>
+      <div class="pc pg reveal"><div class="pc-ico">🏳️‍🌈</div><h3>LGBTQIAPN+ Afirmativo</h3><p>Ambiente respeitoso e afirmativo para pessoas LGBTQIAPN+ que buscam apoio comprometido com sua identidade e história.</p></div>
+      <div class="pc pl reveal"><div class="pc-ico">🌿</div><h3>Psicopatologia</h3><p>Depressão, transtornos de ansiedade e outros. Avaliação cuidadosa e acompanhamento baseado em evidências para bem-estar real.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-wrap reveal">
+        <div class="about-frame">
+          <img src="foto-teo.jpg" alt="Téo Lima Psicólogo"/>
+        </div>
+        <div class="about-crp"><strong>CRP 03/20310</strong>Conselho Regional<br>de Psicologia · BA</div>
+      </div>
+      <div class="about-text reveal">
+        <span class="label ll">Sobre o psicólogo</span>
+        <h2 class="title">Olá, eu sou o <em class="tl">Téo Lima</em></h2>
+        <p>Sou psicólogo com formação voltada ao cuidado integral das pessoas, especialmente em momentos de maior vulnerabilidade — como o luto, as transições de vida e o enfrentamento de doenças graves.</p>
+        <p>Trabalho com a <strong>Terapia de Aceitação e Compromisso (ACT)</strong>, uma abordagem baseada em evidências que ajuda você a lidar com emoções difíceis sem precisar lutar contra elas, e a agir em direção ao que realmente importa.</p>
+        <p>Tenho especialização em <strong>psicologia hospitalar e cuidados paliativos</strong>, o que me permite oferecer suporte qualificado a pacientes e familiares. Atendo adultos, idosos e pessoas LGBTQIAPN+ com total respeito, afeto e ética.</p>
+        <p>Meu compromisso é criar um espaço seguro, sem julgamentos, onde você possa ser quem você é e encontrar recursos para atravessar qualquer fase da vida.</p>
+        <div class="tags">
+          <span class="tag tb">ACT</span>
+          <span class="tag tg">Psicologia Hospitalar</span>
+          <span class="tag tl">Cuidados Paliativos</span>
+          <span class="tag tb">Luto e Perdas</span>
+          <span class="tag tg">Psicopatologia</span>
+          <span class="tag tl">Abuso de Substâncias</span>
+          <span class="tag tb">LGBTQIAPN+ Afirmativo</span>
+          <span class="tag tg">Idosos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="how">
+  <div class="container">
+    <div class="how-hd reveal">
+      <span class="label lb">Como funciona</span>
+      <h2 class="title">Simples, seguro e <em class="tb">do seu jeito</em></h2>
+      <p>Começar é mais fácil do que parece. Em poucos passos, sua sessão está agendada.</p>
+    </div>
+    <div class="how-steps">
+      <div class="hs reveal"><div class="hs-num sn1">1</div><h3>Entre em contato</h3><p>Mande uma mensagem pelo WhatsApp. Sem formulários, sem burocracia.</p></div>
+      <div class="hs reveal"><div class="hs-num sn2">2</div><h3>Conversa inicial</h3><p>Uma breve conversa gratuita para entender o que você precisa.</p></div>
+      <div class="hs reveal"><div class="hs-num sn3">3</div><h3>Agendamos juntos</h3><p>Escolhemos um horário que encaixe na sua rotina, inclusive fins de semana.</p></div>
+      <div class="hs reveal"><div class="hs-num sn4">4</div><h3>Sessão online</h3><p>Atendimento por videoconferência, com total conforto e privacidade.</p></div>
+    </div>
+    <div class="how-cta reveal">
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20o%20atendimento." class="btn btn-green" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Quero agendar minha sessão
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="test-hd reveal">
+      <span class="label ll">Depoimentos</span>
+      <h2 class="title">O que dizem quem já <em class="tl">deu o primeiro passo</em></h2>
+    </div>
+    <div class="test-grid">
+      <div class="tc reveal">
+        <div class="tc-accent tab"></div>
+        <div class="tc-stars sb">★★★★★</div>
+        <div class="tc-quote">"</div>
+        <p class="tc-text">Depois de perder minha mãe, eu me sentia completamente perdida. O Téo me ajudou a entender que o luto não tem prazo. Foi absolutamente transformador.</p>
+        <div class="tc-author"><div class="tc-av avb">M</div><div><div class="tc-name">Mariana S.</div><div class="tc-detail">Paciente · processo de luto</div></div></div>
+      </div>
+      <div class="tc reveal">
+        <div class="tc-accent tag2"></div>
+        <div class="tc-stars sg">★★★★★</div>
+        <div class="tc-quote">"</div>
+        <p class="tc-text">Fui muito bem acolhido como homem gay. Nunca precisei justificar quem sou. O espaço é realmente seguro e o Téo demonstra cuidado genuíno em cada sessão.</p>
+        <div class="tc-author"><div class="tc-av avg">R</div><div><div class="tc-name">Rafael T.</div><div class="tc-detail">Paciente · saúde mental LGBTQIA+</div></div></div>
+      </div>
+      <div class="tc reveal">
+        <div class="tc-accent tal"></div>
+        <div class="tc-stars sl">★★★★★</div>
+        <div class="tc-quote">"</div>
+        <p class="tc-text">Minha mãe estava em cuidados paliativos e eu não sabia como lidar. O suporte do Téo foi fundamental para toda a família. Sensível, humano e competente.</p>
+        <div class="tc-author"><div class="tc-av avl">C</div><div><div class="tc-name">Carla N.</div><div class="tc-detail">Familiar · cuidados paliativos</div></div></div>
+      </div>
+    </div>
+    <p class="test-disc">* Depoimentos fictícios usados como modelo. Substitua por depoimentos reais com autorização expressa antes de publicar.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-side reveal">
+        <span class="label lb">Dúvidas frequentes</span>
+        <h2 class="title">Perguntas que a maioria tem antes de <em class="tb">começar</em></h2>
+        <p>Se tiver outra dúvida, é só me chamar pelo WhatsApp. Responderei com prazer!</p>
+        <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Tenho%20uma%20dúvida%20sobre%20o%20atendimento." class="btn btn-blue" target="_blank" rel="noopener">Tirar dúvidas</a>
+      </div>
+      <div class="faq-list reveal">
+        <div class="fi"><button class="fi-q">O atendimento online é tão eficaz quanto o presencial?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Sim! Pesquisas científicas mostram que a psicoterapia online tem a mesma eficácia que o atendimento presencial. Você realiza as sessões de onde se sentir mais confortável, com total privacidade.</div></div>
+        <div class="fi"><button class="fi-q">Qual plataforma usamos para as sessões?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">As sessões acontecem por videoconferência em plataformas seguras como Google Meet. Você não precisa instalar nada — basta ter internet e um celular, tablet ou computador.</div></div>
+        <div class="fi"><button class="fi-q">Quanto tempo dura cada sessão?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Cada sessão tem duração de 50 minutos, seguindo o padrão clínico. A frequência é geralmente semanal, mas pode ser ajustada conforme a sua necessidade.</div></div>
+        <div class="fi"><button class="fi-q">Meus dados e o que falo são sigilosos?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Absolutamente. O sigilo profissional é um dever ético e legal do psicólogo. Tudo conversado em sessão é estritamente confidencial, conforme o Código de Ética Profissional do Psicólogo.</div></div>
+        <div class="fi"><button class="fi-q">Você atende planos de saúde?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Atualmente trabalho com atendimento particular. Entre em contato pelo WhatsApp para conhecer os valores e formas de pagamento disponíveis.</div></div>
+        <div class="fi"><button class="fi-q">Nunca fui ao psicólogo. Como é a primeira sessão?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">A primeira sessão é uma conversa leve e sem pressão. Serve para nos conhecermos e entender juntos o que você precisa. Não há certo ou errado — você fala no seu tempo.</div></div>
+        <div class="fi"><button class="fi-q">O que é a Terapia de Aceitação e Compromisso (ACT)?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">A ACT é uma abordagem baseada em evidências que ajuda você a aceitar pensamentos e sentimentos difíceis sem lutar contra eles, agindo de forma comprometida com seus valores e o que realmente importa na sua vida.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="container cta-inner">
+    <span class="label">Pronto para começar?</span>
+    <h2>O primeiro passo é o <em>mais importante.</em></h2>
+    <p>Você não precisa estar em crise para buscar ajuda. Se algo não está bem, você merece cuidado — agora.</p>
+    <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20sessão." class="btn btn-white" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-main">
+      <div class="foot-brand">Téo <span>Lima</span><p>Psicologia que respeita sua história e honra sua vida.</p></div>
+      <div class="foot-col">
+        <h4>Navegação</h4>
+        <a href="#about">Sobre o Téo</a>
+        <a href="#problems">Especialidades</a>
+        <a href="#how">Como funciona</a>
+        <a href="#testimonials">Depoimentos</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5571991940263" target="_blank" rel="noopener">(71) 99194-0263 · WhatsApp</a>
+        <p>Salvador, Bahia</p>
+        <p>Atendimento online · Todo o Brasil</p>
+      </div>
+      <div class="foot-col">
+        <h4>Registro</h4>
+        <p>CRP 03/20310</p>
+        <p>Conselho Regional de Psicologia<br>6ª Região – Bahia</p>
+      </div>
+    </div>
+    <div class="foot-bar">
+      © 2025 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados<br>
+      Este site tem caráter informativo e não substitui consulta profissional.
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Vim%20pelo%20site%20e%20quero%20saber%20mais." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+  // Hamburger
+  const hbg = document.getElementById('hamburger');
+  const mob = document.getElementById('mobile-menu');
+  hbg.addEventListener('click', () => { hbg.classList.toggle('open'); mob.classList.toggle('open'); });
+  function closeMobile() { hbg.classList.remove('open'); mob.classList.remove('open'); }
+
+  // FAQ
+  document.querySelectorAll('.fi-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.fi');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.fi').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Reveal on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
