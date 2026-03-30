@@ -110,9 +110,10 @@
 
   .hero-h1 { font-family:var(--font-d); font-size:clamp(2.3rem,5.5vw,3.9rem); font-weight:400; line-height:1.12; animation:fadeUp .8s .13s ease both; }
   .hero-h1 em { font-style:italic; color:var(--blue); }
-  .hero-sub { font-size:1rem; color:var(--text-mid); max-width:460px; margin:20px 0 34px; animation:fadeUp .8s .25s ease both; text-align:center; }
+  .hero-sub { font-size:1rem; color:var(--text-mid); max-width:460px; margin:20px 0 34px; animation:fadeUp .8s .25s ease both; }
   .hero-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; animation:fadeUp .8s .37s ease both; }
 
+  /* ── ESTATÍSTICAS CENTRALIZADAS ── */
   .hero-stats { display:flex; gap:24px; margin-top:40px; animation:fadeUp .8s .49s ease both; justify-content:center; }
   .hero-stat { display:flex; flex-direction:column; align-items:center; text-align:center; }
   .hero-stat strong { font-family:var(--font-d); font-size:2rem; font-weight:400; line-height:1; }
@@ -131,9 +132,6 @@
   }
   .hero-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
 
-  .hero-badge { position:absolute; bottom:22px; left:-22px; background:#fff; border:1px solid var(--border); border-radius:16px; padding:14px 20px; box-shadow:var(--sh-md); font-size:.82rem; }
-  .hero-badge strong { display:block; font-family:var(--font-d); font-size:1.05rem; margin-bottom:3px; }
-  .hero-badge span   { color:var(--text-light); }
   .hero-crp { position:absolute; top:22px; right:-18px; background:var(--blue); color:#fff; border-radius:12px; padding:10px 16px; font-size:.7rem; font-weight:700; line-height:1.5; box-shadow:var(--sh-sm); }
 
   /* ── TRUST BAR ── */
@@ -173,6 +171,23 @@
   .cl .gc-arrow { color:var(--lilac); }
   .gc:hover .gc-arrow { gap:10px; }
 
+  /* ── SOBRE MIM ── */
+  #about { padding:100px 0; background:var(--white); }
+  .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .about-wrap { position:relative; }
+  .about-frame { width:100%; aspect-ratio:1/1; border-radius:44% 56% 40% 60% / 48% 44% 56% 52%; overflow:hidden; background:linear-gradient(135deg,var(--blue-pale),var(--green-pale),var(--lilac-pale)); box-shadow:var(--sh-lg); }
+  .about-frame img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+  .about-crp { position:absolute; top:14px; right:-16px; background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px 18px; font-size:.74rem; color:var(--text-mid); box-shadow:var(--sh-sm); line-height:1.55; }
+  .about-crp strong { display:block; color:var(--blue); font-weight:700; font-size:.8rem; }
+  .about-text .title { margin-bottom:20px; }
+  .about-text p { color:var(--text-mid); font-size:.92rem; margin-bottom:16px; text-align:justify; }
+  .about-text p strong { color:var(--text); }
+  .tags { display:flex; flex-wrap:wrap; gap:9px; margin-top:26px; }
+  .tag  { font-size:.7rem; font-weight:700; padding:6px 14px; border-radius:100px; letter-spacing:.03em; }
+  .tag.tb { background:var(--blue-pale);  color:var(--blue);  border:1px solid rgba(74,127,165,.2); }
+  .tag.tg { background:var(--green-pale); color:var(--green); border:1px solid rgba(95,163,126,.2); }
+  .tag.tl { background:var(--lilac-pale); color:var(--lilac); border:1px solid rgba(139,123,181,.2); }
+
   /* ── PROBLEMAS ── */
   #problems { padding:100px 0; background:var(--cream); position:relative; overflow:hidden; }
   #problems::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--blue-light),var(--lilac-light),transparent); }
@@ -191,23 +206,6 @@
   .pl .pc-ico { background:var(--lilac-pale); }
   .pc h3 { font-family:var(--font-d); font-size:1.15rem; font-weight:500; margin-bottom:10px; }
   .pc p  { font-size:.85rem; color:var(--text-mid); line-height:1.75; }
-
-  /* ── SOBRE MIM ── */
-  #about { padding:100px 0; background:var(--white); }
-  .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-  .about-wrap { position:relative; }
-  .about-frame { width:100%; aspect-ratio:1/1; border-radius:44% 56% 40% 60% / 48% 44% 56% 52%; overflow:hidden; background:linear-gradient(135deg,var(--blue-pale),var(--green-pale),var(--lilac-pale)); box-shadow:var(--sh-lg); }
-  .about-frame img { width:100%; height:100%; object-fit:cover; object-position:top center; }
-  .about-crp { position:absolute; top:14px; right:-16px; background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px 18px; font-size:.74rem; color:var(--text-mid); box-shadow:var(--sh-sm); line-height:1.55; }
-  .about-crp strong { display:block; color:var(--blue); font-weight:700; font-size:.8rem; }
-  .about-text .title { margin-bottom:20px; }
-  .about-text p { color:var(--text-mid); font-size:.92rem; margin-bottom:16px; text-align:justify; }
-  .about-text p strong { color:var(--text); }
-  .tags { display:flex; flex-wrap:wrap; gap:9px; margin-top:26px; }
-  .tag  { font-size:.7rem; font-weight:700; padding:6px 14px; border-radius:100px; letter-spacing:.03em; }
-  .tag.tb { background:var(--blue-pale);  color:var(--blue);  border:1px solid rgba(74,127,165,.2); }
-  .tag.tg { background:var(--green-pale); color:var(--green); border:1px solid rgba(95,163,126,.2); }
-  .tag.tl { background:var(--lilac-pale); color:var(--lilac); border:1px solid rgba(139,123,181,.2); }
 
   /* ── COMO FUNCIONA ── */
   #how { padding:100px 0; background:var(--cream); }
@@ -294,7 +292,6 @@
     .hero-inner { grid-template-columns:1fr; gap:48px; }
     .hero-visual { order:-1; }
     .hero-photo  { max-width:300px; margin:0 auto; }
-    .hero-badge  { left:0; bottom:16px; font-size:.76rem; padding:10px 16px; }
     .hero-crp    { display:none; }
     .about-inner { grid-template-columns:1fr; gap:48px; }
     .about-wrap  { max-width:320px; margin:0 auto; }
@@ -370,7 +367,8 @@
           <div class="hero-photo">
             <img src="foto-teo.jpg" alt="Téo Lima, Psicólogo – Salvador BA"/>
           </div>
-            </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -423,7 +421,7 @@
       <a href="#how" class="gc cl">
         <div class="gc-thumb">⚙️</div>
         <div class="gc-body">
-       <h3>Como Funciona?</h3>
+          <h3>Como Funciona?</h3>
           <p>Do primeiro contato até a sessão online — simples e sem burocracia.</p>
           <span class="gc-arrow">Ver o processo →</span>
         </div>
@@ -456,13 +454,10 @@
   </div>
 </section>
 
-  <!-- SOBRE -->
+<!-- SOBRE -->
 <section id="about">
   <div class="container">
-   <div class="about-wrap reveal">
-        <div class="about-frame">
-          <img src="foto-teo.jpg" alt="Téo Lima Psicólogo"/>
-        </div>
+    <div class="about-inner">
       <div class="about-text reveal">
         <span class="label ll">Sobre o psicólogo</span>
         <h2 class="title">Olá, eu sou <em class="tl">Téo Lima</em></h2>
@@ -470,6 +465,7 @@
         <p>Graduado pela Universidade Federal da Bahia (UFBA, 2019), tenho especialização em Cuidados Paliativos e em Psicologia Hospitalar pela Faculdade Venda Nova dos Imigrantes (FAVENI, 2026), o que me permite oferecer suporte qualificado a pacientes adultos e idosos e familiares com total profissionalismo, respeito, afeto e ética.</p>
         <p>Minha Formação e Linha de Abordagem é a Terapia de Aceitação e Compromisso (ACT), uma abordagem baseada em evidências que ajuda na aceitação de pensamentos e sentimentos difíceis sem lutar contra eles, agindo de forma comprometida com seus valores e o que realmente importa na sua vida.</p>
         <p>Meu compromisso é criar um espaço seguro, sem julgamentos, onde você possa ser quem você é e encontrar recursos para se autoconhecer e atravessar qualquer fase da vida.</p>
+        <div class="tags">
           <span class="tag tb">ACT</span>
           <span class="tag tg">Psicologia Hospitalar</span>
           <span class="tag tl">Cuidados Paliativos</span>
@@ -478,30 +474,35 @@
           <span class="tag tl">Abuso de Substâncias</span>
           <span class="tag tb">LGBTQIAPN+</span>
           <span class="tag tg">Idosos</span>
-         <span class="tag tl">Obesidade</span>
-         <span class="tag tb">Redução de Danos</span>
+          <span class="tag tl">Obesidade</span>
+          <span class="tag tb">Redução de Danos</span>
+        </div>
+      </div>
+      <div class="about-wrap reveal">
+        <div class="about-frame">
+          <img src="foto-teo.jpg" alt="Téo Lima Psicólogo"/>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
+
 <!-- PROBLEMAS -->
 <section id="problems">
   <div class="container">
     <div class="prob-hd reveal">
-      <span class="label lg">O que você pode estar vivendo</span>
-      <h2 class="title">não precisa atravessar <em class="tg">sozinho</em></h2>
+      <span class="label lg">Especialidades</span>
+      <h2 class="title">Você não precisa atravessar isso <em class="tg">sozinho</em></h2>
       <p>Muitas pessoas carregam dores que parecem impossíveis de superar. Você está no lugar certo.</p>
     </div>
     <div class="prob-grid">
-      <div class="pc pb reveal"><div class="pc-ico">🌹</div><h3> Perdas e Luto</h3><p>Perda de pessoas queridas, relacionamentos, fases da vida. O luto tem muitas formas — todas merecem cuidado especializado e sem pressa.</p></div>
+      <div class="pc pb reveal"><div class="pc-ico">🌹</div><h3>Perdas e Luto</h3><p>Perda de pessoas queridas, relacionamentos, fases da vida. O luto tem muitas formas — todas merecem cuidado especializado e sem pressa.</p></div>
       <div class="pc pg reveal"><div class="pc-ico">🧨</div><h3>Ansiedade e Estresse</h3><p>Pensamentos acelerados, medo constante, dificuldade de relaxar. Aqui você aprende a lidar com a ansiedade de forma compassiva e prática.</p></div>
-     <div class="pc pl reveal"><div class="pc-ico">🍔</div><h3>Psicologia da Obesidade</h3><p>A relação com o corpo vai além do peso. Aqui você encontrará apoio para compreender os fatores emocionais, comportamentais e sociais que influenciam a alimentação e a autoimagem, construindo uma vida com aceitação e um maior Bem-Estar.</p></div> 
-      <div class="pc pl reveal"><div class="pc-ico">🩺</div><h3>Cuidados Paliativos</h3><p>Diagnósticos difíceis, hospitalização e cuidados paliativos. Apoio especializado para pacientes e familiares neste momento tão delicados.</p></div>
-      <div class="pc pb reveal"><div class="pc-ico">🍾</div><h3>Abuso de Substâncias</h3><p>Sem julgamento. Um espaço seguro para entender os gatilhos e construir uma redução de danos de acordo com seu rítimo.</p></div>
-      <div class="pc pg reveal"><div class="pc-ico">🏳️‍🌈</div><h3>LGBTQIAPN+</h3><p>Ambiente respeitoso e afirmativo para pessoas LGBTQIAPN+ que buscam se autoconhecer, com um apoio comprometido com sua identidade e história.</p></div>
-      <div class="pc pl reveal"><div class="pc-ico">🧠</div><h3>Psicopatologias</h3><p>Avaliação cuidadosa e acompanhamento baseado em evidências para um bem-estar real.</p></div>
+      <div class="pc pl reveal"><div class="pc-ico">🍔</div><h3>Psicologia da Obesidade</h3><p>A relação com o corpo vai além do peso. Aqui você encontrará apoio para compreender os fatores emocionais, comportamentais e sociais que influenciam a alimentação e a autoimagem, construindo uma vida com aceitação e um maior Bem-Estar.</p></div>
+      <div class="pc pb reveal"><div class="pc-ico">🩺</div><h3>Cuidados Paliativos</h3><p>Diagnósticos difíceis, hospitalização e cuidados paliativos. Apoio especializado para pacientes e familiares neste momento tão delicado.</p></div>
+      <div class="pc pg reveal"><div class="pc-ico">🍾</div><h3>Abuso de Substâncias</h3><p>Sem julgamento. Um espaço seguro para entender os gatilhos e construir uma redução de danos de acordo com seu ritmo.</p></div>
+      <div class="pc pl reveal"><div class="pc-ico">🏳️‍🌈</div><h3>LGBTQIAPN+</h3><p>Ambiente respeitoso e afirmativo para pessoas LGBTQIAPN+ que buscam se autoconhecer, com um apoio comprometido com sua identidade e história.</p></div>
+      <div class="pc pb reveal"><div class="pc-ico">🧠</div><h3>Psicopatologias</h3><p>Avaliação cuidadosa e acompanhamento baseado em evidências para um bem-estar real.</p></div>
     </div>
   </div>
 </section>
@@ -559,6 +560,7 @@
         <div class="tc-author"><div class="tc-av avl">C</div><div><div class="tc-name">Carla N.</div><div class="tc-detail">Familiar · cuidados paliativos</div></div></div>
       </div>
     </div>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -634,17 +636,14 @@
 </a>
 
 <script>
-  // Nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
 
-  // Hamburger
   const hbg = document.getElementById('hamburger');
   const mob = document.getElementById('mobile-menu');
   hbg.addEventListener('click', () => { hbg.classList.toggle('open'); mob.classList.toggle('open'); });
   function closeMobile() { hbg.classList.remove('open'); mob.classList.remove('open'); }
 
-  // FAQ
   document.querySelectorAll('.fi-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.fi');
@@ -654,7 +653,6 @@
     });
   });
 
-  // Reveal on scroll
   const obs = new IntersectionObserver(entries => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
