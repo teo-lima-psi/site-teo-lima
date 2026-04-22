@@ -45,8 +45,8 @@
   .esp-hero .container{position:relative;z-index:2}
   .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--text-light);margin-bottom:28px;transition:color .2s}
   .back-link:hover{color:var(--accent)}
- .esp-ico{width:72px;height:72px;border-radius:20px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:24px;border:1px solid rgba(0,0,0,.06);margin-left:auto;margin-right:auto;}
-  .esp-hero h1{font-family:var(--font-d);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:20px}
+  .esp-ico{width:72px;height:72px;border-radius:20px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:24px;border:1px solid rgba(0,0,0,.06);margin-left:auto;margin-right:auto;}
+  .esp-hero h1{font-family:var(--font-d);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:20px;text-align:center}
   .esp-hero h1 em{font-style:italic;color:var(--accent)}
   .esp-lead{font-size:1.05rem;color:var(--text-mid);max-width:620px;line-height:1.8;text-align:justify}
  
@@ -60,19 +60,14 @@
   .esp-section ul{margin:10px 0 16px 24px;color:var(--text-mid);font-size:.95rem;line-height:1.85}
   .esp-section ul li{margin-bottom:6px}
   .esp-section strong{color:var(--text)}
-
-     /* PLACEHOLDER NOTICE */
-  .placeholder-box{background:transparent;border:none;border-radius:0;padding:0;margin-bottom:14px}
-  .placeholder-box p.placeholder-box p{color:var(--text-mid);font-size:.88rem;font-style:italic;text-align:justify;margin:0}
-  .placeholder-box strong{display:block;font-family:var(--font-d);font-size:1rem;font-style:normal;color:var(--text);margin-bottom:6px;text-align:center}
  
   /* DIVIDER */
   .esp-divider{width:60px;height:3px;border-radius:3px;background:var(--accent);margin:40px 0;opacity:.5}
  
- /* CTA BOX */
+  /* CTA BOX */
   .esp-cta{background:linear-gradient(135deg,var(--blue) 0%,#3a6a8a 50%,var(--lilac) 100%);border-radius:24px;padding:52px 40px;text-align:center;margin-top:64px}
-  .esp-cta h3{font-family:var(--font-d);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;margin-bottom:12px}
-  .esp-cta p.esp-cta p{color:rgba(255,255,255,.75);font-size:.92rem;max-width:440px;margin:0 auto 32px;text-align:justify}
+  .esp-cta h3{font-family:var(--font-d);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;margin-bottom:20px}
+  .esp-cta p{color:rgba(255,255,255,.85);font-size:.92rem;max-width:480px;margin:0 auto 32px;text-align:center;line-height:1.85}
   .esp-cta a{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;font-family:var(--font-b);font-size:.88rem;font-weight:700;padding:14px 30px;border-radius:100px;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s}
   .esp-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
   .esp-cta a svg{width:20px;height:20px;flex-shrink:0}
@@ -94,7 +89,7 @@
     <div class="nav-logo">Téo <span>Lima</span></div>
     <div style="display:flex;align-items:center;gap:12px">
       <a href="index.html" class="nav-back">← Voltar ao site</a>
-      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Cuidados%20Paliativos" class="nav-cta" target="_blank" rel="noopener">
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Compulsões%20e%20Transtornos%20Alimentares" class="nav-cta" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span>Agendar sessão</span>
       </a>
@@ -107,9 +102,9 @@
   <div class="hero-blob hb2"></div>
   <div class="container">
     <a href="index.html" class="back-link">← Voltar às especialidades</a>
-    <div class="esp-ico">🍔</div>
-    <h1>Compulsões e <em>Transtornos Alimentares </em></h1>
-    <p class="esp-lead">Um diagnóstico desafiador transforma a vida de toda uma família em um instante, a vida que você conhecia ganha novos contornos, novas perguntas e medos que parecem impossíveis de carregar. Nos cuidados paliativos, o foco não é apenas o corpo: é a pessoa inteira, sua história, seus vínculos e tudo aquilo que ainda importa.<br>O suporte psicológico existe para que você e sua família não precisem atravessar esse momento sozinhos — com mais dignidade, mais presença e mais cuidado em cada etapa do caminho.</p>
+    <div class="esp-ico">🍽️</div>
+    <h1>Compulsões e <em>Transtornos Alimentares</em></h1>
+    <p class="esp-lead">Comer vai muito além de nutrir o corpo — é um ato carregado de emoção, história, cultura e significado. Quando a relação com a comida começa a causar sofrimento, culpa ou perda de controle, isso não é falta de força de vontade. É um sinal de que algo mais profundo precisa de atenção e cuidado. Se você reconhece esse padrão na sua vida, saiba que existe ajuda especializada — e que você não precisa resolver isso sozinho.</p>
   </div>
 </section>
  
@@ -118,113 +113,103 @@
  
     <!-- SEÇÃO 1 -->
     <div class="esp-section">
-       <div class="placeholder-box">
-        <strong>🍔</strong>
-      <h2>O que são <em>Cuidados Paliativos Psicológicos?</em></h2>
-      <p>Cuidados Paliativos Psicológicos são um conjunto de intervenções especializadas voltadas ao bem-estar emocional de pacientes com doenças graves ou em fase avançada, e de seus familiares. Não se trata de preparar para a morte — trata-se de cuidar da vida enquanto ela acontece.</p>
+      <div class="esp-ico">🍽️</div>
+      <h2>Qual a dimensão emocional <em>da alimentação?</em></h2>
+      <p>A relação com a comida começa muito antes do prato. Ela é moldada pela nossa história, pelas emoções que aprendemos a suprimir ou a expressar, pelos padrões que absorvemos ao longo da vida. Comer pode ser conforto, recompensa, punição, controle — e muitas vezes tudo isso ao mesmo tempo.</p>
+      <p>Quando essa relação se torna problemática, não é porque a pessoa é fraca ou descuidada. É porque a comida passou a ocupar um espaço emocional que, no fundo, pede por outra coisa: acolhimento, escuta, presença.</p>
  
-      <p><strong>Esse cuidado é indicado quando:</strong></p>
+      <p><strong>Você pode estar enfrentando uma dificuldade emocional com a alimentação se:</strong></p>
       <ul>
-        <li>Você ou um familiar recebeu um diagnóstico grave ou limitante</li>
-        <li>O tratamento médico já não tem objetivo curativo, mas de conforto</li>
-        <li>A família está sobrecarregada emocionalmente e não sabe como ajudar</li>
-        <li>Há medo, angústia, raiva ou sensação de impotência diante da situação</li>
-        <li>Questões existenciais surgem e pedem um espaço seguro para serem faladas</li>
-        <li>O paciente sente que perdeu o controle sobre sua própria vida e decisões</li>
-        <li>Há necessidade de apoio para tomar decisões difíceis com mais clareza e paz</li>
+        <li>Come em resposta a emoções como ansiedade, tristeza, tédio ou estresse</li>
+        <li>Sente perda de controle durante as refeições ou episódios de comer em excesso</li>
+        <li>Sente culpa ou vergonha depois de comer</li>
+        <li>Pensa muito em comida, peso ou corpo ao longo do dia</li>
+        <li>Usa a alimentação como forma de se punir ou se recompensar</li>
+        <li>Evita situações sociais por medo de comer na frente dos outros</li>
+        <li>Alterna entre períodos de restrição intensa e episódios de compulsão</li>
+        <li>Sente que a relação com a comida interfere na sua qualidade de vida</li>
       </ul>
  
-      <p><strong>O suporte psicológico nos cuidados paliativos cuida de:</strong></p>
-      <ul>
-        <li>Qualidade de vida emocional do paciente e da família</li>
-        <li>Elaboração do sofrimento, do medo e das perdas ao longo do processo</li>
-        <li>Comunicação entre paciente, família e equipe de saúde</li>
-        <li>Respeito às vontades, valores e dignidade da pessoa em tratamento</li>
-        <li>Prevenção e cuidado do luto antecipatório dos familiares</li>
-      </ul>
+      <p>Reconhecer esse padrão é o primeiro passo. O segundo é buscar apoio — sem julgamento e sem pressa.</p>
     </div>
  
     <div class="esp-divider"></div>
  
     <!-- SEÇÃO 2 -->
     <div class="esp-section">
-     <div class="placeholder-box">
-     <strong>🍔</strong>
-      <h2>Qual o papel do psicólogo <em>neste processo?</em></h2>
-      <p>O psicólogo especializado em cuidados paliativos não entra na vida do paciente para "resolver" a situação — porque algumas situações não têm solução, apenas cuidado. Meu papel é criar um espaço onde tudo pode ser dito, sentido e acolhido sem julgamento.</p>
+      <div class="esp-ico">🍽️</div>
+      <h2>Qual a relação das Compulsões e Transtornos Alimentares <em>com a Saúde Mental?</em></h2>
+      <p>Os transtornos alimentares estão entre os transtornos mentais mais complexos e que mais impactam a vida das pessoas. Eles raramente existem sozinhos — na maioria dos casos, estão ligados a ansiedade, depressão, baixa autoestima, experiências de trauma, dificuldade de regulação emocional ou uma relação muito crítica consigo mesmo.</p>
+      <p>Não se trata de uma questão estética ou de disciplina. Trata-se de saúde mental — e merece o mesmo cuidado e atenção que qualquer outro sofrimento psicológico.</p>
  
-      <p><strong>Como eu posso ajudar o paciente:</strong></p>
+      <p><strong>Os transtornos alimentares mais comuns incluem:</strong></p>
       <ul>
-        <li>Oferecer escuta ativa e presença genuína em cada sessão</li>
-        <li>Ajudar a identificar e expressar emoções que parecem difíceis de nomear</li>
-        <li>Trabalhar o medo — do sofrimento, da morte, do que ficará para trás</li>
-        <li>Resgatar sentido, propósito e conexão com o que ainda importa</li>
-        <li>Apoiar na tomada de decisões com mais clareza e alinhamento aos próprios valores</li>
-        <li>Auxiliar na comunicação com a família sobre desejos, medos e despedidas</li>
+        <li><strong>Compulsão Alimentar:</strong> episódios de comer grandes quantidades em pouco tempo, com sensação de perda de controle e culpa posterior</li>
+        <li><strong>Anorexia:</strong> restrição extrema da alimentação, distorção da imagem corporal e medo intenso de ganhar peso</li>
+        <li><strong>Bulimia:</strong> ciclos de compulsão seguidos de comportamentos compensatórios como vômito ou uso de laxantes</li>
+        <li><strong>Ortorexia:</strong> obsessão por alimentação saudável que interfere na vida social e emocional</li>
+        <li><strong>Comer Emocional:</strong> uso da comida como principal estratégia para lidar com emoções difíceis</li>
       </ul>
  
-      <p><strong>Como eu posso ajudar a família:</strong></p>
+      <p><strong>Fatores que frequentemente aparecem junto a esses quadros:</strong></p>
       <ul>
-        <li>Acolher o esgotamento, a culpa e o luto antecipatório de quem cuida</li>
-        <li>Orientar sobre como estar presente sem se perder no processo</li>
-        <li>Criar espaço para que sentimentos difíceis sejam expressos com segurança</li>
-        <li>Preparar emocionalmente para o luto, quando necessário</li>
-        <li>Apoiar nas decisões que a família precisa tomar junto ao paciente</li>
+        <li>Ansiedade e estresse crônico</li>
+        <li>Depressão e baixa autoestima</li>
+        <li>Histórico de críticas ao corpo ou experiências de bullying</li>
+        <li>Dificuldade em nomear e expressar emoções</li>
+        <li>Perfeccionismo e autocrítica excessiva</li>
+        <li>Necessidade de controle em outras áreas da vida</li>
       </ul>
  
-      <p>Atendo pacientes e familiares de forma individual e online, para todo o Brasil e para brasileiros em qualquer parte do mundo.</p>
+      <p>O tratamento psicológico especializado faz toda a diferença — não para "consertar" você, mas para ajudá-lo a compreender o que está por trás desse sofrimento e construir uma relação mais gentil consigo mesmo e com o seu corpo.</p>
     </div>
  
     <div class="esp-divider"></div>
  
     <!-- SEÇÃO 3 -->
     <div class="esp-section">
-       <div class="placeholder-box">
-        <strong>🍔</strong>
-      <h2>Como a Terapia de Aceitação e Compromisso (ACT) <em>pode ajudar você e sua família?</em></h2>
-      <p>A ACT é uma abordagem terapêutica baseada em evidências científicas, especialmente eficaz em situações de sofrimento intenso onde não há como mudar a realidade — apenas a forma como nos relacionamos com ela.</p>
-      <p>Nos cuidados paliativos, a ACT não promete eliminar a dor. Ela oferece algo mais real: ferramentas para que você possa continuar sendo quem é, valorizando o que ama, mesmo diante do inimaginável.</p>
+      <div class="esp-ico">🍽️</div>
+      <h2>Como a Terapia de Aceitação e Compromisso (ACT) pode ajudar no tratamento de <em>Compulsões e Transtornos Alimentares?</em></h2>
+      <p>A ACT é uma abordagem terapêutica baseada em evidências científicas que tem mostrado resultados significativos no tratamento de compulsões e transtornos alimentares. Diferente de abordagens que tentam eliminar pensamentos ou controlar comportamentos à força, a ACT trabalha de forma mais gentil e profunda.</p>
+      <p>O objetivo não é criar mais uma régua para você se medir — é ajudá-lo a se libertar das que já existem. A ACT parte do princípio de que tentar suprimir pensamentos e emoções difíceis muitas vezes os intensifica. Em vez disso, você aprende a se relacionar com eles de uma forma diferente.</p>
  
       <p><strong>Com a ACT, você vai aprender a:</strong></p>
       <ul>
-        <li>Aceitar o que não pode ser mudado sem precisar lutar contra isso o tempo todo</li>
-        <li>Criar distância dos pensamentos que assustam, sem ser controlado por eles</li>
-        <li>Identificar o que ainda importa para você — seus valores, seus vínculos, sua história</li>
-        <li>Agir em direção a isso, mesmo nos dias mais difíceis</li>
-        <li>Encontrar presença e significado no momento que está vivendo agora</li>
-        <li>Desenvolver compaixão por si mesmo — porque sofrer não é fraqueza, é humano</li>
+        <li>Reconhecer os gatilhos emocionais que levam aos episódios de compulsão ou restrição</li>
+        <li>Criar espaço para emoções difíceis sem precisar usar a comida para suprimi-las</li>
+        <li>Questionar pensamentos autocríticos sobre o corpo e a alimentação sem ser dominado por eles</li>
+        <li>Identificar o que realmente importa para você — seus valores — e agir a partir deles</li>
+        <li>Desenvolver uma relação mais compassiva e menos punitiva com você mesmo</li>
+        <li>Quebrar o ciclo de culpa e compensação que alimenta o sofrimento</li>
+        <li>Construir hábitos e escolhas alinhados ao seu bem-estar real, não ao medo ou à vergonha</li>
       </ul>
  
-      <p>Para a família, a ACT oferece suporte para lidar com a impotência, o medo da perda e o esgotamento de cuidar, sem perder de vista o que realmente importa: estar presente para quem você ama.</p>
+      <p>O tratamento com ACT não impõe um padrão de corpo ou alimentação. Ele te ajuda a reconectar com o que você sente, com o que você precisa e com quem você quer ser — independente do peso ou do prato.</p>
     </div>
  
-      <!-- CTA -->
+    <!-- CTA -->
     <div class="esp-cta">
-     <h3>Pronto para começar?<br><em>O primeiro passo é o mais importante!</em></h3>
-      <p style="color:#fff;">Você não precisa ter certeza de que está pronto.
-        Você não precisa saber exatamente o que dizer.
-        Na primeira sessão, você fala no seu tempo — sem pressão, sem julgamentos.
-        Entre em contato pelo WhatsApp agora mesmo e vamos conversar.n
-        Atendo online para todo o Brasil e para brasileiros em qualquer parte do mundo.</p>
-    </ul>
-     <br>
-      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Perdas%20e%20Luto" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="white" ><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <h3>Você merece uma relação mais leve<br><em>com a comida e com você mesmo.</em></h3>
+      <p>Se a relação com a comida está causando sofrimento, não espere chegar ao limite para buscar ajuda. O primeiro passo é uma conversa — sem julgamentos, sem cobranças e no seu tempo. Entre em contato pelo WhatsApp agora mesmo. Atendo online para todo o Brasil e para brasileiros em qualquer parte do mundo.</p>
+      <br>
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Compulsões%20e%20Transtornos%20Alimentares" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Fale comigo
       </a>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <footer>
   <div class="container">
     <div class="foot-bar">
-      © 2025 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados®️<br>
+      © 2025 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados<br>
       Este site tem caráter informativo e não substitui consulta profissional.
     </div>
   </div>
 </footer>
-
+ 
 </body>
 </html>
+ 
