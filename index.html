@@ -41,7 +41,7 @@
   .label { display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; margin-bottom:12px; }
   .lb { color:var(--blue); } .lg { color:var(--green); } .ll { color:var(--lilac); }
   .title { font-family:var(--font-d); font-size:clamp(1.9rem,4vw,2.9rem); font-weight:400; line-height:1.2; color:var(--text); }
-  .title em    { font-style:italic; }
+  .title em { font-style:italic; }
   .tb { color:var(--blue); } .tg { color:var(--green); } .tl { color:var(--lilac); }
   .btn {
     display:inline-flex; align-items:center; gap:10px;
@@ -53,36 +53,16 @@
   .btn:hover { transform:translateY(-2px); }
   .btn svg { width:20px; height:20px; flex-shrink:0; }
   .btn-blue  { background:var(--blue);  color:#fff; box-shadow:0 4px 20px rgba(74,127,165,.38); }
-  .btn-blue:hover  { background:var(--blue-light);  box-shadow:0 8px 30px rgba(74,127,165,.42); }
+  .btn-blue:hover  { background:var(--blue-light); box-shadow:0 8px 30px rgba(74,127,165,.42); }
   .btn-green { background:var(--green); color:#fff; box-shadow:0 4px 20px rgba(37,211,102,.38); }
   .btn-green:hover { background:#1ebe5d; box-shadow:0 8px 30px rgba(37,211,102,.42); }
   .btn-white { background:#fff; color:var(--blue); box-shadow:0 4px 24px rgba(0,0,0,.13); }
   .btn-white:hover { box-shadow:0 10px 36px rgba(0,0,0,.18); }
   .btn-ghost { background:transparent; color:var(--text-mid); border:1.5px solid var(--border); }
   .btn-ghost:hover { border-color:var(--blue-light); color:var(--blue); }
-  .doctoralia-btn-wrap { display:inline-flex; align-items:center; }
-  .zl-url {
-    display:inline-flex !important; align-items:center !important; gap:10px !important;
-    padding:14px 30px !important; border-radius:100px !important;
-    font-family:var(--font-b) !important; font-size:.88rem !important; font-weight:700 !important;
-    cursor:pointer !important; border:1.5px solid var(--border) !important;
-    background:transparent !important; color:var(--text-mid) !important;
-    text-decoration:none !important;
-    transition:transform .22s, box-shadow .22s, border-color .22s, color .22s !important;
-    box-shadow:none !important;
-  }
-  .zl-url:hover { transform:translateY(-2px) !important; border-color:var(--blue-light) !important; color:var(--blue) !important; }
-  .nav-doctoralia .zl-url { padding:10px 18px !important; font-size:.78rem !important; }
-  .cta-doctoralia .zl-url { background:rgba(255,255,255,.12) !important; border-color:rgba(255,255,255,.4) !important; color:#fff !important; }
-  .cta-doctoralia .zl-url:hover { background:rgba(255,255,255,.22) !important; border-color:#fff !important; color:#fff !important; }
-  .btn-divider {
-    display:flex; align-items:center; gap:8px;
-    font-size:.7rem; color:var(--text-light); font-weight:600; letter-spacing:.08em; white-space:nowrap;
-  }
-  .btn-divider::before,.btn-divider::after { content:''; flex:1; height:1px; background:var(--border); min-width:12px; }
   .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
   .reveal.visible { opacity:1; transform:translateY(0); }
- 
+
   /* NAV */
   #nav { position:fixed; top:0; left:0; right:0; z-index:300; padding:20px 0; transition:background .4s,padding .3s,box-shadow .3s; }
   #nav.scrolled { background:rgba(253,252,255,.95); backdrop-filter:blur(16px); padding:13px 0; box-shadow:0 1px 0 var(--border); }
@@ -102,7 +82,7 @@
   .mobile-menu { display:none; position:fixed; inset:0; background:rgba(253,252,255,.97); z-index:200; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
   .mobile-menu.open { display:flex; }
   .mobile-menu a { font-family:var(--font-d); font-size:1.5rem; color:var(--text); }
- 
+
   /* HERO */
   #hero { min-height:100vh; padding:130px 0 90px; background:var(--cream); position:relative; overflow:hidden; display:flex; align-items:center; }
   .blob { position:absolute; border-radius:50%; pointer-events:none; opacity:.2; filter:blur(70px); }
@@ -136,16 +116,14 @@
     background:linear-gradient(145deg,var(--blue-pale),var(--lilac-pale));
     display:flex; align-items:center; justify-content:center;
   }
-  /* FOTO HERO — 95% de zoom, centralizada */
   .hero-photo img { width:95%; height:auto; object-fit:cover; display:block; margin:0 auto; }
-  .hero-crp { position:absolute; top:22px; right:-18px; background:var(--blue); color:#fff; border-radius:12px; padding:10px 16px; font-size:.7rem; font-weight:700; line-height:1.5; box-shadow:var(--sh-sm); }
- 
+
   /* TRUST BAR */
   #trust { background:var(--blue); padding:16px 0; }
   .trust-inner { display:flex; align-items:center; justify-content:center; gap:36px; flex-wrap:wrap; }
   .trust-item  { display:flex; align-items:center; gap:9px; color:rgba(255,255,255,.88); font-size:.79rem; }
   .trust-item svg { width:16px; height:16px; flex-shrink:0; }
- 
+
   /* GALERIA */
   #gallery { padding:86px 0 70px; background:var(--white); }
   .gallery-hd { text-align:center; max-width:560px; margin:0 auto 48px; }
@@ -153,22 +131,22 @@
   .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
   .gc { display:block; border:1.5px solid var(--border); border-radius:var(--r); overflow:hidden; cursor:pointer; background:var(--white); transition:transform .25s,box-shadow .25s,border-color .25s; }
   .gc:hover { transform:translateY(-6px); box-shadow:var(--sh-md); }
-  .gc.cb:hover { border-color:var(--blue-light);  }
+  .gc.cb:hover { border-color:var(--blue-light); }
   .gc.cg:hover { border-color:var(--green-light); }
   .gc.cl:hover { border-color:var(--lilac-light); }
   .gc-thumb { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:2.8rem; position:relative; overflow:hidden; }
-  .cb .gc-thumb { background:var(--blue-pale);  }
+  .cb .gc-thumb { background:var(--blue-pale); }
   .cg .gc-thumb { background:var(--green-pale); }
   .cl .gc-thumb { background:var(--lilac-pale); }
   .gc-body { padding:20px 22px 22px; }
   .gc-body h3 { font-family:var(--font-d); font-size:1.05rem; font-weight:500; margin-bottom:6px; }
   .gc-body p  { font-size:.78rem; color:var(--text-mid); line-height:1.55; margin-bottom:12px; }
   .gc-arrow { display:inline-flex; align-items:center; gap:5px; font-size:.72rem; font-weight:700; transition:gap .2s; }
-  .cb .gc-arrow { color:var(--blue);  }
+  .cb .gc-arrow { color:var(--blue); }
   .cg .gc-arrow { color:var(--green); }
   .cl .gc-arrow { color:var(--lilac); }
   .gc:hover .gc-arrow { gap:10px; }
- 
+
   /* SOBRE MIM */
   #about { padding:100px 0; background:var(--white); }
   .about-inner { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
@@ -181,10 +159,7 @@
     box-shadow:var(--sh-lg);
     display:flex; align-items:center; justify-content:center;
   }
-  /* FOTO SOBRE MIM — 93% de zoom, centralizada */
   .about-frame img { width:93%; height:auto; object-fit:contain; display:block; margin:-9% auto 0; }
-  .about-crp { position:absolute; top:14px; right:-16px; background:#fff; border:1px solid var(--border); border-radius:14px; padding:12px 18px; font-size:.74rem; color:var(--text-mid); box-shadow:var(--sh-sm); line-height:1.55; }
-  .about-crp strong { display:block; color:var(--blue); font-weight:700; font-size:.8rem; }
   .about-text .title { margin-bottom:20px; }
   .about-text p { color:var(--text-mid); font-size:.92rem; margin-bottom:16px; text-align:justify; }
   .about-text p strong { color:var(--text); }
@@ -193,7 +168,7 @@
   .tag.tb { background:var(--blue-pale);  color:var(--blue);  border:1px solid rgba(74,127,165,.2); }
   .tag.tg { background:var(--green-pale); color:var(--green); border:1px solid rgba(95,163,126,.2); }
   .tag.tl { background:var(--lilac-pale); color:var(--lilac); border:1px solid rgba(139,123,181,.2); }
- 
+
   /* ESPECIALIDADES */
   #problems { padding:100px 0; background:var(--cream); position:relative; overflow:hidden; }
   #problems::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--blue-light),var(--lilac-light),transparent); }
@@ -202,41 +177,40 @@
   .prob-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:20px; }
   .pc { display:block; text-decoration:none; color:inherit; background:var(--white); border:1px solid var(--border); border-radius:var(--r); padding:32px; transition:transform .25s,box-shadow .25s,border-color .25s; cursor:pointer; }
   .pc:hover { transform:translateY(-6px); box-shadow:var(--sh-md); }
-  .pc.pb:hover { border-color:var(--blue-light);  }
+  .pc.pb:hover { border-color:var(--blue-light); }
   .pc.pg:hover { border-color:var(--green-light); }
   .pc.pl:hover { border-color:var(--lilac-light); }
- .pc-ico { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:18px; margin-left:auto; margin-right:auto; }
-  .pb .pc-ico { background:var(--blue-pale);  }
+  .pc-ico { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:18px; margin-left:auto; margin-right:auto; overflow:hidden; }
+  .pb .pc-ico { background:var(--blue-pale); }
   .pg .pc-ico { background:var(--green-pale); }
   .pl .pc-ico { background:var(--lilac-pale); }
   .pc h3 { font-family:var(--font-d); font-size:1.15rem; font-weight:500; margin-bottom:10px; text-align:center; }
   .pc p  { font-size:.85rem; color:var(--text-mid); line-height:1.75; text-align:justify; }
   .pc-arrow { display:inline-flex; align-items:center; gap:6px; margin-top:16px; font-size:.75rem; font-weight:700; transition:gap .2s; }
-  .pb .pc-arrow { color:var(--blue);  }
+  .pb .pc-arrow { color:var(--blue); }
   .pg .pc-arrow { color:var(--green); }
   .pl .pc-arrow { color:var(--lilac); }
   .pc:hover .pc-arrow { gap:12px; }
- 
+
   /* COMO FUNCIONA */
   #how { padding:100px 0; background:var(--cream); }
   .how-hd { text-align:center; max-width:560px; margin:0 auto 64px; }
   .how-hd p { font-size:.93rem; color:var(--text-mid); margin-top:12px; }
-  /* CARICATURA "Como Funciona" */
   .how-caricatura { text-align:center; margin:0 0 48px; }
-  .how-caricatura img { width:520px; height:520px; object-fit:conver; border-radius:20px; display:block; margin:0 auto; box-shadow:var(--sh-md); }
+  .how-caricatura img { width:520px; height:520px; object-fit:contain; border-radius:20px; display:block; margin:0 auto; box-shadow:var(--sh-md); }
   .how-steps { display:grid; grid-template-columns:repeat(4,1fr); position:relative; }
   .how-steps::before { content:''; position:absolute; top:38px; left:12%; right:12%; height:1px; background:linear-gradient(90deg,var(--blue-light),var(--green-light),var(--lilac-light)); }
   .hs { text-align:center; padding:0 18px; }
   .hs-num { width:76px; height:76px; border-radius:50%; margin:0 auto 22px; display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:1.7rem; font-weight:400; position:relative; z-index:2; background:var(--white); border:2px solid; }
-  .sn1 { color:var(--blue);  border-color:var(--blue-light);  }
+  .sn1 { color:var(--blue);  border-color:var(--blue-light); }
   .sn2 { color:var(--green); border-color:var(--green-light); }
   .sn3 { color:var(--lilac); border-color:var(--lilac-light); }
-  .sn4 { color:var(--blue);  border-color:var(--blue-light);  }
+  .sn4 { color:var(--blue);  border-color:var(--blue-light); }
   .hs h3 { font-family:var(--font-d); font-size:1.1rem; font-weight:500; margin-bottom:8px; }
   .hs p  { font-size:.82rem; color:var(--text-mid); line-height:1.7; }
   .how-cta { text-align:center; margin-top:52px; }
   .how-cta-buttons { display:flex; flex-direction:column; align-items:center; gap:12px; }
- 
+
   /* DEPOIMENTOS */
   #testimonials { padding:100px 0; background:var(--white); }
   .test-hd { text-align:center; max-width:560px; margin:0 auto 56px; }
@@ -251,12 +225,12 @@
   .tc-text  { font-size:.9rem; color:var(--text-mid); font-style:italic; line-height:1.85; margin-bottom:24px; }
   .tc-author { display:flex; align-items:center; gap:13px; }
   .tc-av { width:42px; height:42px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-d); font-size:1.1rem; }
-  .avb { background:var(--blue-pale);  color:var(--blue);  }
+  .avb { background:var(--blue-pale);  color:var(--blue); }
   .avg { background:var(--green-pale); color:var(--green); }
   .avl { background:var(--lilac-pale); color:var(--lilac); }
   .tc-name   { font-size:.86rem; font-weight:700; }
   .tc-detail { font-size:.74rem; color:var(--text-light); }
- 
+
   /* FAQ */
   #faq { padding:100px 0; background:var(--cream); }
   .faq-inner { display:grid; grid-template-columns:1fr 2fr; gap:80px; align-items:start; }
@@ -271,7 +245,7 @@
   .fi.open .fi-chev { transform:rotate(180deg); }
   .fi-a { max-height:0; overflow:hidden; font-size:.87rem; color:var(--text-mid); line-height:1.8; transition:max-height .4s ease,padding .3s; }
   .fi.open .fi-a { max-height:300px; padding:0 22px 20px; }
- 
+
   /* CTA FINAL */
   #cta-final { padding:110px 0; text-align:center; background:linear-gradient(135deg,var(--blue) 0%,#3a6a8a 40%,var(--lilac) 100%); position:relative; overflow:hidden; }
   #cta-final::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.08) 0%,transparent 65%); pointer-events:none; }
@@ -282,7 +256,7 @@
   .cta-inner p { color:rgba(255,255,255,.72); font-size:.97rem; max-width:500px; margin:0 auto 40px; }
   .cta-buttons { display:flex; flex-direction:column; align-items:center; gap:12px; }
   .cta-buttons-row { display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:center; }
- 
+
   /* FOOTER */
   footer { background:#1E1E2E; padding:50px 0 28px; }
   .foot-main { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:32px; margin-bottom:40px; }
@@ -293,31 +267,28 @@
   .foot-col a, .foot-col p { display:block; font-size:.82rem; color:rgba(255,255,255,.5); margin-bottom:8px; transition:color .2s; }
   .foot-col a:hover { color:rgba(255,255,255,.85); }
   .foot-bar { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; text-align:center; font-size:.72rem; color:rgba(255,255,255,.25); line-height:1.8; }
- 
+
   /* WA FLOAT */
   .wa-float { position:fixed; bottom:26px; right:26px; z-index:400; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 22px rgba(37,211,102,.45); transition:transform .25s,box-shadow .25s; }
   .wa-float:hover { transform:scale(1.1); box-shadow:0 8px 34px rgba(37,211,102,.5); }
   .wa-float svg { width:28px; height:28px; }
- 
+
   @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
   @keyframes fadeIn { from{opacity:0} to{opacity:1} }
- 
+
   /* RESPONSIVE */
   @media(max-width:900px) {
     .hero-inner { grid-template-columns:1fr; gap:48px; }
     .hero-visual { order:-1; }
     .hero-photo  { max-width:300px; margin:0 auto; }
-    .hero-crp    { display:none; }
     .about-inner { grid-template-columns:1fr; gap:48px; }
     .about-wrap  { max-width:320px; margin:0 auto; }
-    .about-crp   { display:none; }
     .faq-inner   { grid-template-columns:1fr; gap:40px; }
     .how-steps   { grid-template-columns:1fr 1fr; gap:36px; }
     .how-steps::before { display:none; }
     .gallery-grid { grid-template-columns:1fr 1fr; }
     .nav-links   { display:none; }
     .hamburger   { display:flex; }
-    .nav-actions .nav-doctoralia { display:none; }
     .how-caricatura img { width:220px; height:220px; }
   }
   @media(max-width:560px) {
@@ -332,7 +303,7 @@
   </style>
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav id="nav">
   <div class="container nav-inner">
@@ -345,15 +316,12 @@
       <li><a href="#faq">Dúvidas</a></li>
     </ul>
     <div class="nav-actions">
-      <div class="nav-doctoralia">
-        <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" rel="nofollow" data-zlw-doctor="teo-lima" data-zlw-type="button_calendar_medium" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Doctoralia</a>
-      </div>
       <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Vim%20pelo%20site%20e%20quero%20agendar%20uma%20sessão." class="btn btn-green nav-btn" target="_blank" rel="noopener">Agendar consulta</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
- 
+
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about"        onclick="closeMobile()">Sobre</a>
   <a href="#problems"     onclick="closeMobile()">Especialidades</a>
@@ -361,9 +329,8 @@
   <a href="#testimonials" onclick="closeMobile()">Depoimentos</a>
   <a href="#faq"          onclick="closeMobile()">Dúvidas</a>
   <a href="https://wa.me/5571991940263" class="btn btn-green" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
-  <a href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" class="btn btn-ghost" target="_blank" rel="noopener">Agendar pelo Doctoralia</a>
 </div>
- 
+
 <!-- HERO -->
 <section id="hero">
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
@@ -379,10 +346,6 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Agendar pelo WhatsApp
             </a>
-            <span class="btn-divider">ou</span>
-            <div class="doctoralia-btn-wrap">
-              <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" rel="nofollow" data-zlw-doctor="teo-lima" data-zlw-type="button_calendar_medium" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Doctoralia</a>
-            </div>
           </div>
         </div>
         <div class="hero-stats">
@@ -396,14 +359,14 @@
       <div class="hero-visual">
         <div class="hero-card">
           <div class="hero-photo">
-            <img src="Foto Hero.jpeg" alt="Téo Lima, Psicólogo – Salvador BA"/>
+            <img src="foto-hero.jpeg" alt="Téo Lima, Psicólogo – Salvador BA"/>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- TRUST BAR -->
 <div id="trust">
   <div class="container">
@@ -423,7 +386,7 @@
     </div>
   </div>
 </div>
- 
+
 <!-- SOBRE -->
 <section id="about">
   <div class="container">
@@ -431,10 +394,12 @@
       <div class="about-text reveal">
         <span class="label ll">Sobre o psicólogo</span>
         <h2 class="title">Olá, eu sou <em class="tl">Téo Lima</em></h2>
-        <p>Graduei-me em Psicologia pela Universidade Federal da Bahia (UFBA) em 2019, e tenho Especializaçôes em Cuidados Paliativos e em Psicologia Hospitalar pela Faculdade Venda Nova dos Imigrantes (FAVENI - ES), o que me permite oferecer suporte qualificado a pacientes adultos e idosos e a familiares com total profissionalismo, respeito, empatia e ética.</p>
-        <p>Minha Linha de Abordagem é a Terapia de Aceitação e Compromisso (ACT), uma abordagem terapêutica baseada em evidências (TBE) que ajuda na aceitação de pensamentos e sentimentos difíceis sem lutar contra eles, agindo de forma comprometida com seus valores e o que realmente importa na sua vida. É uma terapia que ensina a aceitar o que não podemos mudar e a nos comprometermos com o que podemos melhorar, e o foco não é "eliminar" o que você sente, mas aprender a conviver com esses sentimentos sem que eles governem suas decisões.</p>
-        <p>Atuo na Psicologia Clínica há mais de 7 anos e tenho uma formação voltada ao cuidado integral das pessoas, especialmente em momentos de maior vulnerabilidade — como nas perdas e luto, nas transições da vida e no enfrentamento de doenças graves, na obesidade, no abuso de substâncias e no autoconhecimento e autoafirmação, bem como no tratamento clínico das diversas psicopatologias.</p>
-        <p>Meu compromisso é criar um espaço seguro com empatia e sem julgamentos, onde você possa ser quem é e encontrar recursos para atravessar qualquer fase da vida se autoconhecendo e se autoafirmando.</p>
+        <p>Me graduei em Psicologia pela <strong>Universidade Federal da Bahia (UFBA)</strong> e tenho especializações em <strong>Cuidados Paliativos</strong> e em <strong>Psicologia Hospitalar</strong>, além de formações em Terapia de Aceitação e Compromisso (ACT), Saúde Mental, Dependência Química, Transtornos Alimentares e Psicologia Antirracista e Afirmativa.</p>
+        <p>Minha trajetória foi construída no cuidado real com pessoas em momentos de grande vulnerabilidade. Realizei meu primeiro estágio supervisionado na <strong>Ala Infantil do Hospital das Clínicas da UFBA</strong>, e o segundo no <strong>CETAD/UFBA</strong> — referência nacional no tratamento de dependência química com foco em Redução de Danos. Essa formação prática me deu algo que nenhum livro ensina: a capacidade de estar presente de verdade, nos momentos mais difíceis da vida de alguém.</p>
+        <p>Atuo na Psicologia Clínica há mais de <strong>7 anos</strong>, incluindo experiência com Terapia Breve, e desde 2022 ofereço atendimento voluntário no <strong>CECOM</strong>, um centro comunitário em Salvador — porque acredito que cuidar de pessoas não pode depender apenas da capacidade de pagar.</p>
+        <p>Minha linha de abordagem é a <strong>Terapia de Aceitação e Compromisso (ACT)</strong>, uma abordagem baseada em evidências que não busca eliminar o que você sente, mas te ajuda a conviver com esses sentimentos sem que eles governem suas escolhas — agindo de forma comprometida com o que realmente importa na sua vida.</p>
+        <p>Atendo com sensibilidade à diversidade de gênero e sexualidade, e como pessoa com deficiência visual monocular e bariátrico, carrego na prática clínica uma perspectiva que só quem viveu sabe o que significa enfrentar o mundo de um jeito diferente e ainda assim seguir em frente.</p>
+        <p>Ofereço horários flexíveis, incluindo noite, madrugada e sábados — para quem só tem horário depois do trabalho, para quem não consegue em nenhum momento durante a semana, para quem se sente mais à vontade quando a cidade dorme, para momentos de crise que não escolhem hora, e para brasileiros em qualquer parte do mundo.</p>
         <div class="tags">
           <span class="tag tb">ACT</span>
           <span class="tag tg">Compulsão</span>
@@ -443,35 +408,32 @@
           <span class="tag tg">Psicologia Hospitalar</span>
           <span class="tag tl">Cuidados Paliativos</span>
           <span class="tag tb">Perdas e Luto</span>
-          <span class="tag tg">Psicopatologia</span>
-          <span class="tag tl">Abuso de Substâncias</span>
-          <span class="tag tb">LGBTQIAPN+</span>
+          <span class="tag tg">Psicopatologias</span>
+          <span class="tag tl">Abusos</span>
+          <span class="tag tb">Pessoas LGBTQIAPN+</span>
           <span class="tag tg">Idosos</span>
           <span class="tag tl">Obesidade</span>
           <span class="tag tb">Redução de Danos</span>
-          <span class="tag tg">Ansiedade e Estresse</span>
-          <span class="tag tl">Depressão</span>
+          <span class="tag tg">Depressão, Ansiedade e Estresse</span>
+          <span class="tag tl">Álcool, drogas e outras substâncias</span>
           <span class="tag tb">Transtornos Alimentares</span>
-          <span class="tag tg">Dependencia Química</span>
+          <span class="tag tg">Dependências</span>
+          <span class="tag tl">Antirracismo</span>
         </div>
       </div>
       <div class="about-wrap reveal">
         <div class="about-frame">
-          <img src="Foto Sobre Mim.jpeg" alt="Téo Lima Psicólogo"/>
+          <img src="foto-sobre-mim.jpeg" alt="Téo Lima Psicólogo"/>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- GALERIA CLICÁVEL -->
 <section id="gallery">
   <div class="container">
-    <div class="gallery-hd reveal">
-      <span class="label lb"></span>
-      <h2 class="title"><em class="tb"></em></h2>
-      <p></p>
-    </div>
+    <div class="gallery-hd reveal"></div>
     <div class="gallery-grid reveal">
       <a href="#about" class="gc cb">
         <div class="gc-thumb">🎓</div>
@@ -485,7 +447,7 @@
         <div class="gc-thumb">🥼</div>
         <div class="gc-body">
           <h3>Atuação</h3>
-          <p>Perdas e Luto, Cuidados Paliativos, Obesidade, Abuso de substâncias, Autoconhecimento e Autoafirmação, Ansiedade, Estresse e Tratamento de Psicopatologias.</p>
+          <p>Perdas e Luto, Cuidados Paliativos, Compulsão, Obesidade e Transtornos Alimentares, Abuso de substâncias, Autoconhecimento e Autoafirmação de Pessoas LGBTQIAPN+, Tratamento de Ansiedade, Depressão, Estresse e de outras Psicopatologias.</p>
           <span class="gc-arrow">Ver especialidades →</span>
         </div>
       </a>
@@ -524,7 +486,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- ESPECIALIDADES -->
 <section id="problems">
   <div class="container">
@@ -534,52 +496,77 @@
       <p>Muitas pessoas carregam dores que parecem impossíveis de superar. Você está no lugar certo.</p>
     </div>
     <div class="prob-grid">
-      <a href="especialidade-perdas-luto.html" class="pc pb reveal">
+      <a href="luto.html" class="pc pb reveal">
         <div class="pc-ico">🌹</div>
         <h3>Perdas e Luto</h3>
-        <p>As perdas e o luto não têm prazo, não têm fórmula e não precisam ser enfrentados sozinhos. Cada perda é única — seja de uma pessoa querida, de um relacionamento, de um papel na vida ou de uma fase que ficou para trás — e tudo isso merece um cuidado especializado, empático e sem pressa. A dor de uma perda é uma das experiências mais intensas e solitárias que um ser humano pode viver. Talvez você já esteja carregando um peso que parece impossível de suportar, e eu quero que você saiba: o que você sente é real, é válido, e existe suporte especializado para te ajudar.</p>
+        <p>O luto não segue fórmulas nem tem prazo para terminar. Quando a perda acontece — seja de alguém querido, de um animal de estimação, de um amor, de um sonho ou até da estabilidade financeira e bens materiais — tudo muda. O mundo ao redor continua girando e as pessoas têm pressa para que a gente supere, o que pode tornar a dor solitária e sem cor. Mas quero que saiba: o peso que você carrega é real, seus sentimentos são legítimos e o luto exige tempo. Você não precisa atravessar esse silêncio sozinho. Ofereço um suporte especializado, com empatia e sem pressa, para acolher a sua dor e ajudar você a reorganizar a sua vida, respeitando cada passo no seu próprio ritmo e costurando, aos poucos, o que ficou pelo caminho.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
-      <a href="especialidade-cuidados-paliativos.html" class="pc pb reveal">
+      <a href="paliativos.html" class="pc pb reveal">
         <div class="pc-ico">🩺</div>
         <h3>Cuidados Paliativos</h3>
-        <p>Um diagnóstico desafiador transforma a vida de toda uma família — em um instante, a vida que você conhecia ganha novos contornos, novas perguntas e medos que parecem impossíveis de carregar. Nos cuidados paliativos, o foco não é apenas o corpo: é a pessoa inteira, sua história, seus vínculos e tudo aquilo que ainda importa. O suporte psicológico existe para que você e sua família não precisem atravessar esse momento sozinhos, mas sim com mais dignidade, mais presença e mais cuidado em cada etapa do caminho.</p>
+        <p>Nos cuidados paliativos o paciente e sua família precisam de uma atenção mais profunda. O foco vai além do corpo e passa a ser a pessoa inteira — sua história, seus vínculos, seus valores e tudo aquilo que ainda importa. Quando um diagnóstico desafiador emerge, a vida de toda uma família muda em um instante: os planos se transformam, as perguntas se multiplicam e o peso dos medos parece grande demais para se sustentar por conta própria. O suporte psicológico existe para que você e sua família não atravessem esse momento sozinhos, mas sim com mais dignidade, presença e cuidado em cada etapa do caminho.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
-     <a href="especialidade-obesidade.html" class="pc pg reveal">
-      <div class="pc-ico">🧩</div>
-      <h3>Compulsões: Alimentação, Substâncias e Comportamentos</h3>
-      <p>Você já se pegou fazendo algo repetidamente mesmo sabendo que não era bom e mesmo assim não conseguia parar? Isso não é fraqueza. é o funcionamento de um padrão chamado compulsão, e ele pode se manifestar na comida, no álcool, nas drogas, nas telas, nos jogos ou no sexo. O mecanismo é o mesmo — e o cuidado, quando chega na hora certa, pode mudar tudo.</p>
-      <span class="pc-arrow">Saiba mais →</span>
-     </a>
-      <a href="especialidade-abuso-substancias.html" class="pc pg reveal">
-        <div class="pc-ico">🍾</div>
-        <h3>Abuso de Substâncias</h3>
-        <p>Sem julgamento. Um espaço seguro para entender os gatilhos e construir uma redução de danos de acordo com seu ritmo.</p>
+      <a href="compulsao.html" class="pc pl reveal">
+        <div class="pc-ico">🧩</div>
+        <h3>Compulsões: Alimentação, Substâncias e Comportamentos Impulsivos</h3>
+        <p>Muitas vezes, repetimos comportamentos que nos fazem mal — como o uso exagerado de comida, substâncias, telas, compras, sexo ou apostas — sem conseguir parar. Isso não é falta de caráter; é um ciclo de compulsão que o cérebro cria para tentar aliviar dores como a ansiedade e o tédio. O problema é que esse alívio é passageiro e logo dá lugar à culpa e à sensação de perda de controle. Para romper esse padrão, trabalhamos com a Redução de Danos, que respeita o seu tempo e não exige que você pare com tudo de imediato, focando primeiro em diminuir os riscos e prejuízos na sua rotina. Somado a isso, a Terapia de Aceitação e Compromisso (ACT) ensina você a não lutar contra seus desejos ou pensamentos difíceis, mas a criar espaço para eles sem precisar agir por impulso. Juntas, essas abordagens oferecem um caminho seguro para você retomar as rédeas da sua vida, priorizando o seu bem-estar e respeitando o seu próprio ritmo.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
-      <a href="especialidade-lgbtqiapn.html" class="pc pl reveal">
-        <div class="pc-ico">🏳️‍🌈</div>
-        <h3>LGBTQIAPN+</h3>
-        <p>Ambiente respeitoso e afirmativo para pessoas LGBTQIAPN+ que buscam se autoconhecer, com um apoio comprometido com sua identidade e história.</p>
+      <a href="afirmativa.html" class="pc pl reveal">
+        <div class="pc-ico">
+          <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+            <defs>
+              <clipPath id="fist-card">
+                <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#fist-card)">
+              <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+              <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+              <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+              <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+              <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+              <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+              <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Psicologia Afirmativa e Antirracista</h3>
+        <p>Existir como você é não deveria ser um ato de coragem — mas para muitas pessoas ainda é. Seja pela sua orientação sexual, identidade de gênero ou origem étnico-racial, carregar o peso do preconceito, da discriminação e da invisibilidade cobra um custo emocional real e profundo. O racismo, a homofobia, a transfobia e o machismo não ficam do lado de fora quando a gente fecha a porta de casa — eles entram junto, se instalam na autoestima, na forma como a gente se vê e no medo constante de ocupar espaço. Aqui você encontra um espaço genuinamente seguro, afirmativo e antirracista, onde sua identidade é respeitada, sua história é acolhida e sua presença é bem-vinda exatamente como você é — sem julgamentos, sem condições e sem precisar se justificar, com um psicólogo capacitado nesta área e que vai poder te entender perfeitamente.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
-      <a href="especialidade-ansiedade-estresse.html" class="pc pg reveal">
-        <div class="pc-ico">🧨</div>
-        <h3>Ansiedade e Estresse</h3>
-        <p>Pensamentos acelerados, medo constante, dificuldade de relaxar. Aqui você aprende a lidar com a ansiedade de forma compassiva e prática.</p>
+      <a href="pcd.html" class="pc pb reveal">
+        <div class="pc-ico">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="52" height="52">
+            <circle cx="50" cy="50" r="50" fill="#EBF4FA"/>
+            <circle cx="50" cy="22" r="8" fill="#4A7FA5"/>
+            <line x1="50" y1="30" x2="50" y2="62" stroke="#4A7FA5" stroke-width="5" stroke-linecap="round"/>
+            <line x1="50" y1="44" x2="28" y2="36" stroke="#4A7FA5" stroke-width="5" stroke-linecap="round"/>
+            <line x1="50" y1="44" x2="72" y2="36" stroke="#4A7FA5" stroke-width="5" stroke-linecap="round"/>
+            <line x1="50" y1="62" x2="35" y2="80" stroke="#4A7FA5" stroke-width="5" stroke-linecap="round"/>
+            <line x1="50" y1="62" x2="65" y2="80" stroke="#4A7FA5" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="28" cy="36" r="4" fill="#4A7FA5"/>
+            <circle cx="72" cy="36" r="4" fill="#4A7FA5"/>
+            <circle cx="35" cy="80" r="4" fill="#4A7FA5"/>
+            <circle cx="65" cy="80" r="4" fill="#4A7FA5"/>
+          </svg>
+        </div>
+        <h3>PcD, TDAH e/ou Bariátrico</h3>
+        <p>Viver com uma deficiência, com TDAH ou passar pelo processo bariátrico é muito mais do que enfrentar limitações físicas — é carregar, muitas vezes em silêncio, um peso emocional que o mundo raramente reconhece ou acolhe. O capacitismo, a subestimação, o diagnóstico tardio, os anos de bullying pelo peso, a relação dolorosa com o próprio corpo — tudo isso deixa marcas profundas na autoestima e na saúde mental. Aqui você encontra um espaço especializado e sem julgamentos, onde sua história é compreendida de verdade — não apenas pelos livros, mas por um psicólogo que viveu e vive na pele o que é ser diferente num mundo que ainda não sabe acolher a diversidade, e que escolheu transformar essa experiência em cuidado genuíno para quem também vive isso.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
-      <a href="especialidade-psicopatologias.html" class="pc pb reveal">
+      <a href="psicopatologias.html" class="pc pb reveal">
         <div class="pc-ico">🧠</div>
-        <h3>Psicopatologias</h3>
+        <h3>Saúde Mental</h3>
         <p>Avaliação cuidadosa e acompanhamento baseado em evidências para um bem-estar real.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
     </div>
   </div>
 </section>
- 
+
 <!-- COMO FUNCIONA -->
 <section id="how">
   <div class="container">
@@ -588,33 +575,26 @@
       <h2 class="title">Simples, seguro e <em class="tb">do seu jeito</em></h2>
       <p>Começar é mais fácil do que parece e em poucos passos sua sessão estará agendada.</p>
     </div>
-    <!-- CARICATURA -->
     <div class="how-caricatura reveal">
-      <img src="Foto Como Funciona.jpg" alt="Téo Lima Psicólogo"/>
+      <img src="foto-como-funciona.jpg" alt="Téo Lima Psicólogo"/>
     </div>
     <div class="how-steps">
-      <div class="hs reveal"><div class="hs-num sn1">1</div><h3>Entre em contato</h3><p>Mande uma mensagem pelo WhatsApp ou agende pela Doctoralia. Sem formulários, sem burocracia.</p></div>
+      <div class="hs reveal"><div class="hs-num sn1">1</div><h3>Entre em contato</h3><p>Mande uma mensagem pelo WhatsApp. Sem formulários, sem burocracia.</p></div>
       <div class="hs reveal"><div class="hs-num sn2">2</div><h3>Conversa Inicial</h3><p>Uma breve conversa para entender o que você precisa.</p></div>
       <div class="hs reveal"><div class="hs-num sn3">3</div><h3>Agendamos juntos</h3><p>Escolhemos um horário que encaixe na sua rotina, inclusive fins de semana.</p></div>
       <div class="hs reveal"><div class="hs-num sn4">4</div><h3>Sessão online</h3><p>Atendimento por videochamada, com total conforto e privacidade.</p></div>
     </div>
     <div class="how-cta reveal">
       <div class="how-cta-buttons">
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;">
-          <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20o%20atendimento." class="btn btn-green" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Agendar pelo WhatsApp
-          </a>
-          <span class="btn-divider">ou</span>
-          <div class="doctoralia-btn-wrap">
-            <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" rel="nofollow" data-zlw-doctor="teo-lima" data-zlw-type="button_calendar_medium" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Doctoralia</a>
-          </div>
-        </div>
+        <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20o%20atendimento." class="btn btn-green" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- DEPOIMENTOS -->
 <section id="testimonials">
   <div class="container">
@@ -647,7 +627,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- FAQ -->
 <section id="faq">
   <div class="container">
@@ -660,7 +640,7 @@
       </div>
       <div class="faq-list reveal">
         <div class="fi"><button class="fi-q">O atendimento online é tão eficaz quanto o presencial?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Sim! Pesquisas científicas mostram que a psicoterapia online tem a mesma eficácia que o atendimento presencial. Você realiza as sessões de onde se sentir mais confortável, com total privacidade.</div></div>
-        <div class="fi"><button class="fi-q">Qual plataforma usamos para as sessões?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">As sessões acontecem por videochamada em plataformas seguras como o próprio Whatsapp. Você não precisa instalar nada — basta ter internet e um celular, tablet ou computador.</div></div>
+        <div class="fi"><button class="fi-q">Qual plataforma usamos para as sessões?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">As sessões acontecem por videochamada em plataformas seguras como o próprio WhatsApp. Você não precisa instalar nada — basta ter internet e um celular, tablet ou computador.</div></div>
         <div class="fi"><button class="fi-q">Quanto tempo dura cada sessão?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Cada sessão tem duração de 50 minutos, seguindo o padrão clínico. A frequência é geralmente semanal, mas pode ser ajustada conforme a sua necessidade.</div></div>
         <div class="fi"><button class="fi-q">Meus dados e o que falo são sigilosos?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Absolutamente. O sigilo profissional é um dever ético e legal do psicólogo. Tudo conversado em sessão é estritamente confidencial, conforme o Código de Ética Profissional do Psicólogo.</div></div>
         <div class="fi"><button class="fi-q">Você atende planos de saúde?<svg class="fi-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="fi-a">Atualmente trabalho com atendimento particular. Entre em contato pelo WhatsApp para conhecer os valores e formas de pagamento disponíveis.</div></div>
@@ -670,7 +650,7 @@
     </div>
   </div>
 </section>
- 
+
 <!-- CTA FINAL -->
 <section id="cta-final">
   <div class="container cta-inner">
@@ -683,15 +663,11 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Agendar pelo WhatsApp
         </a>
-        <span class="btn-divider" style="color:rgba(255,255,255,.5);--border:rgba(255,255,255,.25)">ou</span>
-        <div class="cta-doctoralia">
-          <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" rel="nofollow" data-zlw-doctor="teo-lima" data-zlw-type="button_calendar_medium" data-zlw-opinion="false" data-zlw-hide-branding="true" data-zlw-saas-only="true" data-zlw-a11y-title="Widget de marcação de consultas médicas">Doctoralia</a>
-        </div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -708,7 +684,6 @@
       <div class="foot-col">
         <h4>Contato</h4>
         <a href="https://wa.me/5571991940263" target="_blank" rel="noopener">(71) 99194-0263 · WhatsApp</a>
-        <a href="https://www.doctoralia.com.br/teo-lima/psicologo/salvador" target="_blank" rel="noopener">Doctoralia · Agendar consulta</a>
         <p>Salvador, Bahia</p>
         <p>Atendimento online em qualquer lugar do mundo pela internet</p>
       </div>
@@ -724,12 +699,12 @@
     </div>
   </div>
 </footer>
- 
+
 <!-- WhatsApp flutuante -->
 <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Vim%20pelo%20site%20e%20quero%20saber%20mais." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
- 
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
@@ -755,9 +730,6 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
- 
-<script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
- 
+
 </body>
 </html>
- 
