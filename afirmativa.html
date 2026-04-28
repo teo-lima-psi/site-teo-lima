@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Psicologia Afirmativa e Antirracista | Téo Lima · Psicólogo Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+  :root {
+    --blue:#4A7FA5; --blue-light:#7EB5D6; --blue-pale:#EBF4FA;
+    --green:#25D366; --green-light:#94C9AD; --green-pale:#E8F5EE;
+    --lilac:#8B7BB5; --lilac-light:#B8AEDE; --lilac-pale:#F0EDF8;
+    --white:#FDFCFF; --cream:#F5F3F8; --text:#252535;
+    --text-mid:#585870; --text-light:#9898B0; --border:#E0DDF0;
+    --accent:#4A7FA5; --accent-pale:#EBF4FA;
+    --sh-md:0 8px 36px rgba(74,127,165,.14);
+    --font-d:'Playfair Display',Georgia,serif;
+    --font-b:'Nunito',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;font-size:16px}
+  body{font-family:var(--font-b);background:rgba(253,252,255,0.82);color:var(--text);line-height:1.75;overflow-x:hidden;position:relative;z-index:1}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .container{width:100%;max-width:820px;margin:0 auto;padding:0 28px}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:301;padding:18px 0;background:rgba(253,252,255,.97);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--border);transition:padding .3s}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1120px;margin:0 auto;padding:0 28px}
+  .nav-logo{font-family:var(--font-d);font-size:1.2rem;font-weight:500;color:var(--text)}
+  .nav-logo span{color:var(--blue)}
+  .nav-back{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;font-weight:700;color:var(--text-mid);border:1.5px solid var(--border);padding:8px 18px;border-radius:100px;transition:color .2s,border-color .2s}
+  .nav-back:hover{color:var(--blue);border-color:var(--blue-light)}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:var(--font-b);font-size:.8rem;font-weight:700;padding:10px 20px;border-radius:100px;box-shadow:0 4px 18px rgba(37,211,102,.35);transition:background .2s,transform .2s}
+  .nav-cta:hover{background:#1ebe5d;transform:translateY(-1px)}
+  .esp-hero{padding:120px 0 70px;background:rgba(245,243,248,0.82);position:relative;overflow:hidden}
+  .esp-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom,transparent,var(--white))}
+  .hero-blob{position:absolute;border-radius:50%;pointer-events:none;opacity:.18;filter:blur(60px)}
+  .hb1{width:420px;height:420px;background:var(--accent);top:-15%;right:-8%}
+  .hb2{width:280px;height:280px;background:var(--lilac-light);bottom:-10%;left:-5%}
+  .esp-hero .container{position:relative;z-index:2}
+  .back-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--text-light);margin-bottom:28px;transition:color .2s}
+  .back-link:hover{color:var(--accent)}
+  .esp-ico{width:72px;height:72px;border-radius:20px;background:var(--accent-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 24px auto;border:1px solid rgba(0,0,0,.06);overflow:hidden;}
+  .esp-ico svg{width:52px;height:52px;}
+  .esp-hero h1{font-family:var(--font-d);font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:20px;text-align:center}
+  .esp-hero h1 em{font-style:italic;color:var(--accent)}
+  .esp-lead{font-size:1.05rem;color:var(--text-mid);line-height:1.8;text-align:justify}
+  .esp-body{padding:72px 0 100px;background:rgba(253,252,255,0.82)}
+  .esp-section{margin-bottom:56px}
+  .esp-section h2{font-family:var(--font-d);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;margin-bottom:16px;color:var(--text);text-align:center}
+  .esp-section h2 em{font-style:italic;color:var(--accent)}
+  .esp-section p{font-size:.95rem;color:var(--text-mid);line-height:1.85;margin-bottom:14px;text-align:justify}
+  .esp-section p:last-child{margin-bottom:0}
+  .esp-section strong{color:var(--text)}
+  .esp-section ul{margin:10px 0 16px 24px;color:var(--text-mid);font-size:.95rem;line-height:1.85}
+  .esp-section ul li{margin-bottom:6px;text-align:justify}
+  .esp-divider{width:60px;height:3px;border-radius:3px;background:var(--accent);margin:40px auto;opacity:.5}
+  .esp-cta{background:linear-gradient(135deg,var(--blue) 0%,#3a6a8a 50%,var(--lilac) 100%);border-radius:24px;padding:52px 40px;text-align:center;margin-top:64px}
+  .esp-cta h3{font-family:var(--font-d);font-size:clamp(1.4rem,3vw,2rem);font-weight:400;color:#fff;margin-bottom:20px}
+  .esp-cta p{color:rgba(255,255,255,.85);font-size:.92rem;max-width:480px;margin:0 auto 32px;text-align:center;line-height:1.85}
+  .esp-cta a{display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;font-family:var(--font-b);font-size:.88rem;font-weight:700;padding:14px 30px;border-radius:100px;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s}
+  .esp-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+  .esp-cta a svg{width:20px;height:20px;flex-shrink:0}
+  footer{background:#1E1E2E;padding:32px 0}
+  .foot-bar{text-align:center;font-size:.72rem;color:rgba(255,255,255,.25);line-height:1.8}
+  @media(max-width:600px){.esp-cta{padding:36px 24px}.nav-cta span{display:none}}
+  
+
+  
+  .audio-btn{position:fixed;bottom:90px;right:26px;z-index:500;width:46px;height:46px;border-radius:50%;background:rgba(74,127,165,0.85);backdrop-filter:blur(8px);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(74,127,165,0.4);transition:transform .2s,background .2s}
+  .audio-btn:hover{transform:scale(1.1);background:rgba(74,127,165,1)}
+  .audio-btn svg{width:20px;height:20px;fill:#fff}
+  .audio-btn .icon-pause{display:none}
+  </style>
+</head>
+<body>
+
+<canvas id="water-bg" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0.18"></canvas>
+<script>
+(function(){
+  const canvas = document.getElementById('water-bg');
+  const ctx = canvas.getContext('2d');
+  let W, H, buf0, buf1, imgData;
+  const DAMP = 0.985;
+
+  function init(){
+    W = Math.floor(window.innerWidth / 2);
+    H = Math.floor(window.innerHeight / 2);
+    canvas.width = W; canvas.height = H;
+    buf0 = new Float32Array(W * H);
+    buf1 = new Float32Array(W * H);
+    imgData = ctx.createImageData(W, H);
+    // Fill with blue base color
+    for(let i=0;i<imgData.data.length;i+=4){
+      imgData.data[i]=74; imgData.data[i+1]=127; imgData.data[i+2]=165; imgData.data[i+3]=255;
+    }
+  }
+
+  function drop(x, y, radius, strength){
+    x = Math.floor(x*W); y = Math.floor(y*H);
+    for(let dy=-radius;dy<=radius;dy++){
+      for(let dx=-radius;dx<=radius;dx++){
+        const d = Math.sqrt(dx*dx+dy*dy);
+        if(d<radius){
+          const nx=x+dx, ny=y+dy;
+          if(nx>0&&nx<W-1&&ny>0&&ny<H-1){
+            buf0[ny*W+nx] += strength * Math.cos(d/radius*Math.PI/2);
+          }
+        }
+      }
+    }
+  }
+
+  function step(){
+    for(let y=1;y<H-1;y++){
+      for(let x=1;x<W-1;x++){
+        const i=y*W+x;
+        buf1[i]=(buf0[(y-1)*W+x]+buf0[(y+1)*W+x]+buf0[y*W+x-1]+buf0[y*W+x+1])/2 - buf1[i];
+        buf1[i]*=DAMP;
+      }
+    }
+    const tmp=buf0; buf0=buf1; buf1=tmp;
+  }
+
+  function render(){
+    const data=imgData.data;
+    for(let y=1;y<H-1;y++){
+      for(let x=1;x<W-1;x++){
+        const i=y*W+x;
+        const dx=buf0[i+1]-buf0[i-1];
+        const dy=buf0[(y+1)*W+x]-buf0[(y-1)*W+x];
+        const sx=Math.floor(x+dx*2), sy=Math.floor(y+dy*2);
+        const src=(Math.max(0,Math.min(H-1,sy))*W+Math.max(0,Math.min(W-1,sx)))*4;
+        const dst=i*4;
+        const bright=Math.max(0,Math.min(255,74+dx*60));
+        data[dst]=Math.max(0,Math.min(255,bright));
+        data[dst+1]=Math.max(0,Math.min(255,127+dx*40));
+        data[dst+2]=Math.max(0,Math.min(255,165+dy*30));
+        data[dst+3]=255;
+      }
+    }
+    ctx.putImageData(imgData,0,0);
+  }
+
+  function addRandomDrop(){
+    drop(0.1+Math.random()*0.8, 0.1+Math.random()*0.8, 4+Math.floor(Math.random()*6), 120+Math.random()*80);
+    setTimeout(addRandomDrop, 1200+Math.random()*1800);
+  }
+
+  function loop(){
+    step(); render();
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', init);
+  init();
+  addRandomDrop();
+  setTimeout(addRandomDrop, 600);
+  setTimeout(addRandomDrop, 1200);
+  loop();
+})();
+</script>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Téo <span>Lima</span></div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="index.html" class="nav-back">← Voltar ao site</a>
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Psicologia%20Afirmativa%20e%20Antirracista" class="nav-cta" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>Agendar sessão</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="esp-hero">
+  <div class="hero-blob hb1"></div>
+  <div class="hero-blob hb2"></div>
+  <div class="container">
+    <a href="index.html" class="back-link">← Voltar às especialidades</a>
+
+    <!-- Ícone personalizado: punho com metade arco-íris e metade preto -->
+    <div class="esp-ico">
+      <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="fist-hero">
+            <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+          </clipPath>
+        </defs>
+        <g clip-path="url(#fist-hero)">
+          <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+          <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+          <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+          <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+          <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+          <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+          <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+        </g>
+      </svg>
+    </div>
+
+    <h1>Psicologia Afirmativa e Antirracista<br><em>(Relações LGBTQIAPN+, Étnico-Raciais e de Gênero)</em></h1>
+    <p class="esp-lead">Viver em uma sociedade que ainda discrimina, apaga e invisibiliza deixa marcas, que nem sempre aparecem em forma de grandes traumas, mas que vão se acumulando silenciosamente no cotidiano — no comentário que ninguém achou problemático, no espaço que você não ocupou por medo, no relacionamento que precisou esconder, no cabelo que você alisou para ser aceito, no corpo que você aprendeu a envergonhar, na identidade que você guardou por anos dentro de você mesmo. Essas experiências têm nome, têm peso e têm impacto real na saúde mental. <br>
+A Psicologia Afirmativa e Antirracista parte de um princípio fundamental: sua identidade não é um problema a ser tratado — é parte essencial de quem você é e merece ser honrada, celebrada e cuidada. Este não é um espaço neutro. É um espaço posicionado, que reconhece que o racismo, a homofobia, a transfobia, o machismo e todo tipo de preconceito são estruturas reais que causam sofrimento real — e que a terapia tem o dever de levar isso em conta. <br>
+Aqui você pode ser você, sem precisar se justificar, sem precisar diminuir nenhuma parte de si mesmo, sem ter que explicar o que é ser quem você é. O cuidado começa com o reconhecimento de que a sua experiência importa — e que você merece um espaço que realmente entenda isso.</p>
+  </div>
+</section>
+
+<section class="esp-body">
+  <div class="container">
+
+    <!-- SEÇÃO 1 -->
+    <div class="esp-section">
+      <div class="esp-ico">
+        <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="fist-s1">
+              <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#fist-s1)">
+            <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+            <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+            <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+            <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+            <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+            <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+            <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+          </g>
+        </svg>
+      </div>
+      <h2>O que é Psicologia Afirmativa e Antirracista <em>e por que ela importa?</em></h2>
+      <p>A Psicologia Afirmativa é uma abordagem terapêutica que reconhece, respeita e valoriza as diversas identidades de gênero, orientações sexuais e expressões de afeto como partes legítimas e saudáveis da experiência humana. Ela surgiu como resposta à história da própria psicologia, que durante muito tempo patologizou o que é simplesmente diversidade — tratou a homossexualidade como doença, ignorou as violências específicas sofridas por pessoas trans e negras, e ofereceu uma terapia moldada para um padrão que excluía a maioria.<br>
+A Psicologia Antirracista vai além de "não ser racista" — ela atua ativamente contra o racismo, reconhece seus impactos na saúde mental e trabalha para que o espaço terapêutico seja um lugar onde a experiência de pessoas negras, indígenas e de outras populações historicamente marginalizadas seja validada, compreendida e cuidada com a seriedade que merece.<br>
+Juntas, essas abordagens formam um cuidado que não separa a pessoa do contexto em que ela vive. Porque adoecer não acontece no vácuo — acontece em um mundo com estruturas, com privilégios, com opressões. E a terapia que ignora isso não está cuidando da pessoa inteira.</p>
+      <p><strong>Por que isso importa na prática:</strong></p>
+      <ul>
+        <li>Porque pessoas LGBTQIAPN+ têm taxas significativamente maiores de ansiedade, depressão e ideação suicida — e isso não é coincidência, é consequência de um ambiente que ainda as hostiliza</li>
+        <li>Porque o racismo estrutural causa adoecimento psicológico real, que vai muito além de episódios isolados de discriminação</li>
+        <li>Porque pessoas negras frequentemente precisam lidar com o duplo peso de cuidar da própria saúde mental enquanto ainda enfrentam barreiras de acesso ao cuidado</li>
+        <li>Porque a terapia que não reconhece essas realidades pode, sem querer, reproduzir as mesmas violências que o paciente enfrenta lá fora</li>
+        <li>Porque você merece um espaço terapêutico que te veja inteiro — não apenas os sintomas, mas também a história, o contexto e a identidade que você carrega</li>
+      </ul>
+    </div>
+
+    <div class="esp-divider"></div>
+
+    <!-- SEÇÃO 2 -->
+    <div class="esp-section">
+      <div class="esp-ico">
+        <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="fist-s2">
+              <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#fist-s2)">
+            <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+            <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+            <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+            <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+            <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+            <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+            <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+          </g>
+        </svg>
+      </div>
+      <h2>Como o racismo, a homofobia, a transfobia e o machismo <em>afetam a saúde mental?</em></h2>
+      <p>O preconceito não é apenas desconfortável — ele adoece. A ciência já demonstrou de forma clara que a exposição contínua a situações de discriminação, rejeição e violência — seja ela física, verbal ou simbólica — tem impactos profundos e duradouros na saúde mental e física das pessoas.</p>
+      <p><strong>O que o racismo faz com a saúde mental:</strong></p>
+      <ul>
+        <li>Gera um estado constante de hipervigilância — o corpo e a mente sempre alertas, sempre avaliando se o ambiente é seguro</li>
+        <li>Produz o chamado "estresse minoritário": o desgaste acumulado de existir em um corpo que a sociedade ainda marginaliza</li>
+        <li>Causa ansiedade antecipatória — o medo do que pode acontecer antes mesmo que aconteça</li>
+        <li>Impacta a autoestima e a autoimagem, especialmente quando o racismo é internalizado desde a infância</li>
+        <li>Pode gerar sintomas semelhantes ao TEPT (Transtorno de Estresse Pós-Traumático) em pessoas que sofreram episódios graves de discriminação racial</li>
+      </ul>
+      <p><strong>O que a homofobia e a transfobia fazem com a saúde mental:</strong></p>
+      <ul>
+        <li>O processo de esconder a identidade ("ficar no armário") é em si mesmo um fator de estresse crônico</li>
+        <li>A rejeição familiar — uma das experiências mais dolorosas relatadas por pessoas LGBTQIAPN+ — está associada a taxas muito maiores de depressão e comportamento suicida</li>
+        <li>A transfobia causa sofrimento adicional ao criar barreiras no acesso a documentos, serviços de saúde e espaços sociais — o que amplia o isolamento</li>
+        <li>A violência, real ou antecipada, cria um estado permanente de alerta que esgota emocionalmente</li>
+      </ul>
+      <p><strong>O que o machismo faz com a saúde mental:</strong></p>
+      <ul>
+        <li>Impõe papéis rígidos de gênero que sufocam a expressão emocional — especialmente em homens, que aprendem desde cedo que sentir é fraqueza</li>
+        <li>Para mulheres, o machismo se manifesta em relacionamentos abusivos, na sobrecarga do trabalho doméstico invisível, no assédio e na objetificação</li>
+        <li>Causa culpa, vergonha e autossabotagem quando a pessoa não se encaixa no que a sociedade espera do seu gênero</li>
+      </ul>
+      <p>Tudo isso não é fraqueza de quem sofre. É a resposta natural de um ser humano a um ambiente que o machuca sistematicamente.</p>
+    </div>
+
+    <div class="esp-divider"></div>
+
+    <!-- SEÇÃO 3 -->
+    <div class="esp-section">
+      <div class="esp-ico">
+        <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="fist-s3">
+              <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#fist-s3)">
+            <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+            <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+            <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+            <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+            <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+            <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+            <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+          </g>
+        </svg>
+      </div>
+      <h2>O que é identidade de gênero e orientação sexual e <em>como a terapia pode apoiar esse processo?</em></h2>
+      <p>A identidade de gênero é a experiência interna e profunda que cada pessoa tem de si mesma em relação ao gênero — que pode ou não corresponder ao sexo atribuído no nascimento. A orientação sexual diz respeito a quem a pessoa se sente atraída emocional, romântica e/ou sexualmente. Ambas são partes naturais e legítimas da experiência humana — não são escolhas, não são fases e não precisam de cura.<br>
+A terapia afirmativa não tenta mudar, questionar ou "consertar" a identidade ou a orientação de ninguém. As chamadas "terapias de conversão" — que tentam mudar a orientação sexual ou a identidade de gênero de uma pessoa — são consideradas pseudocientíficas, antiéticas e extremamente prejudiciais. No Brasil, elas são vedadas pelo Conselho Federal de Psicologia.</p>
+      <p><strong>Como a terapia pode apoiar:</strong></p>
+      <ul>
+        <li>Acompanhar o processo de autoconhecimento e autodescoberta da identidade, sem pressa e sem julgamento</li>
+        <li>Ajudar a lidar com o medo, a incerteza e a vulnerabilidade que muitas vezes acompanham o processo de assumir a própria identidade</li>
+        <li>Trabalhar a relação com a família e com o entorno social — especialmente quando há rejeição ou incompreensão</li>
+        <li>Apoiar pessoas trans em diferentes momentos da transição, incluindo o processo de tomada de decisões sobre o próprio corpo e identidade</li>
+        <li>Cuidar do luto que pode surgir quando se perde o apoio de pessoas importantes</li>
+        <li>Fortalecer a autoestima e a autoaceitação de quem cresceu em ambientes que invalidaram sua identidade</li>
+        <li>Ser um espaço de descanso — onde você não precisa educar ninguém, não precisa se defender e pode simplesmente ser</li>
+      </ul>
+    </div>
+
+    <div class="esp-divider"></div>
+
+    <!-- SEÇÃO 4 -->
+    <div class="esp-section">
+      <div class="esp-ico">
+        <svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="fist-s4">
+              <path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/>
+            </clipPath>
+          </defs>
+          <g clip-path="url(#fist-s4)">
+            <rect x="128" y="0" width="32" height="640" fill="#E40303"/>
+            <rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+            <rect x="192" y="0" width="32" height="640" fill="#FFED00"/>
+            <rect x="224" y="0" width="32" height="640" fill="#008026"/>
+            <rect x="256" y="0" width="32" height="640" fill="#004DFF"/>
+            <rect x="288" y="0" width="32" height="640" fill="#750787"/>
+            <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+          </g>
+        </svg>
+      </div>
+      <h2>Como a Terapia de Aceitação e Compromisso (ACT) pode <em>ajudar na sua jornada?</em></h2>
+      <p>A ACT é uma abordagem terapêutica baseada em evidências que se aplica muito bem ao cuidado de pessoas que vivem em contextos de opressão e discriminação — justamente porque ela não tenta mudar o mundo lá fora, mas trabalha a relação da pessoa com suas experiências internas, seus pensamentos e seus valores mais profundos.<br>
+Viver em um mundo que ainda discrimina significa conviver com pensamentos dolorosos, emoções difíceis e situações que muitas vezes fogem ao nosso controle. A ACT não promete eliminar esse sofrimento — mas oferece ferramentas para que ele não paralise a sua vida, ela não apaga o que você viveu, mas te ajuda a integrar essas experiências e a continuar construindo uma vida que faça sentido para você — com presença, com dignidade e com a liberdade de ser quem você é.</p>
+      <p><strong>Com a ACT, você vai aprender a:</strong></p>
+      <ul>
+        <li>Reconhecer e nomear o impacto que o racismo, a homofobia, a transfobia ou o machismo têm sobre seus pensamentos e emoções — sem minimizar e sem ser dominado por eles</li>
+        <li>Criar distância de pensamentos autocríticos e internalizados — aqueles que dizem que você é demais, de menos, errado ou insuficiente</li>
+        <li>Identificar seus valores mais profundos — quem você quer ser, como quer viver, o que realmente importa para você — independente do que o mundo diz sobre quem você deveria ser</li>
+        <li>Agir em direção a esses valores, mesmo quando o ambiente ainda é hostil e a dor ainda está presente</li>
+        <li>Desenvolver compaixão genuína por si mesmo — incluindo as partes que você aprendeu a esconder ou a ter vergonha</li>
+        <li>Construir uma relação mais leve e honesta com a própria identidade — não como um peso a carregar, mas como parte de quem você é</li>
+      </ul>
+     </div>
+
+    <!-- CTA -->
+    <div class="esp-cta">
+      <h3>Você merece um espaço que<br><em>realmente te entenda.</em></h3>
+      <p>Existir como você é não deveria exigir coragem — mas quando exige, você não precisa fazer isso sozinho. Entre em contato pelo WhatsApp e vamos conversar, sem julgamentos e no seu tempo. Atendo online para todo o Brasil e para brasileiros em qualquer parte do mundo.</p>
+      <br>
+      <a href="https://wa.me/5571991940263?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20Psicologia%20Afirmativa%20e%20Antirracista" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Fale comigo
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-bar">
+      © 2025 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados<br>
+      Este site tem caráter informativo e não substitui consulta profissional.
+    </div>
+  </div>
+</footer>
+
+
+<audio id="aud1" src="music1.mp3" loop preload="none"></audio>
+<audio id="aud2" src="music2.mp3" loop preload="none"></audio>
+<button class="audio-btn" id="audio-btn" title="Música">
+  <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+</button>
+<script>
+(function(){
+  const a1=document.getElementById('aud1');
+  const a2=document.getElementById('aud2');
+  const btn=document.getElementById('audio-btn');
+  let playing=false;
+  let started=false;
+
+  function startMusic(){
+    if(!started){
+      a1.volume=0.45;
+      a2.volume=0.55;
+      a1.play();
+      a2.play();
+      playing=true;
+      started=true;
+      btn.querySelector('.icon-play').style.display='none';
+      btn.querySelector('.icon-pause').style.display='block';
+      document.removeEventListener('click',onFirstClick);
+    }
+  }
+
+  function onFirstClick(e){
+    if(e.target.closest('.audio-btn')) return;
+    startMusic();
+  }
+
+  document.addEventListener('click', onFirstClick);
+
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    if(!started){ startMusic(); return; }
+    if(playing){
+      a1.pause(); a2.pause();
+      btn.querySelector('.icon-play').style.display='block';
+      btn.querySelector('.icon-pause').style.display='none';
+    } else {
+      a1.play(); a2.play();
+      btn.querySelector('.icon-play').style.display='none';
+      btn.querySelector('.icon-pause').style.display='block';
+    }
+    playing=!playing;
+  });
+})();
+</script>
+</body>
+</html>
+
+
