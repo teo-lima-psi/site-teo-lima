@@ -719,22 +719,13 @@
   </div>
 </footer>
 
-
-<audio id="aud1" src="music1.mp3" loop preload="none"></audio>
-<audio id="aud2" src="music2.mp3" loop preload="none"></audio>
-<audio id="aud3" src="music3.mp3" loop preload="none"></audio>
-<button class="audio-btn" id="audio-btn" id="audio-btn" title="Música">
-  <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-  <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-</button>
-<script>
-<audio id="aud1" src="music1.mp3" loop preload="none"></audio>
-<audio id="aud2" src="music2.mp3" loop preload="none"></audio>
-<audio id="aud3" src="music3.mp3" loop preload="none"></audio>
+<audio id="aud1" src="music1.mp3" loop preload="auto"></audio>
+<audio id="aud2" src="music2.mp3" loop preload="auto"></audio>
+<audio id="aud3" src="music3.mp3" loop preload="auto"></audio>
 
 <button class="audio-btn" id="audio-btn" title="Música">
     <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-    <svg class="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
 </button>
 
 <script>
@@ -743,22 +734,30 @@
     const a2=document.getElementById('aud2');
     const a3=document.getElementById('aud3');
     const btn=document.getElementById('audio-btn');
-    
-    // Garante que o ícone de pause comece escondido via JS
-    btn.querySelector('.icon-pause').style.display='none';
+    const iPlay = btn.querySelector('.icon-play');
+    const iPause = btn.querySelector('.icon-pause');
 
     let playing=false;
     let started=false;
 
     function startMusic(){
         if(!started){
-            a1.volume=0.55; a2.volume=0.50; a3.volume=0.45;
-            a1.play(); a2.play(); a3.play();
-            playing=true;
-            started=true;
-            btn.querySelector('.icon-play').style.display='none';
-            btn.querySelector('.icon-pause').style.display='block';
-            document.removeEventListener('click',onFirstClick);
+            // Volumes ajustados: 60, 55 e 50
+            a1.volume = 0.60; 
+            a2.volume = 0.55; 
+            a3.volume = 0.50;
+            
+            const p1 = a1.play(); const p2 = a2.play(); const p3 = a3.play();
+            
+            Promise.all([p1, p2, p3]).then(() => {
+                playing=true;
+                started=true;
+                iPlay.style.display='none';
+                iPause.style.display='block';
+                document.removeEventListener('click', onFirstClick);
+            }).catch(error => {
+                console.log("Interação necessária para tocar áudio.");
+            });
         }
     }
 
@@ -769,7 +768,7 @@
 
     document.addEventListener('click', onFirstClick);
 
-    btn.addEventListener('click',function(e){
+    btn.addEventListener('click', function(e){
         e.stopPropagation();
         if(!started){
             startMusic();
@@ -777,14 +776,14 @@
         }
         if(playing){
             a1.pause(); a2.pause(); a3.pause();
-            btn.querySelector('.icon-play').style.display='block';
-            btn.querySelector('.icon-pause').style.display='none';
+            iPlay.style.display='block';
+            iPause.style.display='none';
         } else {
             a1.play(); a2.play(); a3.play();
-            btn.querySelector('.icon-play').style.display='none';
-            btn.querySelector('.icon-pause').style.display='block';
+            iPlay.style.display='none';
+            iPause.style.display='block';
         }
-        playing = !playing; // Correção da atribuição
+        playing = !playing;
     });
 })();
 </script>
