@@ -711,12 +711,35 @@
       <p class="cusdis-sub">Sua experiência pode ajudar outras pessoas a dar o primeiro passo.</p>
       <div id="cusdis_thread" data-host="https://cusdis.com" data-app-id="662e685d-80a2-4a03-8f26-e90d9bf0092b" data-page-id="depoimentos" data-page-url="https://teolima.com/" data-page-title="Depoimentos"></div>
       <script>
-        window.CUSDIS_LOCALE = {powered_by:'Desenvolvido por Cusdis',post_comment:'Enviar depoimento',loading:'Carregando...',email:'E-mail (opcional)',nickname:'Nome',reply_placeholder:'Escreva seu depoimento aqui...',reply_btn:'Enviar',loading_comments:'Carregando depoimentos...',comments:'depoimentos',comment:'depoimento',no_comment:'Seja o primeiro a deixar um depoimento.'};
-        window.addEventListener('message', function(e){try{var iframe=document.querySelector('#cusdis_thread iframe');if(!iframe)return;var d=e.data;if(d&&typeof d==='object'){var h=d.height||(d.data&&d.data.height);if(h&&h>0){iframe.style.height=h+'px';iframe.style.minHeight=h+'px';}}}catch(err){}});
-        var cusdisTarget=document.getElementById('cusdis_thread');
-        if(cusdisTarget){new MutationObserver(function(){var iframe=cusdisTarget.querySelector('iframe');if(iframe&&!iframe.dataset.watched){iframe.dataset.watched='1';iframe.style.minHeight='600px';}}).observe(cusdisTarget,{childList:true,subtree:true});}
+        // Lazy load: carrega o Cusdis só quando o visitante rolar até esta seção
+        (function(){
+          var loaded=false;
+          var target=document.getElementById('cusdis_thread');
+          if(!target) return;
+          function loadCusdis(){
+            if(loaded) return;
+            loaded=true;
+            window.CUSDIS_LOCALE={powered_by:'Desenvolvido por Cusdis',post_comment:'Enviar depoimento',loading:'Carregando...',email:'E-mail (opcional)',nickname:'Nome',reply_placeholder:'Escreva seu depoimento aqui...',reply_btn:'Enviar',loading_comments:'Carregando depoimentos...',comments:'depoimentos',comment:'depoimento',no_comment:'Seja o primeiro a deixar um depoimento.'};
+            window.addEventListener('message',function(e){try{var iframe=document.querySelector('#cusdis_thread iframe');if(!iframe)return;var d=e.data;if(d&&typeof d==='object'){var h=d.height||(d.data&&d.data.height);if(h&&h>0){iframe.style.height=h+'px';iframe.style.minHeight=h+'px';}}}catch(err){}});
+            var obs2=new MutationObserver(function(){var iframe=target.querySelector('iframe');if(iframe&&!iframe.dataset.watched){iframe.dataset.watched='1';iframe.style.minHeight='600px';}});
+            obs2.observe(target,{childList:true,subtree:true});
+            var s=document.createElement('script');
+            s.src='https://cusdis.com/js/cusdis.es.js';
+            s.async=true; s.defer=true;
+            document.body.appendChild(s);
+          }
+          // Dispara quando o bloco de depoimentos aparecer na tela
+          if('IntersectionObserver' in window){
+            var io=new IntersectionObserver(function(entries){
+              if(entries[0].isIntersecting) loadCusdis();
+            },{rootMargin:'200px'});
+            io.observe(target);
+          } else {
+            // Fallback para navegadores antigos — carrega após 3s
+            setTimeout(loadCusdis, 3000);
+          }
+        })();
       </script>
-      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </div>
   </div>
 </section>
@@ -769,13 +792,13 @@
       <div class="foot-brand">Téo <span>Lima</span><p>Psicólogo Online · CRP 03/20310<br>Salvador – BA · Atendimento para todo o Brasil e brasileiros no exterior.</p></div>
       <div class="foot-col"><h3 style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-soft);margin-bottom:16px">Especialidades</h3><a href="luto.html">Perdas e Luto</a><a href="paliativos.html">Cuidados Paliativos</a><a href="afirmativa.html">Psicologia Afirmativa</a><a href="compulsao.html">Compulsões</a><a href="pcd.html">PcD, TDAH e Bariátrico</a><a href="psicopatologias.html">Depressão e Ansiedade</a></div>
       <div class="foot-col"><h4>Links Rápidos</h4><a href="#about">Sobre o psicólogo</a><a href="#abordagem">Abordagens (ACT e DBT)</a><a href="#how">Como funciona</a><a href="#faq">Dúvidas frequentes</a><a href="marcar-consulta.html">Marcar Sessão</a><a href="marcar-consulta.html#politica">Política de Cancelamento</a></div>
-      <div class="foot-col"><h4>Contato</h4><a href="mailto:contato@teolima.com">contato@teolima.com</a><p>Cel.: 71 99194-0263</p><a href="https://wa.me/5571991940263" target="_blank" rel="noopener">WhatsApp</a><a href="https://teolima.setmore.com/teolima" target="_blank" rel="noopener">Agendar sessão</a><p>📍 Salvador – BA</p><p>🌐 Atendimento online</p></div>
+      <div class="foot-col"><h4>Contato</h4><a href="/cdn-cgi/l/email-protection#64070b0a1005100b2410010b080d09054a070b09"><span class="__cf_email__" data-cfemail="e0838f8e9481948fa094858f8c898d81ce838f8d">[email&#160;protected]</span></a><p>Cel.: 71 99194-0263</p><a href="https://wa.me/5571991940263" target="_blank" rel="noopener">WhatsApp</a><a href="https://teolima.setmore.com/teolima" target="_blank" rel="noopener">Agendar sessão</a><p>📍 Salvador – BA</p><p>🌐 Atendimento online</p></div>
     </div>
     <div class="foot-bar">© 2026 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados<br>Este site tem caráter informativo e não substitui consulta profissional.</div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const revEls=document.querySelectorAll('.reveal');
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:0.12});
 revEls.forEach(el=>ro.observe(el));
