@@ -48,7 +48,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="preconnect" href="https://cusdis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap"/></noscript>
   <style>
   :root{
     /* Paleta B — Acolhedor & Humano */
@@ -104,8 +105,9 @@
   .btn svg{width:18px;height:18px;flex-shrink:0}
   .btn-blue{background:var(--terra);color:#fff;box-shadow:0 8px 22px rgba(200,120,86,.32)}
   .btn-blue:hover{background:var(--terra-deep);box-shadow:0 12px 32px rgba(200,120,86,.42)}
-  .btn-green{background:var(--whats);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.36);position:relative}
+  .btn-green{background:var(--whats);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.36);position:relative;text-shadow:0 1px 3px rgba(0,0,0,.45)}
   .btn-green:hover{background:var(--whats-deep);box-shadow:0 12px 32px rgba(37,211,102,.45)}
+  .btn-green svg{stroke:#0D3320;stroke-width:.6px;paint-order:stroke fill}
   .btn-green::before{content:"";position:absolute;inset:0;border-radius:100px;border:2px solid var(--whats);opacity:0;animation:waPulse 4s ease-out infinite}
   @keyframes waPulse{0%{transform:scale(1);opacity:.55}80%,100%{transform:scale(1.18);opacity:0}}
   .btn-white{background:#fff;color:var(--terra);box-shadow:0 6px 20px rgba(0,0,0,.10)}
@@ -475,6 +477,7 @@
         <a class="tag tg" href="paliativos.html">Psicologia Hospitalar</a>
         <a class="tag tl" href="paliativos.html">Cuidados Paliativos</a>
         <a class="tag tb" href="luto.html">Perdas e Luto</a>
+        <a class="tag tg" href="luto.html">Luto Migratório</a>
         <a class="tag tg" href="psicopatologias.html">Psicopatologias</a>
         <a class="tag tl" href="afirmativa.html">Abusos</a>
         <a class="tag tb" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
@@ -582,7 +585,7 @@
       <a href="luto.html" class="pc pb reveal">
         <div class="pc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></div>
         <h3>Perdas e Luto</h3>
-        <p>O luto não segue fórmulas prontas nem possui um prazo determinado. Quando a perda acontece; seja de alguém querido, de um animal de estimação, de um amor, de um sonho ou até da estabilidade financeira ou bens materiais, tudo muda profundamente dentro de nós. O mundo ao redor continua girando freneticamente enquanto estamos mais lentos e as pessoas costumam ter pressa para que a gente supere logo; o que pode tornar a dor solitária, silenciosa e sem cor. Mas quero que saiba algo fundamental: o peso que você carrega é real, seus sentimentos são legítimos e o processo do luto exige tempo para ser integrado à sua história. Você não precisa atravessar sozinho ou sem direção esse deserto de silêncio. Ofereço um suporte especializado, com profunda empatia e sem pressa, para acolher a sua dor. Vamos trabalhar juntos para reorganizar a sua vida, respeitando cada passo no seu próprio ritmo para costurar, aos poucos, todos os retalhos que podem ter ficado pelo caminho.</p>
+        <p>O luto não segue fórmulas prontas nem possui um prazo determinado — e também não é apenas a perda de uma pessoa. Inclui também o <strong>luto migratório</strong>: a dor silenciosa de quem deixou o Brasil, a família, os amigos e a vida que conhecia para começar tudo do zero em outro país. Quando a perda acontece; seja de alguém querido, de um animal de estimação, de um amor, de um sonho ou até da estabilidade financeira ou bens materiais, tudo muda profundamente dentro de nós. O mundo ao redor continua girando freneticamente enquanto estamos mais lentos e as pessoas costumam ter pressa para que a gente supere logo; o que pode tornar a dor solitária, silenciosa e sem cor. Mas quero que saiba algo fundamental: o peso que você carrega é real, seus sentimentos são legítimos e o processo do luto exige tempo para ser integrado à sua história. Você não precisa atravessar sozinho ou sem direção esse deserto de silêncio. Ofereço um suporte especializado, com profunda empatia e sem pressa, para acolher a sua dor. Vamos trabalhar juntos para reorganizar a sua vida, respeitando cada passo no seu próprio ritmo para costurar, aos poucos, todos os retalhos que podem ter ficado pelo caminho.</p>
         <span class="pc-arrow">Saiba mais →</span>
       </a>
       <a href="paliativos.html" class="pc pb reveal">

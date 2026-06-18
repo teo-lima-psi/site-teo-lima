@@ -48,7 +48,8 @@
   <link rel="icon" type="image/png" href="favicon.png"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Nunito:wght@300;400;500;600;700&family=Caveat:wght@400;500&display=swap"/></noscript>
   <style>
 
   /* ============================================================
@@ -113,8 +114,9 @@
   .btn-ghost:hover{color:var(--terra);border-color:var(--terra-soft);background:var(--terra-pale)}
   .btn-terra{background:var(--terra);color:#fff;box-shadow:0 4px 20px rgba(200,120,86,.38)}
   .btn-terra:hover{background:var(--terra-deep);box-shadow:0 8px 30px rgba(200,120,86,.42)}
-  .btn-green{background:var(--whats);color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.38)}
+  .btn-green{background:var(--whats);color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.38);text-shadow:0 1px 3px rgba(0,0,0,.45)}
   .btn-green:hover{background:var(--whats-deep);box-shadow:0 8px 30px rgba(37,211,102,.42)}
+  .btn-green svg{stroke:#0D3320;stroke-width:.6px;paint-order:stroke fill}
   .btn-white{background:#fff;color:var(--terra);box-shadow:0 4px 24px rgba(0,0,0,.13)}
   .btn-white:hover{box-shadow:0 10px 36px rgba(0,0,0,.18)}
 
