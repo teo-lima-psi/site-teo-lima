@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/especialidade-abuso-substancias.html", "destination": "/compulsao.html", "permanent": true },
+    { "source": "/especialidade-obesidade.html", "destination": "/pcd.html", "permanent": true },
+    { "source": "/especialidade-ansiedade-estresse.html", "destination": "/psicopatologias.html", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*\\.webp)",
