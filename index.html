@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) - carregado apos o load da pagina para nao competir com conteudo visivel -->
+<!-- Google tag (gtag.js) - carregado apenas apos interacao real da pessoa (rolar, tocar, mexer o mouse), com prazo maximo de seguranca -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JK9G9WR01W');
-  window.addEventListener('load', function(){
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W';
-    document.head.appendChild(s);
-  });
+  (function(){
+    var carregado = false;
+    function carregarGtag(){
+      if (carregado) return;
+      carregado = true;
+      eventos.forEach(function(ev){ window.removeEventListener(ev, carregarGtag, {passive:true}); });
+      clearTimeout(prazo);
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W';
+      document.head.appendChild(s);
+    }
+    var eventos = ['scroll','mousemove','touchstart','keydown','click'];
+    eventos.forEach(function(ev){ window.addEventListener(ev, carregarGtag, {passive:true, once:true}); });
+    var prazo = setTimeout(carregarGtag, 8000);
+  })();
 </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -153,14 +163,14 @@
   .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:100px;font-family:var(--font-b);font-size:.86rem;font-weight:700;cursor:pointer;border:none;transition:transform .25s,box-shadow .25s,background .25s}
   .btn:hover{transform:translateY(-2px)}
   .btn svg{width:18px;height:18px;flex-shrink:0}
-  .btn-blue{background:var(--terra);color:#fff;box-shadow:0 8px 22px rgba(200,120,86,.32)}
+  .btn-blue{background:#AE5D27;color:#fff;box-shadow:0 8px 22px rgba(200,120,86,.32)}
   .btn-blue:hover{background:var(--terra-deep);box-shadow:0 12px 32px rgba(200,120,86,.42)}
-  .btn-green{background:var(--whats);color:#fff;box-shadow:0 8px 22px rgba(37,211,102,.36);position:relative;text-shadow:0 1px 3px rgba(0,0,0,.45)}
+  .btn-green{background:var(--whats);color:#0B3D20;box-shadow:0 8px 22px rgba(37,211,102,.36);position:relative}
   .btn-green:hover{background:var(--whats-deep);box-shadow:0 12px 32px rgba(37,211,102,.45)}
   .btn-green svg{stroke:#0D3320;stroke-width:.6px;paint-order:stroke fill}
   .btn-green::before{content:"";position:absolute;inset:0;border-radius:100px;border:2px solid var(--whats);opacity:0;animation:waPulse 4s ease-out infinite}
   @keyframes waPulse{0%{transform:scale(1);opacity:.55}80%,100%{transform:scale(1.18);opacity:0}}
-  .btn-white{background:#fff;color:var(--terra);box-shadow:0 6px 20px rgba(0,0,0,.10)}
+  .btn-white{background:#fff;color:#AE5D27;box-shadow:0 6px 20px rgba(0,0,0,.10)}
   .btn-white:hover{box-shadow:0 12px 32px rgba(0,0,0,.16)}
   .btn-ghost{background:transparent;color:var(--text-mid);border:1.5px solid var(--border)}
   .btn-ghost:hover{border-color:var(--terra);color:var(--terra)}
@@ -452,6 +462,8 @@
   <a href="#faq" onclick="closeMobile()">Dúvidas</a>
   <a href="marcar-consulta.html" class="btn btn-blue" onclick="closeMobile()">Marcar Sessão</a>
 </div>
+
+<main>
 
 <!-- HERO -->
 <section id="hero">
@@ -836,19 +848,21 @@
 
 <!-- FLOATS removidos — botões da nav cobrem o site todo -->
 
+</main>
+
 <footer>
   <div class="container">
     <div class="foot-main">
       <div class="foot-brand">Téo <span>Lima</span><p>Psicólogo Online · CRP 03/20310<br>Salvador – BA · Atendimento para todo o Brasil e brasileiros no exterior.</p></div>
       <div class="foot-col"><h3 style="font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-soft);margin-bottom:16px">Especialidades</h3><a href="luto.html">Perdas e Luto</a><a href="paliativos.html">Cuidados Paliativos</a><a href="afirmativa.html">Psicologia Afirmativa</a><a href="compulsao.html">Compulsões</a><a href="pcd.html">PcD, TDAH e Bariátrico</a><a href="psicopatologias.html">Depressão e Ansiedade</a></div>
       <div class="foot-col"><h4>Links Rápidos</h4><a href="#about">Sobre o psicólogo</a><a href="#abordagem">Abordagens (ACT e DBT)</a><a href="#how">Como funciona</a><a href="#faq">Dúvidas frequentes</a><a href="marcar-consulta.html">Marcar Sessão</a><a href="marcar-consulta.html#politica">Política de Cancelamento</a></div>
-      <div class="foot-col"><h4>Contato</h4><a href="/cdn-cgi/l/email-protection#64070b0a1005100b2410010b080d09054a070b09"><span class="__cf_email__" data-cfemail="e0838f8e9481948fa094858f8c898d81ce838f8d">[email&#160;protected]</span></a><p>Cel.: 71 99651-2547</p><a href="https://wa.me/5571996512547" target="_blank" rel="noopener">WhatsApp</a><a href="https://teolima.setmore.com/teolima" target="_blank" rel="noopener">Agendar sessão</a><p>📍 Salvador – BA</p><p>🌐 Atendimento online</p></div>
+      <div class="foot-col"><h4>Contato</h4><a href="mailto:contato@teolima.com">contato@teolima.com</a><p>Cel.: 71 99651-2547</p><a href="https://wa.me/5571996512547" target="_blank" rel="noopener">WhatsApp</a><a href="https://teolima.setmore.com/teolima" target="_blank" rel="noopener">Agendar sessão</a><p>📍 Salvador – BA</p><p>🌐 Atendimento online</p></div>
     </div>
     <div class="foot-bar">© 2026 Téo Lima · Psicólogo · CRP 03/20310 · Todos os direitos reservados<br>Este site tem caráter informativo e não substitui consulta profissional.</div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const revEls=document.querySelectorAll('.reveal');
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:0.12});
 revEls.forEach(el=>ro.observe(el));

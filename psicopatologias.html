@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) - carregado apos o load da pagina para nao competir com conteudo visivel -->
+<!-- Google tag (gtag.js) - carregado apenas apos interacao real da pessoa (rolar, tocar, mexer o mouse), com prazo maximo de seguranca -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JK9G9WR01W');
-  window.addEventListener('load', function(){
-    var s = document.createElement('script');
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W';
-    document.head.appendChild(s);
-  });
+  (function(){
+    var carregado = false;
+    function carregarGtag(){
+      if (carregado) return;
+      carregado = true;
+      eventos.forEach(function(ev){ window.removeEventListener(ev, carregarGtag, {passive:true}); });
+      clearTimeout(prazo);
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W';
+      document.head.appendChild(s);
+    }
+    var eventos = ['scroll','mousemove','touchstart','keydown','click'];
+    eventos.forEach(function(ev){ window.addEventListener(ev, carregarGtag, {passive:true, once:true}); });
+    var prazo = setTimeout(carregarGtag, 8000);
+  })();
 </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -162,10 +172,10 @@
   .btn-sm{padding:9px 20px;font-size:.8rem}
   .btn-ghost{background:transparent;color:var(--text-mid);border:1.5px solid var(--border)}
   .btn-ghost:hover{color:var(--terra);border-color:var(--terra-soft);background:var(--terra-pale)}
-  .btn-green{background:var(--whats);color:#fff;box-shadow:0 4px 20px rgba(37,211,102,.38);text-shadow:0 1px 3px rgba(0,0,0,.45)}
+  .btn-green{background:var(--whats);color:#0B3D20;box-shadow:0 4px 20px rgba(37,211,102,.38)}
   .btn-green:hover{background:var(--whats-deep);box-shadow:0 8px 30px rgba(37,211,102,.42)}
   .btn-green svg{stroke:#0D3320;stroke-width:.6px;paint-order:stroke fill}
-  .btn-white{background:#fff;color:var(--terra);box-shadow:0 4px 24px rgba(0,0,0,.13)}
+  .btn-white{background:#fff;color:#AE5D27;box-shadow:0 4px 24px rgba(0,0,0,.13)}
   .btn-white:hover{box-shadow:0 10px 36px rgba(0,0,0,.18)}
 
   /* Footer */
@@ -252,6 +262,8 @@
   </div>
 </nav>
 
+<main>
+
 <section class="esp-hero">
   <div class="container reveal">
     <div class="esp-ico">🧠</div>
@@ -331,6 +343,8 @@ A psicologia não existe apenas para momentos de crise. Ela existe para que voc�
 
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="container">
