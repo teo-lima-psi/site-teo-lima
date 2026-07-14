@@ -186,6 +186,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
   .nav-right{display:flex;align-items:center;gap:10px;align-self:flex-start;margin-top:2px}
   .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
+  .nav-logo-group .nav-logo{margin-left:10px}
   .nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:500;color:var(--ink);letter-spacing:-.005em}
   .nav-logo span{color:var(--terra);font-style:italic}
   .nav-handnote{font-family:var(--font-h);font-size:1.15rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.5px 0 0 currentColor,-.5px 0 0 currentColor}
@@ -302,7 +303,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   #abordagem .about-footer{margin-top:-45px}
   #about .about-footer{margin-top:-10px}
   .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .hero-tags{justify-content:flex-start;margin-top:22px}
+  .hero-tags{justify-content:flex-start;margin-bottom:24px}
   .tag-break3{display:block;flex-basis:100%;height:0}
   #about .about-footer .tags{margin-top:68px}
   #abordagem .about-footer .tags{margin-top:68px}
@@ -495,17 +496,6 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-pill">Psicólogo · CRP 03/20310 · Atendimento Online</div>
-        <h1 class="hero-h1">Psicologia que respeita sua história e <em>honra sua vida.</em></h1>
-        <span class="hero-handnote">no seu tempo</span><br>
-        <p class="hero-sub" style="margin-bottom:42px">Um espaço seguro, acolhedor e sem julgamentos, onde você pode ser quem é e encontrar recursos para se autoconhecer, autoafirmar e atravessar os desafios emocionais, o luto e as transições da vida com suporte especializado.</p>
-        <div class="hero-stats">
-          <div class="hero-stat"><strong>+7</strong><span>Anos de experiência clínica</span></div>
-          <div class="stat-div"></div>
-          <div class="hero-stat"><strong>ACT</strong><span>Aceitação e Compromisso</span></div>
-          <div class="stat-div"></div>
-          <div class="hero-stat"><strong>TBE</strong><span>Baseada em Evidências</span></div>
-        </div>
         <div class="tags hero-tags">
           <a class="tag taz" href="#abordagem">Autoconhecimento</a>
           <a class="tag tam" href="afirmativa.html">Autoafirmação</a>
@@ -519,6 +509,18 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
           <a class="tag tvm" href="afirmativa.html">Antirracismo</a>
           <a class="tag taz" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
         </div>
+        <h1 class="hero-h1">Psicologia que respeita sua história e <em>honra sua vida.</em></h1>
+        <span class="hero-handnote">no seu tempo</span><br>
+        <p class="hero-sub" style="margin-bottom:42px">Um espaço seguro, acolhedor e sem julgamentos, onde você pode ser quem é e encontrar recursos para se autoconhecer, autoafirmar e atravessar os desafios emocionais, o luto e as transições da vida com suporte especializado.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>+7</strong><span>Anos de experiência clínica</span></div>
+          <div class="stat-div"></div>
+          <div class="hero-stat"><strong>ACT</strong><span>Aceitação e Compromisso</span></div>
+          <div class="stat-div"></div>
+          <div class="hero-stat"><strong>TBE</strong><span>Baseada em Evidências</span></div>
+        </div>
+        <div class="hero-pill">Psicólogo · CRP 03/20310 · Atendimento Online</div>
+      </div>
       </div>
       <div class="hero-visual">
         <div class="photo-wrap">
