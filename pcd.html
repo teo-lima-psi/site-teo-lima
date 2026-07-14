@@ -157,8 +157,10 @@
     box-shadow:0 1px 0 var(--border);transition:padding .3s}
   #nav.scrolled{padding:12px 0}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
   .nav-logo{font-family:var(--font-d);font-size:1.2rem;font-weight:500;color:var(--ink)}
   .nav-logo span{color:var(--terra)}
+  .nav-handnote{font-family:var(--font-h);font-size:.72rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.4px 0 0 currentColor,-.4px 0 0 currentColor}
   .nav-links{display:flex;align-items:center;gap:4px}
   .nav-links a{font-size:.82rem;font-weight:600;color:var(--text-mid);padding:7px 14px;border-radius:100px;transition:color .2s,background .2s}
   .nav-links a:hover{color:var(--terra);background:var(--terra-pale)}
@@ -254,7 +256,10 @@
 
 <nav id="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+      <span class="nav-handnote">Minha história molda a forma como eu escuto a sua</span>
+    </div>
     <div class="nav-actions">
       <a href="index.html#problems" class="btn btn-ghost btn-sm">← Voltar</a>
       <a href="https://wa.me/5571996512547?text=Olá%20Téo!%20Quero%20saber%20mais%20sobre%20atendimento%20para%20PcD%2C%20TDAH%20e%20Bariátrico" class="btn btn-green btn-sm" target="_blank" rel="noopener">

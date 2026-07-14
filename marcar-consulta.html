@@ -189,23 +189,28 @@
   .reveal.visible{opacity:1;transform:translateY(0)}
 
   /* Nav */
-  #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:20px 0;transition:background .4s,padding .3s,box-shadow .3s}
-  #nav.scrolled{background:rgba(244,235,225,.92);backdrop-filter:blur(16px);padding:13px 0;box-shadow:0 1px 0 var(--border)}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 0 16px;transition:background .4s,padding .3s,box-shadow .3s}
+  #nav.scrolled{background:rgba(244,235,225,.92);backdrop-filter:blur(16px);padding:10px 0 11px;box-shadow:0 1px 0 var(--border)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .nav-right{display:flex;align-items:center;gap:10px}
+  .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
   .nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:500;color:var(--ink);letter-spacing:-.005em}
   .nav-logo span{color:var(--terra);font-style:italic}
-  .nav-links{display:flex;align-items:center;gap:22px;list-style:none}
-  .nav-links a{font-size:.78rem;font-weight:600;color:var(--text-mid);transition:color .2s;position:relative}
-  .nav-links a:hover{color:var(--terra)}
-  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-handnote{font-family:var(--font-h);font-size:.82rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.4px 0 0 currentColor,-.4px 0 0 currentColor}
+  .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+  .nav-links a{font-size:.74rem;font-weight:700;color:#fff;transition:background .25s,box-shadow .25s;padding:7px 14px;border-radius:100px;background:#AE5D27;box-shadow:0 4px 12px rgba(200,120,86,.28)}
+  .nav-links a:hover{background:var(--terra-deep);box-shadow:0 6px 18px rgba(200,120,86,.38)}
   .nav-btn{padding:9px 20px;font-size:.78rem}
+  .nav-btn svg{width:14px;height:14px;flex-shrink:0}
   .nav-actions{display:flex;align-items:center;gap:10px}
-  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger{display:none;position:relative;background:#AE5D27;border:none;border-radius:50%;width:23px;height:23px;cursor:pointer;padding:0;box-shadow:0 3px 8px rgba(200,120,86,.28)}
+  .hamburger span{position:absolute;left:50%;width:13px;height:1.5px;background:#fff;border-radius:2px;transform:translateX(-50%);transition:transform .3s,opacity .3s}
+  .hamburger span:nth-child(1){top:6px}
+  .hamburger span:nth-child(2){top:11px}
+  .hamburger span:nth-child(3){top:16px}
+  .hamburger.open span:nth-child(1){transform:translateX(-50%) translateY(4px) rotate(45deg)}
   .hamburger.open span:nth-child(2){opacity:0}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hamburger.open span:nth-child(3){transform:translateX(-50%) translateY(-4px) rotate(-45deg)}
   .mobile-menu{display:none;position:fixed;inset:0;background:rgba(244,235,225,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px}
   .mobile-menu.open{display:flex}
   .mobile-menu a{font-family:var(--font-d);font-size:1.5rem;color:var(--ink);font-style:italic}
@@ -233,6 +238,12 @@
   @media(max-width:900px){
     .nav-links{display:none}
     .hamburger{display:flex}
+    .nav-btn{padding:0;width:23px;height:23px;justify-content:center;border-radius:50%}
+    .nav-btn svg{width:13px;height:13px}
+    .nav-btn .btn-label{display:none}
+    .nav-actions{gap:6px}
+    .nav-right{gap:6px;align-self:flex-start;margin-top:2px}
+    .btn-green .wa-icon{fill:#fff;stroke:#000;stroke-width:.9px;paint-order:stroke fill}
   }
   @media(max-width:560px){
     .foot-main{flex-direction:column}
@@ -379,7 +390,10 @@
 
 <nav id="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+      <span class="nav-handnote">Minha história molda a forma como eu escuto a sua</span>
+    </div>
     <div class="nav-actions">
       <a href="index.html" class="btn btn-ghost btn-sm">← Voltar</a>
       <a href="https://wa.me/5571996512547?text=Olá%20Téo!%20Quero%20tirar%20uma%20dúvida%20antes%20de%20marcar." class="btn btn-green btn-sm" target="_blank" rel="noopener">

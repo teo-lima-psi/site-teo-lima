@@ -181,23 +181,28 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .reveal.visible{opacity:1;transform:translateY(0)}
 
   /* ===== NAV ===== */
-  #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:20px 0;transition:background .4s,padding .3s,box-shadow .3s}
-  #nav.scrolled{background:rgba(244,235,225,.92);backdrop-filter:blur(16px);padding:13px 0;box-shadow:0 1px 0 var(--border)}
+  #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 0 16px;transition:background .4s,padding .3s,box-shadow .3s}
+  #nav.scrolled{background:rgba(244,235,225,.92);backdrop-filter:blur(16px);padding:10px 0 11px;box-shadow:0 1px 0 var(--border)}
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .nav-right{display:flex;align-items:center;gap:10px}
+  .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
   .nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:500;color:var(--ink);letter-spacing:-.005em}
   .nav-logo span{color:var(--terra);font-style:italic}
-  .nav-links{display:flex;align-items:center;gap:22px;list-style:none}
-  .nav-links a{font-size:.78rem;font-weight:600;color:var(--text-mid);transition:color .2s;position:relative}
-  .nav-links a:hover{color:var(--terra)}
-  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-  .nav-links a:hover::after{transform:scaleX(1)}
+  .nav-handnote{font-family:var(--font-h);font-size:.82rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.4px 0 0 currentColor,-.4px 0 0 currentColor}
+  .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
+  .nav-links a{font-size:.74rem;font-weight:700;color:#fff;transition:background .25s,box-shadow .25s;padding:7px 14px;border-radius:100px;background:#AE5D27;box-shadow:0 4px 12px rgba(200,120,86,.28)}
+  .nav-links a:hover{background:var(--terra-deep);box-shadow:0 6px 18px rgba(200,120,86,.38)}
   .nav-btn{padding:9px 20px;font-size:.78rem}
+  .nav-btn svg{width:14px;height:14px;flex-shrink:0}
   .nav-actions{display:flex;align-items:center;gap:10px}
-  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-  .hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}
-  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger{display:none;position:relative;background:#AE5D27;border:none;border-radius:50%;width:23px;height:23px;cursor:pointer;padding:0;box-shadow:0 3px 8px rgba(200,120,86,.28)}
+  .hamburger span{position:absolute;left:50%;width:13px;height:1.5px;background:#fff;border-radius:2px;transform:translateX(-50%);transition:transform .3s,opacity .3s}
+  .hamburger span:nth-child(1){top:6px}
+  .hamburger span:nth-child(2){top:11px}
+  .hamburger span:nth-child(3){top:16px}
+  .hamburger.open span:nth-child(1){transform:translateX(-50%) translateY(4px) rotate(45deg)}
   .hamburger.open span:nth-child(2){opacity:0}
-  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hamburger.open span:nth-child(3){transform:translateX(-50%) translateY(-4px) rotate(-45deg)}
   .mobile-menu{display:none;position:fixed;inset:0;background:rgba(244,235,225,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px}
   .mobile-menu.open{display:flex}
   .mobile-menu a{font-family:var(--font-d);font-size:1.5rem;color:var(--ink);font-style:italic}
@@ -277,6 +282,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .about-header{margin-bottom:24px}
   .about-header .title{margin-top:8px}
+  .about-handnote{display:inline-block;font-family:var(--font-h);font-size:1.4rem;color:var(--moss);font-weight:600;transform:rotate(-2deg);margin-bottom:6px}
   .about-text p,.about-footer p{color:var(--text-mid);font-size:.94rem;margin-bottom:16px;text-align:justify}
   .about-text p strong,.about-footer p strong{color:var(--ink);font-weight:600}
   .about-frame{position:relative;border-radius:64% 36% 52% 48% / 50% 50% 50% 50%;overflow:hidden;background:linear-gradient(135deg,var(--terra-soft),var(--terra-deep));box-shadow:0 30px 70px rgba(168,89,60,.22);min-height:480px;}
@@ -294,12 +300,18 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   #abordagem .about-footer{margin-top:-45px}
   #about .about-footer{margin-top:-10px}
   .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .hero-tags{justify-content:flex-start;margin-top:22px}
+  .tag-break3{display:block;flex-basis:100%;height:0}
   #about .about-footer .tags{margin-top:68px}
   #abordagem .about-footer .tags{margin-top:68px}
   .tag{font-size:.72rem;font-weight:700;padding:7px 15px;border-radius:100px;letter-spacing:.02em;text-decoration:none;cursor:pointer;transition:transform .22s,box-shadow .22s,filter .22s;display:inline-block;border:1px solid transparent}
   .tag.tb{background:var(--terra-pale);color:var(--terra-deep);border-color:rgba(200,120,86,.25)}
   .tag.tg{background:var(--moss-pale);color:var(--moss-deep);border-color:rgba(90,114,81,.25)}
   .tag.tl{background:#F4E8D6;color:var(--gold);border-color:rgba(182,140,92,.30)}
+  .tag.taz{background:#DCE7F2;color:#2F5D82;border-color:rgba(47,93,130,.28)}
+  .tag.tam{background:#FBF0CE;color:#8A6B1A;border-color:rgba(154,120,20,.30)}
+  .tag.tvd{background:var(--moss-pale);color:var(--moss-deep);border-color:rgba(90,114,81,.25)}
+  .tag.tvm{background:#F6DCDC;color:#A13B3B;border-color:rgba(161,59,59,.28)}
   .tag:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(168,89,60,.18);filter:brightness(1.03)}
 
   /* ===== ESPECIALIDADES ===== */
@@ -410,7 +422,6 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
 
   @media(max-width:900px){
     .hero-inner{grid-template-columns:1fr;gap:48px}
-    .hero-visual{order:-1}
     .photo-wrap{max-width:280px;margin:0 auto}
     .about-inner{grid-template-columns:1fr;gap:48px}
     .about-frame{min-height:380px;max-width:420px;margin:0 auto}
@@ -420,6 +431,12 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
     .gallery-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     .hamburger{display:flex}
+    .nav-btn{padding:0;width:23px;height:23px;justify-content:center;border-radius:50%}
+    .nav-btn svg{width:13px;height:13px}
+    .nav-btn .btn-label{display:none}
+    .nav-actions{gap:6px}
+    .nav-right{gap:6px;align-self:flex-start;margin-top:2px}
+    .btn-green .wa-icon{fill:#fff;stroke:#000;stroke-width:.9px;paint-order:stroke fill}
     .how-caricatura-frame{max-width:340px}
     .hero-stats{gap:18px;flex-wrap:wrap}
   }
@@ -438,7 +455,10 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
 <!-- NAV -->
 <nav id="nav">
   <div class="container nav-inner">
-    <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+    <div class="nav-logo-group">
+      <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
+      <span class="nav-handnote">Minha história molda a forma como eu escuto a sua</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#about">Sobre</a></li>
       <li><a href="#abordagem">Abordagem</a></li>
@@ -447,11 +467,13 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
       <li><a href="#testimonials">Depoimentos</a></li>
       <li><a href="#faq">Dúvidas</a></li>
     </ul>
-    <div class="nav-actions">
-      <a href="marcar-consulta.html" class="btn btn-blue nav-btn">Marcar Sessão</a>
-      <a href="https://wa.me/5571996512547?text=Ol%C3%A1%20T%C3%A9o!%20Vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida." class="btn btn-green nav-btn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Fale Comigo</a>
+    <div class="nav-right">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <div class="nav-actions">
+        <a href="marcar-consulta.html" class="btn btn-blue nav-btn"><svg class="cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg><span class="btn-label">Marcar Sessão</span></a>
+        <a href="https://wa.me/5571996512547?text=Ol%C3%A1%20T%C3%A9o!%20Vim%20pelo%20site%20e%20quero%20tirar%20uma%20d%C3%BAvida." class="btn btn-green nav-btn" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="btn-label">Fale Comigo</span></a>
+      </div>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
@@ -482,6 +504,19 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
           <div class="hero-stat"><strong>ACT</strong><span>Aceitação e Compromisso</span></div>
           <div class="stat-div"></div>
           <div class="hero-stat"><strong>TBE</strong><span>Baseada em Evidências</span></div>
+        </div>
+        <div class="tags hero-tags">
+          <a class="tag taz" href="#abordagem">Autoconhecimento</a>
+          <a class="tag tam" href="afirmativa.html">Autoafirmação</a>
+          <a class="tag tvd" href="luto.html">Perdas e Luto</a>
+          <a class="tag tvm" href="psicopatologias.html">Idosos</a>
+          <span class="tag-break3"></span>
+          <a class="tag taz" href="luto.html">Luto Migratório</a>
+          <a class="tag tam" href="paliativos.html">Psicologia Hospitalar</a>
+          <span class="tag-break3"></span>
+          <a class="tag tvd" href="paliativos.html">Cuidados Paliativos</a>
+          <a class="tag tvm" href="afirmativa.html">Antirracismo</a>
+          <a class="tag taz" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -517,6 +552,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
           <span class="label ll">Sobre o psicólogo</span>
           <h2 class="title">Olá, eu sou <em class="tl">Téo Lima</em></h2>
         </div>
+        <span class="about-handnote">Minha história molda a forma como eu escuto a sua</span>
         <p>Graduei-me em Psicologia pela <strong>Universidade Federal da Bahia (UFBA)</strong> e possuo especializações em <strong>Cuidados Paliativos</strong> e em <strong>Psicologia Hospitalar</strong>, além de formações em <strong>Terapia de Aceitação e Compromisso (ACT)</strong> com <strong>Narrativas Funcionais</strong>, <strong>Saúde Mental</strong>, <strong>Dependência Química</strong>, <strong>Transtornos Alimentares</strong> e <strong>Psicologia Antirracista e Afirmativa</strong>. Estou atualmente em pós-graduação em <strong>Terapia Comportamental Dialética (DBT)</strong> pela <strong>Faculdade Metropolitana</strong>.</p>
         <p>Minha trajetória foi construída no cuidado real com pessoas em momentos de grande vulnerabilidade. Tive uma proveitosa imersão de aprendizado na <strong>Ala Infantil e na UTI Infantil do Hospital das Clínicas da UFBA</strong>, além de experiências igualmente enriquecedoras no <strong>CETAD/UFBA</strong> (referência nacional no tratamento de dependência química com foco em Redução de Danos). Essas profundas formações práticas me deram algo que nenhum livro ensina: a capacidade de estar presente, de verdade, nos momentos mais difíceis da vida de alguém.</p>
         <p>Atuo na Psicologia Clínica há mais de <strong>7 anos</strong>, incluindo experiências com <strong>Terapia Breve</strong>, e desde 2022 ofereço atendimento voluntário no <strong>CECOM</strong> (Centro Comunitário Clériston Andrade), em Salvador, por acreditar que cuidar de pessoas não deve depender apenas da capacidade financeira. A Psicologia precisa chegar a todas as pessoas e classes sociais que eu puder humanamente alcançar.</p>
@@ -532,26 +568,17 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
       <p>Atendo com sensibilidade à diversidade de gênero e sexualidade. Como pessoa com deficiência visual monocular e bariátrico, carrego na prática clínica uma perspectiva que só quem viveu conhece: o significado de enfrentar o mundo de um jeito diferente e, ainda assim, seguir em frente.</p>
       <p>Ofereço horários flexíveis que incluem noite, madrugada e até sábados; atendendo quem não consegue nenhum espaço durante a semana, ou só tem horário depois do trabalho, assim como quem se sente mais à vontade quando a cidade dorme, em momentos de crise que não escolhem hora, além de brasileiros que estão em qualquer parte do mundo com diversos fusos horários.</p>
       <div class="tags">
-        <a class="tag tb" href="#abordagem">ACT</a>
-        <a class="tag tg" href="#abordagem-dbt">DBT</a>
-        <a class="tag tl" href="compulsao.html">Compulsão</a>
-        <a class="tag tl" href="#abordagem">Autoconhecimento</a>
-        <a class="tag tb" href="afirmativa.html">Autoafirmação</a>
-        <a class="tag tg" href="paliativos.html">Psicologia Hospitalar</a>
-        <a class="tag tl" href="paliativos.html">Cuidados Paliativos</a>
-        <a class="tag tb" href="luto.html">Perdas e Luto</a>
-        <a class="tag tg" href="luto.html">Luto Migratório</a>
-        <a class="tag tg" href="psicopatologias.html">Psicopatologias</a>
-        <a class="tag tl" href="afirmativa.html">Abusos</a>
-        <a class="tag tb" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
-        <a class="tag tg" href="psicopatologias.html">Idosos</a>
-        <a class="tag tl" href="compulsao.html">Obesidade</a>
-        <a class="tag tb" href="compulsao.html">Redução de Danos</a>
-        <a class="tag tg" href="psicopatologias.html">Depressão, Ansiedade e Estresse</a>
-        <a class="tag tl" href="compulsao.html">Álcool, drogas e outras substâncias</a>
-        <a class="tag tb" href="compulsao.html">Transtornos Alimentares</a>
-        <a class="tag tg" href="compulsao.html">Dependências</a>
-        <a class="tag tl" href="afirmativa.html">Antirracismo</a>
+        <a class="tag taz" href="#abordagem">ACT</a>
+        <a class="tag tam" href="#abordagem-dbt">DBT</a>
+        <a class="tag tvd" href="compulsao.html">Compulsão</a>
+        <a class="tag tvm" href="psicopatologias.html">Psicopatologias</a>
+        <a class="tag taz" href="afirmativa.html">Abusos</a>
+        <a class="tag tam" href="compulsao.html">Obesidade</a>
+        <a class="tag tvd" href="compulsao.html">Redução de Danos</a>
+        <a class="tag tvm" href="psicopatologias.html">Depressão, Ansiedade e Estresse</a>
+        <a class="tag taz" href="compulsao.html">Álcool, drogas e outras substâncias</a>
+        <a class="tag tam" href="compulsao.html">Transtornos Alimentares</a>
+        <a class="tag tvd" href="compulsao.html">Dependências</a>
       </div>
     </div>
   </div>
@@ -581,12 +608,12 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
       <p>Para isso, a compreensão do comportamento é dividida em dois lados complementares "o <strong>Lado A</strong> e o <strong>Lado B</strong>". Um mesmo comportamento pode ter nascido como resposta de sobrevivência num ambiente familiar ou social específico: ele pode trazer sofrimento em determinados contextos da vida (Lado A) e, ao mesmo tempo, revelar enormes vantagens e recursos em outros (Lado B). Um bom exemplo é o estresse e a ansiedade, que podem gerar conflitos nos relacionamentos familiares, mas trazer grandes vantagens em algumas atividades profissionais ou ambientes corporativos. Compreender essa dualidade é o que permite ao paciente deixar de lutar contra si mesmo e começar a agir com mais consciência e propósito.</p>
       <p>Não se trata de fingir que tudo está bem, nem de forçar uma positividade que não condiz com o que você vive. Trata-se de algo muito mais honesto e poderoso: aprender a conviver com o que você sente sem que isso dite quem você é ou o que você pode fazer. Porque a vida que você quer construir não precisa esperar a dor passar — ela pode começar agora, exatamente de onde você está. Juntas, a ACT e as Narrativas Funcionais trabalham a <strong>Flexibilidade Psicológica — que é a capacidade de estar presente, aceitar o que não pode ser mudado e agir com propósito, mesmo quando a dor ainda está lá.</strong></p>
       <div class="tags">
-        <a class="tag tg" href="#abordagem">ACT</a>
-        <a class="tag tb" href="#abordagem">Narrativas Funcionais</a>
-        <a class="tag tl" href="#abordagem">Flexibilidade Psicológica</a>
-        <a class="tag tg" href="#abordagem">Transdiagnóstica</a>
-        <a class="tag tb" href="#abordagem">Lado A e Lado B</a>
-        <a class="tag tl" href="#abordagem">Baseada em Evidências</a>
+        <a class="tag taz" href="#abordagem">ACT</a>
+        <a class="tag tam" href="#abordagem">Narrativas Funcionais</a>
+        <a class="tag tvd" href="#abordagem">Flexibilidade Psicológica</a>
+        <a class="tag tvm" href="#abordagem">Transdiagnóstica</a>
+        <a class="tag taz" href="#abordagem">Lado A e Lado B</a>
+        <a class="tag tam" href="#abordagem">Baseada em Evidências</a>
       </div>
 
       <!-- DBT — em formação -->
