@@ -15,9 +15,10 @@
       eventos.forEach(function(ev){ window.removeEventListener(ev, carregarGtag, {passive:true}); });
       clearTimeout(prazo);
       var s = document.createElement('script');
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W';
+      if (window.trustedTypes && trustedTypes.createPolicy) { var gtagPolicy = trustedTypes.createPolicy('gtag-loader', { createScriptURL: function (url) { return url; } }); s.src = gtagPolicy.createScriptURL('https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W'); } else { s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JK9G9WR01W'; }
       document.head.appendChild(s);
     }
+document.addEventListener('click', function(e){ var link = e.target.closest('a'); if (!link) return; var href = link.getAttribute('href') || ''; var method = null; if (href.indexOf('wa.me') > -1) method = 'whatsapp'; else if (href.indexOf('setmore.com') > -1) method = 'agendamento_online'; else if (href.indexOf('tel:') === 0) method = 'telefone'; else if (href.indexOf('mailto:') === 0) method = 'email'; if (method && typeof gtag === 'function') { gtag('event', 'generate_lead', {method: method}); } });
     var eventos = ['scroll','mousemove','touchstart','keydown','click'];
     eventos.forEach(function(ev){ window.addEventListener(ev, carregarGtag, {passive:true, once:true}); });
     var prazo = setTimeout(carregarGtag, 8000);
