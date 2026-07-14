@@ -188,12 +188,12 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
   .nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:500;color:var(--ink);letter-spacing:-.005em}
   .nav-logo span{color:var(--terra);font-style:italic}
-  .nav-handnote{font-family:var(--font-h);font-size:.82rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.4px 0 0 currentColor,-.4px 0 0 currentColor}
+  .nav-handnote{font-family:var(--font-h);font-size:1.15rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.5px 0 0 currentColor,-.5px 0 0 currentColor}
   .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
   .nav-links a{font-size:.74rem;font-weight:700;color:#fff;transition:background .25s,box-shadow .25s;padding:7px 14px;border-radius:100px;background:#AE5D27;box-shadow:0 4px 12px rgba(200,120,86,.28);white-space:nowrap}
   .nav-links a:hover{background:var(--terra-deep);box-shadow:0 6px 18px rgba(200,120,86,.38)}
-  .nav-btn{padding:0;width:23px;height:23px;justify-content:center;border-radius:50%}
-  .nav-btn svg{width:13px;height:13px;flex-shrink:0}
+  .nav-btn{padding:0;width:44px;height:44px;justify-content:center;border-radius:50%;box-shadow:0 6px 18px rgba(200,120,86,.4)}
+  .nav-btn svg{width:20px;height:20px;flex-shrink:0}
   .nav-btn .btn-label{display:none}
   .btn-green .wa-icon{fill:#fff;stroke:#000;stroke-width:.9px;paint-order:stroke fill}
   .nav-actions{display:flex;align-items:center;gap:10px}
@@ -433,6 +433,9 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
     .gallery-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     .hamburger{display:flex}
+    .nav-handnote{font-size:.82rem}
+    .nav-btn{width:23px;height:23px;box-shadow:0 3px 8px rgba(200,120,86,.28)}
+    .nav-btn svg{width:13px;height:13px}
     .nav-actions{gap:6px}
     .nav-right{gap:6px}
     .how-caricatura-frame{max-width:340px}
