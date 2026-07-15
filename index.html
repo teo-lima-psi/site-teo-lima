@@ -220,6 +220,11 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   @keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.10);opacity:1}}
 
   .hero-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
+  .hero-top{margin-bottom:56px}
+  .hero-left{display:flex;flex-direction:column}
+  .hero-left .hero-pill{order:1}
+  .hero-left .hero-stats{order:2;flex-wrap:wrap;row-gap:16px}
+  .hero-left .hero-sub{order:3}
   .hero-pill{display:inline-flex;align-items:center;gap:9px;background:rgba(200,120,86,.10);border:1px solid rgba(200,120,86,.28);color:var(--terra-deep);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:8px 18px;border-radius:100px;margin-bottom:24px;animation:fadeUp .8s ease both}
   .hero-pill::before{content:'';width:7px;height:7px;background:var(--terra);border-radius:50%;animation:pulseDot 2.4s ease-in-out infinite}
   @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.6}}
@@ -426,6 +431,8 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
 
   @media(max-width:900px){
     .hero-inner{grid-template-columns:1fr;gap:48px}
+    .hero-left .hero-pill{order:3}
+    .hero-left .hero-sub{order:1}
     .photo-wrap{max-width:280px;margin:0 auto}
     .about-inner{grid-template-columns:1fr;gap:48px}
     .about-frame{min-height:380px;max-width:420px;margin:0 auto}
@@ -495,32 +502,35 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
 <section id="hero">
   <div class="hero-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
   <div class="container">
+    <div class="hero-top">
+      <h1 class="hero-h1">Psicologia que respeita sua história e <em>honra sua vida.</em></h1>
+      <span class="hero-handnote">no seu tempo</span>
+      <div class="tags hero-tags">
+        <a class="tag tb" href="#abordagem">Autoconhecimento</a>
+        <a class="tag tb" href="afirmativa.html">Autoafirmação</a>
+        <a class="tag tb" href="luto.html">Perdas e Luto</a>
+        <a class="tag tb" href="psicopatologias.html">Idosos</a>
+        <a class="tag tb" href="luto.html">Luto Migratório</a>
+        <span class="tag-break2"></span>
+        <a class="tag tb" href="paliativos.html">Psicologia Hospitalar</a>
+        <a class="tag tb" href="paliativos.html">Cuidados Paliativos</a>
+        <a class="tag tb" href="afirmativa.html">Antirracismo</a>
+        <a class="tag tb" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
+      </div>
+    </div>
     <div class="hero-inner">
-      <div>
-        <h1 class="hero-h1">Psicologia que respeita sua história e <em>honra sua vida.</em></h1>
-        <span class="hero-handnote">no seu tempo</span><br>
-        <div class="tags hero-tags">
-          <a class="tag tb" href="#abordagem">Autoconhecimento</a>
-          <a class="tag tb" href="afirmativa.html">Autoafirmação</a>
-          <a class="tag tb" href="luto.html">Perdas e Luto</a>
-          <a class="tag tb" href="psicopatologias.html">Idosos</a>
-          <a class="tag tb" href="luto.html">Luto Migratório</a>
-          <span class="tag-break2"></span>
-          <a class="tag tb" href="paliativos.html">Psicologia Hospitalar</a>
-          <a class="tag tb" href="paliativos.html">Cuidados Paliativos</a>
-          <a class="tag tb" href="afirmativa.html">Antirracismo</a>
-          <a class="tag tb" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
-        </div>
-        <p class="hero-sub" style="margin-bottom:42px">Um espaço seguro, acolhedor e sem julgamentos, onde você pode ser quem é e encontrar recursos para se autoconhecer, autoafirmar e atravessar os desafios emocionais, o luto e as transições da vida com suporte especializado.</p>
+      <div class="hero-left">
+        <div class="hero-pill">Psicólogo · CRP 03/20310 · Atendimento Online</div>
         <div class="hero-stats">
           <div class="hero-stat"><strong>+7</strong><span>Anos de experiência clínica</span></div>
           <div class="stat-div"></div>
-          <div class="hero-stat"><strong>ACT</strong><span>Aceitação e Compromisso</span></div>
+          <div class="hero-stat"><strong>TBE</strong><span>Terapia Baseada em Evidências</span></div>
           <div class="stat-div"></div>
-          <div class="hero-stat"><strong>TBE</strong><span>Baseada em Evidências</span></div>
+          <div class="hero-stat"><strong>ACT</strong><span>Terapia de Aceitação e Compromisso</span></div>
+          <div class="stat-div"></div>
+          <div class="hero-stat"><strong>DBT</strong><span>Terapia Dialética Comportamental</span></div>
         </div>
-        <div class="hero-pill">Psicólogo · CRP 03/20310 · Atendimento Online</div>
-      </div>
+        <p class="hero-sub" style="margin-bottom:0">Um espaço seguro, acolhedor e sem julgamentos, onde você pode ser quem é e encontrar recursos para se autoconhecer, autoafirmar e atravessar os desafios emocionais, o luto e as transições da vida com suporte especializado.</p>
       </div>
       <div class="hero-visual">
         <div class="photo-wrap">
