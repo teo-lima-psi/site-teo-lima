@@ -166,6 +166,10 @@
   .btn.nav-btn{padding:6px 8px 5px;width:auto;min-width:44px;height:auto;flex-direction:column;gap:2px;justify-content:center;border-radius:14px;box-shadow:0 6px 18px rgba(200,120,86,.4)}
   .btn.nav-btn svg{width:20px;height:20px;flex-shrink:0}
   .nav-btn .btn-label{display:block;font-size:.52rem;line-height:1;font-weight:700;white-space:nowrap}
+      .specialty-links{display:flex;gap:5px}
+      .specialty-links a{text-decoration:none;background:#AE5D27;border-radius:14px;padding:6px 8px 5px;display:flex;flex-direction:column;align-items:center;gap:2px;box-shadow:0 6px 18px rgba(200,120,86,.4)}
+      .specialty-links a svg{width:18px;height:18px;stroke:#fff;flex-shrink:0}
+      .specialty-links a span{color:#fff;font-size:.5rem;font-weight:700;line-height:1;white-space:nowrap}
   .btn-green .wa-icon{fill:#fff;stroke:#000;stroke-width:.9px;paint-order:stroke fill}
   .btn-blue{background:#AE5D27;color:#fff;box-shadow:0 8px 22px rgba(200,120,86,.32)}
   .nav-links{display:flex;align-items:center;gap:4px}
@@ -252,6 +256,7 @@
     .btn.nav-btn{width:auto;min-width:23px;height:auto;padding:4px 6px 3px;flex-direction:column;gap:1px;border-radius:10px;box-shadow:0 3px 8px rgba(200,120,86,.28)}
     .btn.nav-btn svg{width:13px;height:13px}
     .nav-btn .btn-label{font-size:.42rem}
+      .specialty-links{display:none}
     .nav-handnote{font-size:.82rem}
   }
   @media(max-width:560px){
@@ -269,6 +274,22 @@
       <a href="index.html" class="nav-logo">Téo <span>Lima</span></a>
       <span class="nav-handnote">Minha história molda a forma como eu escuto a sua</span>
     </div>
+      <div class="specialty-links">
+        <a href="luto.html" aria-label="Perdas e Luto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg><span>Luto</span></a>
+        <a href="paliativos.html" aria-label="Cuidados Paliativos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span>Paliativos</span></a>
+        <a href="afirmativa.html" aria-label="Psicologia Afirmativa"><svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+            <defs><clipPath id="fist-card"><path d="M288 64C305.7 64 320 78.3 320 96L320 208L256 208L256 96C256 78.3 270.3 64 288 64zM160 128C160 110.3 174.3 96 192 96C209.7 96 224 110.3 224 128L224 208L160 208L160 128zM352 128C352 110.3 366.3 96 384 96C401.7 96 416 110.3 416 128L416 224C416 241.7 401.7 256 384 256C366.3 256 352 241.7 352 224L352 128zM448 192C448 174.3 462.3 160 480 160C497.7 160 512 174.3 512 192L512 256C512 273.7 497.7 288 480 288C462.3 288 448 273.7 448 256L448 192zM352 280L352 279.4C361.4 284.8 372.3 288 384 288C397.2 288 409.4 284 419.6 277.2C428.3 302.1 452.1 320 480 320C491.7 320 502.6 316.9 512 311.4L512 320C512 372.3 486.9 418.8 448 448L448 544C448 561.7 433.7 576 416 576L256 576C238.3 576 224 561.7 224 544L224 465.6C206.7 457.7 190.8 446.8 177.1 433.1L165.5 421.5C141.5 397.5 128 364.9 128 331L128 304C128 268.7 156.7 240 192 240L280 240C302.1 240 320 257.9 320 280C320 302.1 302.1 320 280 320L224 320C215.2 320 208 327.2 208 336C208 344.8 215.2 352 224 352L280 352C319.8 352 352 319.8 352 280z"/></clipPath></defs>
+            <g clip-path="url(#fist-card)">
+              <rect x="128" y="0" width="32" height="640" fill="#E40303"/><rect x="160" y="0" width="32" height="640" fill="#FF8C00"/>
+              <rect x="192" y="0" width="32" height="640" fill="#FFED00"/><rect x="224" y="0" width="32" height="640" fill="#008026"/>
+              <rect x="256" y="0" width="32" height="640" fill="#004DFF"/><rect x="288" y="0" width="32" height="640" fill="#750787"/>
+              <rect x="320" y="0" width="320" height="640" fill="#111111"/>
+            </g>
+          </svg><span>Afirmativa</span></a>
+        <a href="compulsao.html" aria-label="Compulsões"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><span>Compulsões</span></a>
+        <a href="pcd.html" aria-label="PcD, TDAH e Bariátrica"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8M8 11l4 1 4-1M9 21l3-6 3 6"/></svg><span>PcD/TDAH</span></a>
+        <a href="psicopatologias.html" aria-label="Depressão e Ansiedade"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/></svg><span>Ansiedade</span></a>
+      </div>
     <div class="nav-right">
       <a href="index.html#problems" class="btn btn-blue nav-btn" aria-label="Voltar"><svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg><span class="btn-label">Voltar</span></a>
       <a href="marcar-consulta.html" class="btn btn-blue nav-btn" aria-label="Marcar Sessão"><svg class="cal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg><span class="btn-label">Marcar Sessão</span></a>
