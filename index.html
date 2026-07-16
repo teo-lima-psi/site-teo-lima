@@ -219,8 +219,9 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .orb3{width:300px;height:300px;background:radial-gradient(circle,rgba(182,140,92,.22) 0%,transparent 70%);top:48%;left:38%;animation:breathe 11s ease-in-out infinite}
   @keyframes breathe{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.10);opacity:1}}
 
-  .hero-inner{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
-  .hero-top{margin-bottom:56px}
+  #hero .container{display:grid;grid-template-columns:auto 1fr;column-gap:56px;align-items:start;grid-template-areas:"top top" "tags rest"}
+  .hero-inner{grid-area:rest;display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;position:relative;z-index:2}
+  .hero-top{grid-area:top;margin-bottom:56px}
   .hero-left{display:flex;flex-direction:column}
   .hero-left .hero-pill{order:1}
   .hero-left .hero-stats{order:2;flex-wrap:wrap;row-gap:16px}
@@ -308,7 +309,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   #abordagem .about-footer{margin-top:-45px}
   #about .about-footer{margin-top:-10px}
   .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .hero-tags{justify-content:flex-start;margin:20px 0 24px;flex-wrap:wrap;gap:14px;row-gap:16px}
+  .hero-tags{grid-area:tags;flex-direction:column;flex-wrap:nowrap;align-items:flex-start;margin:20px 0 0;gap:14px}
   .tag-break2{display:block;flex-basis:100%;height:0}
   .tag-break3{display:block;flex-basis:100%;height:0}
   #about .about-footer .tags{margin-top:68px}
@@ -506,17 +507,17 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
     <div class="hero-top">
       <h1 class="hero-h1">Psicologia que respeita sua história e <em>honra sua vida.</em></h1>
       <span class="hero-handnote">no seu tempo</span>
-      <div class="tags hero-tags">
-        <a class="tag taz" href="#abordagem">Autoconhecimento</a>
-        <a class="tag tg" href="afirmativa.html">Autoafirmação</a>
-        <a class="tag tam" href="luto.html">Perdas e Luto</a>
-        <a class="tag tvm" href="psicopatologias.html">Idosos</a>
-        <a class="tag taz" href="luto.html">Luto Migratório</a>
-        <a class="tag tg" href="paliativos.html">Psicologia Hospitalar</a>
-        <a class="tag tam" href="paliativos.html">Cuidados Paliativos</a>
-        <a class="tag tvm" href="afirmativa.html">Antirracismo</a>
-        <a class="tag taz" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
-      </div>
+    </div>
+    <div class="tags hero-tags">
+      <a class="tag taz" href="#abordagem">Autoconhecimento</a>
+      <a class="tag tg" href="afirmativa.html">Autoafirmação</a>
+      <a class="tag tam" href="luto.html">Perdas e Luto</a>
+      <a class="tag tvm" href="psicopatologias.html">Idosos</a>
+      <a class="tag taz" href="luto.html">Luto Migratório</a>
+      <a class="tag tg" href="paliativos.html">Psicologia Hospitalar</a>
+      <a class="tag tam" href="paliativos.html">Cuidados Paliativos</a>
+      <a class="tag tvm" href="afirmativa.html">Antirracismo</a>
+      <a class="tag taz" href="afirmativa.html">Pessoas LGBTQIAPN+</a>
     </div>
     <div class="hero-inner">
       <div class="hero-left">
