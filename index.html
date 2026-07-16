@@ -432,12 +432,30 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
   @media(max-width:900px){
-    .hero-inner{grid-template-columns:1fr;gap:48px}
-    .hero-left .hero-pill{order:3}
-    .hero-left .hero-sub{order:1}
-    .photo-wrap{max-width:280px;margin:0 auto}
+    #hero .container{grid-template-columns:4fr 6fr;column-gap:16px;row-gap:24px;align-items:start;grid-template-areas:"top top" "tags visual" "tags sub" "pill pill" "stats stats"}
+    .hero-inner{display:contents}
+    .hero-left{display:contents}
+    .hero-pill{grid-area:pill}
+    .hero-stats{grid-area:stats;margin-top:0}
+    .hero-sub{grid-area:sub;margin:0;text-align:left}
+    .hero-visual{grid-area:visual}
+    .hero-tags{grid-area:tags;flex-direction:column;align-items:flex-start;margin:calc(37.5vw - 27px) 0 0 0;gap:6px}
+    .hero-tags .tag{font-size:.5rem;padding:4px 8px}
+    .hero-h1{font-size:2rem}
+    .hero-handnote{font-size:1.6rem;margin:8px 0 20px 32px}
+    .photo-wrap{max-width:220px;margin:0 auto}
+    .crp-seal{font-size:.58rem;padding:7px 12px;bottom:4px;right:-4px}
     .about-inner{grid-template-columns:1fr;gap:48px}
     .about-frame{min-height:380px;max-width:420px;margin:0 auto}
+    #about .about-frame{height:340px;max-width:225px;margin:0 auto;transform:none}
+    #abordagem .about-text{display:contents}
+    #abordagem .about-inner > div:first-child{order:2}
+    #abordagem .about-header{order:1}
+    #abordagem .about-text > p{order:3}
+    #abordagem .about-frame{height:180px;max-width:160px;margin:0 auto 20px;transform:none}
+    .trust-inner{gap:14px;flex-direction:column;align-items:center}
+    .trust-item{justify-content:center}
+    .trust-item:nth-child(3){order:-1}
     .faq-inner{grid-template-columns:1fr;gap:40px}
     .how-steps{grid-template-columns:1fr 1fr;gap:36px}
     .how-steps::before{display:none}
@@ -450,7 +468,6 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
     .nav-actions{gap:6px}
     .nav-right{gap:6px}
     .how-caricatura-frame{max-width:340px}
-    .hero-stats{gap:18px;flex-wrap:wrap}
   }
   @media(max-width:560px){
     .gallery-grid{grid-template-columns:1fr}
@@ -828,7 +845,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
             var obs2=new MutationObserver(function(){var iframe=target.querySelector('iframe');if(iframe&&!iframe.dataset.watched){iframe.dataset.watched='1';iframe.style.minHeight='600px';}});
             obs2.observe(target,{childList:true,subtree:true});
             var s=document.createElement('script');
-            s.src='https://cusdis.com/js/cusdis.es.js';
+            if (window.trustedTypes && trustedTypes.createPolicy) { var cusdisPolicy = trustedTypes.createPolicy('cusdis-loader', { createScriptURL: function (url) { return url; } }); s.src = cusdisPolicy.createScriptURL('https://cusdis.com/js/cusdis.es.js'); } else { s.src = 'https://cusdis.com/js/cusdis.es.js'; }
             s.async=true; s.defer=true;
             document.body.appendChild(s);
           }
