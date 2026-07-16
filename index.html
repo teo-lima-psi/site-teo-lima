@@ -156,7 +156,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .label::before{content:"";width:24px;height:1px;background:currentColor;opacity:.6}
   .lb{color:var(--terra);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)} .lg{color:var(--moss)} .ll{color:var(--gold)}
   .title{font-family:var(--font-d);font-size:clamp(2.18rem,4.6vw,3.34rem);font-weight:400;line-height:1.18;color:var(--ink);letter-spacing:-.005em}
-  .title em{font-style:italic;color:var(--terra);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
+  .title em{font-style:italic;color:var(--terra-deep);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .tb{color:var(--terra);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)} .tg{color:var(--moss)} .tl{color:var(--gold)}
   .hand{font-family:var(--font-h);font-size:1.55rem;color:var(--moss);font-weight:600;display:inline-block;transform:rotate(-2.5deg);margin:0 6px}
 
@@ -188,8 +188,8 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .nav-logo-group{display:flex;flex-direction:column;line-height:1.1}
   .nav-logo-group .nav-logo{margin-left:10px}
   .nav-logo{font-family:var(--font-d);font-size:1.4rem;font-weight:500;color:var(--ink);letter-spacing:-.005em}
-  .nav-logo span{color:var(--terra);font-style:italic;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
-  .nav-handnote{font-family:var(--font-h);font-size:1.15rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.5px 0 0 currentColor,-.5px 0 0 currentColor}
+  .nav-logo span{color:var(--terra-deep);font-style:italic;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
+  .nav-handnote{font-family:var(--font-h);font-size:1.15rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.5px 0 0 currentColor,-.5px 0 0 currentColor,0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .nav-links{display:flex;align-items:center;gap:6px;list-style:none}
   .nav-links a{font-size:.74rem;font-weight:700;color:#fff;transition:background .25s,box-shadow .25s;padding:7px 14px;border-radius:100px;background:#AE5D27;box-shadow:0 4px 12px rgba(200,120,86,.28);white-space:nowrap}
   .nav-links a:hover{background:var(--terra-deep);box-shadow:0 6px 18px rgba(200,120,86,.38)}
@@ -230,8 +230,8 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .hero-pill::before{content:'';width:7px;height:7px;background:var(--terra);border-radius:50%;animation:pulseDot 2.4s ease-in-out infinite}
   @keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.6}}
   .hero-h1{font-family:var(--font-d);font-size:clamp(2.3rem,5.2vw,3.7rem);font-weight:400;line-height:1.10;letter-spacing:-.012em;animation:fadeUp .8s .12s ease both;color:var(--ink)}
-  .hero-h1 em{font-style:italic;color:var(--terra);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
-  .hero-handnote{display:inline-block;font-family:var(--font-h);font-size:2.8rem;color:var(--moss);font-weight:600;transform:rotate(-18deg);margin:4px 0 30px 297px;animation:handnoteFadeUp .8s .25s ease both;line-height:1}
+  .hero-h1 em{font-style:italic;color:var(--terra-deep);font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
+  .hero-handnote{display:inline-block;font-family:var(--font-h);font-size:2.8rem;color:var(--moss);font-weight:600;transform:rotate(-18deg);margin:4px 0 30px 297px;animation:handnoteFadeUp .8s .25s ease both;line-height:1;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .hero-sub{font-size:1rem;color:var(--text-mid);max-width:480px;margin:24px 0 30px;animation:fadeUp .8s .32s ease both;text-align:justify}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr;column-gap:28px;row-gap:16px;margin-top:18px;animation:fadeUp .8s .56s ease both}
   .hero-stat{display:flex;flex-direction:column}
@@ -291,7 +291,7 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .about-header{margin-bottom:24px}
   .about-header .title{margin-top:8px}
-  .about-handnote{display:inline-block;font-family:var(--font-h);font-size:1.4rem;color:var(--moss);font-weight:600;transform:rotate(-2deg);margin-bottom:6px}
+  .about-handnote{display:inline-block;font-family:var(--font-h);font-size:1.4rem;color:var(--moss);font-weight:600;transform:rotate(-2deg);margin-bottom:6px;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .about-text p,.about-footer p{color:var(--text-mid);font-size:.94rem;margin-bottom:16px;text-align:justify}
   .about-text p strong,.about-footer p strong{color:var(--ink);font-weight:600}
   .about-frame{position:relative;border-radius:64% 36% 52% 48% / 50% 50% 50% 50%;overflow:hidden;background:linear-gradient(135deg,var(--terra-soft),var(--terra-deep));box-shadow:0 30px 70px rgba(168,89,60,.22);min-height:480px;}
