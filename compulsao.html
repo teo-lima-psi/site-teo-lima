@@ -199,9 +199,9 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .nav-logo span{color:var(--terra-deep);font-style:italic;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .nav-handnote{font-family:var(--font-h);font-size:1.15rem;color:var(--moss);font-weight:600;margin-top:1px;animation:fadeUp .6s ease both;text-shadow:.5px 0 0 currentColor,-.5px 0 0 currentColor,0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
   .nav-right{display:flex;align-items:center;gap:10px;align-self:flex-start;margin-top:2px}
-  .nav-btn{padding:6px 8px 5px;width:auto;min-width:44px;height:auto;flex-direction:column;gap:2px;justify-content:center;border-radius:14px;box-shadow:0 6px 18px rgba(200,120,86,.4)}
+  .nav-btn{width:44px;height:44px;padding:0;box-sizing:border-box;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:14px;box-shadow:0 6px 18px rgba(200,120,86,.4)}
   .nav-btn svg{width:20px;height:20px;flex-shrink:0}
-  .nav-btn .btn-label{display:block;font-size:.52rem;line-height:1;font-weight:700;white-space:nowrap}
+  .nav-btn .btn-label{display:block;font-size:.5rem;line-height:1;font-weight:700;white-space:nowrap;text-align:center}
       .specialty-links{display:flex;gap:5px}
       .specialty-links a{text-decoration:none;background:#AE5D27;border-radius:14px;padding:6px 8px 5px;display:flex;flex-direction:column;align-items:center;gap:2px;box-shadow:0 6px 18px rgba(200,120,86,.4)}
       .specialty-links a svg{width:18px;height:18px;stroke:#fff;flex-shrink:0}
@@ -211,14 +211,14 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   .nav-links a{font-size:.74rem;font-weight:700;color:#fff;transition:background .25s,box-shadow .25s;padding:7px 14px;border-radius:100px;background:#AE5D27;box-shadow:0 4px 12px rgba(200,120,86,.28)}
   .nav-links a:hover{background:var(--terra-deep);box-shadow:0 6px 18px rgba(200,120,86,.38)}
   .nav-actions{display:flex;align-items:center;gap:10px}
-  .hamburger{display:none;position:relative;background:#AE5D27;border:none;border-radius:50%;width:23px;height:23px;cursor:pointer;padding:0;box-shadow:0 3px 8px rgba(200,120,86,.28)}
-  .hamburger span{position:absolute;left:50%;width:13px;height:1.5px;background:#fff;border-radius:2px;transform:translateX(-50%);transition:transform .3s,opacity .3s}
-  .hamburger span:nth-child(1){top:6px}
-  .hamburger span:nth-child(2){top:11px}
-  .hamburger span:nth-child(3){top:16px}
-  .hamburger.open span:nth-child(1){transform:translateX(-50%) translateY(4px) rotate(45deg)}
+  .hamburger{display:none;position:relative;background:#AE5D27;border:none;border-radius:10px;width:34px;height:34px;cursor:pointer;padding:0;box-shadow:0 3px 8px rgba(200,120,86,.28)}
+  .hamburger span{position:absolute;left:50%;width:19px;height:1.5px;background:#fff;border-radius:2px;transform:translateX(-50%);transition:transform .3s,opacity .3s}
+  .hamburger span:nth-child(1){top:10px}
+  .hamburger span:nth-child(2){top:16px}
+  .hamburger span:nth-child(3){top:22px}
+  .hamburger.open span:nth-child(1){transform:translateX(-50%) translateY(6px) rotate(45deg)}
   .hamburger.open span:nth-child(2){opacity:0}
-  .hamburger.open span:nth-child(3){transform:translateX(-50%) translateY(-4px) rotate(-45deg)}
+  .hamburger.open span:nth-child(3){transform:translateX(-50%) translateY(-6px) rotate(-45deg)}
   .mobile-menu{display:none;position:fixed;inset:0;background:rgba(244,235,225,.97);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:28px}
   .mobile-menu.open{display:flex}
   .mobile-menu a{font-family:var(--font-d);font-size:1.5rem;color:var(--ink);font-style:italic}
@@ -246,9 +246,9 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   @media(max-width:900px){
     .nav-links{display:none}
     .hamburger{display:flex}
-    .nav-btn{width:auto;min-width:23px;height:auto;padding:4px 6px 3px;flex-direction:column;gap:1px;border-radius:10px;box-shadow:0 3px 8px rgba(200,120,86,.28)}
+    .nav-btn{width:34px;height:34px;padding:0;box-sizing:border-box;flex-direction:column;align-items:center;justify-content:center;gap:1px;border-radius:10px;box-shadow:0 3px 8px rgba(200,120,86,.28)}
     .nav-btn svg{width:13px;height:13px}
-    .nav-btn .btn-label{font-size:.42rem}
+    .nav-btn .btn-label{font-size:.4rem}
       .specialty-links{display:none}
     .nav-handnote{font-size:.82rem}
     .nav-actions{gap:6px}
