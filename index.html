@@ -432,14 +432,14 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
   @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
   @media(max-width:900px){
-    #hero .container{grid-template-columns:4fr 6fr;column-gap:16px;row-gap:24px;align-items:start;grid-template-areas:"top top" "tags visual" "tags sub" "pill pill" "stats stats"}
+    #hero .container{grid-template-columns:4fr 6fr;column-gap:16px;row-gap:24px;align-items:start;grid-template-areas:"top top" "visual visual" "tags sub" "pill pill" "stats stats"}
     .hero-inner{display:contents}
     .hero-left{display:contents}
     .hero-pill{grid-area:pill}
     .hero-stats{grid-area:stats;margin-top:0}
     .hero-sub{grid-area:sub;margin:0;text-align:left}
     .hero-visual{grid-area:visual}
-    .hero-tags{grid-area:tags;flex-direction:column;align-items:flex-start;margin:calc(37.5vw - 27px) 0 0 0;gap:6px}
+    .hero-tags{grid-area:tags;flex-direction:column;align-items:flex-start;margin:0;gap:6px}
     .hero-tags .tag{font-size:.5rem;padding:4px 8px}
     .hero-h1{font-size:2rem}
     .hero-handnote{font-size:1.6rem;margin:8px 0 20px 32px}
