@@ -42,7 +42,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cusdis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://cusdis.com; frame-src https://cusdis.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; require-trusted-types-for 'script'; upgrade-insecure-requests"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cusdis.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.google.com https://www.googletagmanager.com https://cusdis.com; frame-src https://cusdis.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; require-trusted-types-for 'script'; upgrade-insecure-requests"
         }
       ]
     },
