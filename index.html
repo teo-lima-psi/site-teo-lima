@@ -564,7 +564,10 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
         <div class="photo-wrap">
           <div class="photo-blob"></div>
           <div class="hero-photo">
-            <img src="foto-hero.webp" srcset="foto-hero-300.webp 300w, foto-hero-450.webp 450w, foto-hero.webp 600w" sizes="(max-width: 900px) 170px, 383px" alt="Téo Lima, Psicólogo – Salvador BA" loading="eager" width="600" height="900"/>
+            <picture>
+              <source type="image/avif" srcset="foto-hero-180.avif 180w, foto-hero-300.avif 300w, foto-hero-450.avif 450w, foto-hero.avif 600w" sizes="(max-width: 900px) 170px, 383px"/>
+              <img src="foto-hero.webp" srcset="foto-hero-300.webp 300w, foto-hero-450.webp 450w, foto-hero.webp 600w" sizes="(max-width: 900px) 170px, 383px" alt="Téo Lima, Psicólogo – Salvador BA" loading="eager" width="600" height="900"/>
+            </picture>
           </div>
           <div class="crp-seal">CRP 03/20310</div>
         </div>
