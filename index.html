@@ -962,6 +962,32 @@ document.addEventListener('click', function(e){ var link = e.target.closest('a')
 const revEls=document.querySelectorAll('.reveal');
 const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}})},{threshold:0.12});
 revEls.forEach(el=>ro.observe(el));
+// Rede de seguranca: em alguns navegadores/zooms o IntersectionObserver nao dispara
+// para todos os elementos (ex.: scroll muito rapido ou direto pro fim da pagina).
+// Sem isso, o conteudo fica com opacity:0 pra sempre. Este checador manual garante
+// que nada fique invisivel: roda no load, no scroll/resize (com throttle) e a cada 0.5s
+// por um tempo, revelando na forca bruta qualquer .reveal que esteja perto da tela.
+function forceRevealVisible(){
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(r.bottom>-600 && r.top<window.innerHeight+600){el.classList.add('visible')}
+  });
+}
+let revealTicking=false;
+function onScrollOrResize(){
+  if(revealTicking)return;
+  revealTicking=true;
+  requestAnimationFrame(()=>{forceRevealVisible();revealTicking=false});
+}
+window.addEventListener('scroll',onScrollOrResize,{passive:true});
+window.addEventListener('resize',onScrollOrResize);
+forceRevealVisible();
+let revealSafetyChecks=0;
+const revealSafetyTimer=setInterval(()=>{
+  forceRevealVisible();
+  revealSafetyChecks++;
+  if(revealSafetyChecks>20)clearInterval(revealSafetyTimer);
+},500);
 
 document.querySelectorAll('.fi-q').forEach(btn=>{
   btn.addEventListener('click',function(){
