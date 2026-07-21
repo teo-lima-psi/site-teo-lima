@@ -982,11 +982,9 @@ function onScrollOrResize(){
 window.addEventListener('scroll',onScrollOrResize,{passive:true});
 window.addEventListener('resize',onScrollOrResize);
 forceRevealVisible();
-let revealSafetyChecks=0;
 const revealSafetyTimer=setInterval(()=>{
   forceRevealVisible();
-  revealSafetyChecks++;
-  if(revealSafetyChecks>20)clearInterval(revealSafetyTimer);
+  if(document.querySelectorAll('.reveal:not(.visible)').length===0)clearInterval(revealSafetyTimer);
 },500);
 
 document.querySelectorAll('.fi-q').forEach(btn=>{
