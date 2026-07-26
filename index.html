@@ -970,10 +970,16 @@ revEls.forEach(el=>ro.observe(el));
 // que nada fique invisivel: roda no load, no scroll/resize (com throttle) e a cada 0.5s
 // por um tempo, revelando na forca bruta qualquer .reveal que esteja perto da tela.
 function forceRevealVisible(){
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
+  // Le a geometria de todos os elementos primeiro (sem misturar com escrita no DOM),
+  // e so depois aplica a classe. Ler e escrever intercalados, elemento por elemento,
+  // forca um reflow sincrono a cada iteracao (layout thrashing).
+  const candidates=document.querySelectorAll('.reveal:not(.visible)');
+  const toReveal=[];
+  candidates.forEach(el=>{
     const r=el.getBoundingClientRect();
-    if(r.bottom>-600 && r.top<window.innerHeight+600){el.classList.add('visible')}
+    if(r.bottom>-600 && r.top<window.innerHeight+600){toReveal.push(el)}
   });
+  toReveal.forEach(el=>el.classList.add('visible'));
 }
 let revealTicking=false;
 function onScrollOrResize(){
