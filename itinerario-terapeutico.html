@@ -225,8 +225,9 @@
   .reveal.visible{opacity:1;transform:translateY(0)}
 
   .esp-handnote{font-family:var(--font-h);font-size:2.2rem;color:var(--moss);font-weight:600;display:inline-block;transform:rotate(-13deg);margin:0;text-shadow:0 1px 2px rgba(0,0,0,.3),0 0 1px rgba(0,0,0,.4)}
-  .esp-title-row{display:flex;align-items:flex-end;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:20px}
-  .esp-title-row h1{margin-bottom:0}
+  .esp-title-wrap{position:relative;display:inline-block;text-align:center;margin-bottom:44px}
+  .esp-title-wrap h1{margin-bottom:0}
+  .esp-title-wrap .esp-handnote{position:absolute;left:2px;bottom:-34px}
   /* ============================================================
      BLOCO DA PÁGINA: ITINERÁRIO TERAPÊUTICO
      ============================================================ */
@@ -235,7 +236,7 @@
   .esp-body .container{max-width:820px}
 
   .esp-hero{padding:120px 0 70px;position:relative}
-  .esp-hero .container{position:relative;z-index:2;padding:36px 40px}
+  .esp-hero .container{position:relative;z-index:2;padding:36px 40px;text-align:center}
 
   .esp-ico{
     width:72px;height:72px;border-radius:20px;
@@ -283,7 +284,7 @@
   @media(max-width:560px){
     .esp-cta{padding:36px 24px}
     .esp-hero .container{padding:24px 20px}
-    .esp-title-row{flex-direction:column;gap:6px}
+    .esp-title-wrap .esp-handnote{font-size:1.5rem;bottom:-26px}
   }
 
   </style>
@@ -336,9 +337,9 @@
 <section class="esp-hero">
   <div class="container reveal">
     <div class="esp-ico">💭</div>
-    <div class="esp-title-row">
-      <span class="esp-handnote">o corpo e suas marcas</span>
+    <div class="esp-title-wrap">
       <h1>Clínica Hospitalar:<br><em>Itinerário Terapêutico</em></h1>
+      <span class="esp-handnote">o corpo e suas marcas</span>
     </div>
     <p class="esp-lead">Dentro de um hospital, o corpo não é só um conjunto de sintomas para tratar. Ele também guarda marcas de uma história pessoal que a medicina sozinha não alcança. Este texto explica o que faz um psicólogo dentro de uma equipe hospitalar, o que é o itinerário terapêutico que cada paciente percorre antes de chegar ao consultório, e por que separar a doença da pessoa muda o cuidado.</p>
   </div>
