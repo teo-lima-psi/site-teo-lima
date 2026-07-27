@@ -974,14 +974,22 @@ revEls.forEach(el=>ro.observe(el));
 function forceRevealVisible(){
   // Le a geometria de todos os elementos primeiro (sem misturar com escrita no DOM),
   // e so depois aplica a classe. Ler e escrever intercalados, elemento por elemento,
-  // forca um reflow sincrono a cada iteracao (layout thrashing).
-  const candidates=document.querySelectorAll('.reveal:not(.visible)');
-  const toReveal=[];
-  candidates.forEach(el=>{
-    const r=el.getBoundingClientRect();
-    if(r.bottom>-600 && r.top<window.innerHeight+600){toReveal.push(el)}
-  });
-  toReveal.forEach(el=>el.classList.add('visible'));
+const observerOptions = {
+    root: null,
+    rootMargin: '600px 0px 600px 0px',
+    threshold: 0
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
 }
 let revealTicking=false;
 function onScrollOrResize(){
