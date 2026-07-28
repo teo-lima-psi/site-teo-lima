@@ -66,4 +66,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+  <url>\n    <loc>https://teolima.com/perguntas.html</loc>\n    <lastmod>2026-07-28</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>
