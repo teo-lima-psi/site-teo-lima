@@ -592,7 +592,7 @@
   <div class="container reveal">
     <div class="esp-ico">💬</div>
     <h1>Perguntas</h1>
-    <p class="esp-lead">Perguntas reais, tiradas dos meus próprios textos, respondidas em linguagem direta. Se a sua dúvida não estiver aqui, pode mandar a sua no formulário no fim da página, sem se identificar.</p>
+    <p class="esp-lead">Perguntas reais, tiradas dos meus próprios textos, respondidas em linguagem direta. Se a sua dúvida não estiver aqui, pode mandar a sua no formulário no fim da página, sem se identificar. E ela não precisa ter nada a ver com estes textos: pode ser sobre qualquer assunto da psicologia, ou sobre o que você estiver vivendo.</p>
   </div>
 </section>
 
@@ -641,10 +641,11 @@
     <div class="perg-form reveal" id="pergunta-anonima">
       <h2>Tem uma pergunta?</h2>
       <p class="perg-crisis">Se você estiver agora em uma crise ou com pensamentos de tirar a própria vida, não espere minha resposta. Sua vida importa muito! Ligue 188 (CVV, 24h, gratuito) ou procure a emergência mais próxima, lá sempre haverá profissionais capacitados para te ajudar agora.</p>
-      <p>Manda sua pergunta sem se identificar. Leio pessoalmente, e quando fizer sentido ela vira uma pergunta nova aqui na página, sempre reescrita de forma que ninguém consiga te identificar. Nem toda pergunta enviada vira resposta publicada, e não há prazo garantido — isto não é um canal de plantão, é um espaço de conteúdo.</p>
+      <p>Manda sua pergunta sem se identificar, sobre o que você quiser. Não precisa ser sobre os textos desta página: pode ser qualquer dúvida de psicologia, ou algo que você esteja atravessando. Leio pessoalmente, e quando fizer sentido ela vira uma pergunta nova aqui na página, sempre reescrita de forma que ninguém consiga te identificar. Nem toda pergunta enviada vira resposta publicada, e não há prazo garantido — isto não é um canal de plantão, é um espaço de conteúdo.</p>
       <form id="perg-form" action="https://formspree.io/f/mzdnoabe" method="POST">
         <textarea class="perg-textarea" name="pergunta" required placeholder="Escreva sua pergunta aqui..."></textarea>
-        <input type="hidden" name="_subject" value="Nova pergunta anônima — teolima.com/perguntas"/>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <input type="hidden" name="_subject" value="Nova pergunta anônima — teolima.com/perguntas"/>
         <button type="submit" class="btn btn-blue">Enviar pergunta</button>
         <p class="perg-note">Não pedimos nome nem e-mail. Se quiser uma resposta pessoal e não pública, prefira o WhatsApp.</p>
       </form>
