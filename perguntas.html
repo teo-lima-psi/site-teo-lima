@@ -725,6 +725,16 @@
 })();
 </script>
 <script>
+document.querySelectorAll('.fi-q').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const item=this.closest('.fi');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.fi.open').forEach(i=>{i.classList.remove('open')});
+    if(!isOpen) item.classList.add('open');
+  });
+});
+</script>
+<script>
 const ham=document.getElementById('hamburger');
 const mob=document.getElementById('mobile-menu');
 function closeMobile(){mob.style.display='none';ham.classList.remove('open')}
